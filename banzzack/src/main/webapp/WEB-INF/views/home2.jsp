@@ -1,7 +1,10 @@
+<!doctype html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
-<html class="no-js" lang="en">
+<html>
 <head>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+	language="java"%>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Asbab - eCommerce HTML5 Templatee</title>
@@ -9,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" href="<c:url value='resources/shop/apple-touch-icon.png'/>">
+    <link rel="shortcut icon" type="image/x-icon" href="<c:url value='resources/shop/images/favicon.ico'/>">
+    <link rel="apple-touch-icon" href="<c:url value='resources/shop/apple-touch-icon.png'/>'/>">
     
 
     <!-- All css files are included here. -->
@@ -18,14 +22,14 @@
     <!-- Owl Carousel min css -->
     <link rel="stylesheet" href="<c:url value='resources/shop/css/owl.carousel.min.css'/>">
     <link rel="stylesheet" href="<c:url value='resources/shop/css/owl.theme.default.min.css'/>">
-    <!-- This core.css file contents all plugings css file. -->
+    <!-- This core.css'/> file contents all plugings css file. -->
     <link rel="stylesheet" href="<c:url value='resources/shop/css/core.css'/>">
     <!-- Theme shortcodes/elements style -->
     <link rel="stylesheet" href="<c:url value='resources/shop/css/shortcode/shortcodes.css'/>">
     <!-- Theme main style -->
     <link rel="stylesheet" href="<c:url value='resources/shop/style.css'/>">
     <!-- Responsive css -->
-    <link rel="stylesheet" href="<c:url value='resources/shop/css/responsive.css'/>">
+    <!-- <link rel="stylesheet" href="<c:url value='resources/shop/css/responsive.css'/>"> -->
     <!-- User style -->
     <link rel="stylesheet" href="<c:url value='resources/shop/css/custom.css'/>">
 
@@ -285,17 +289,17 @@
                             <div class="col-md-7 col-sm-7 col-xs-12 col-lg-6">
                                 <div class="slide">
                                     <div class="slider__inner">
-                                        <h2>collection 2018</h2>
-                                        <h1>NICE CHAIR</h1>
+                                        <h2>collection 2020</h2>
+                                        <h1>New Earring</h1>
                                         <div class="cr__btn">
-                                            <a href="cart.html">Shop Now</a>
+                                            <a href="cart.html">Buy now</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
                                 <div class="slide__thumb">
-                                    <img src="<c:url value='resources/shop/images/slider/fornt-img/1.png'/>" alt="slider images">
+                                    <img src="<c:url value='resources/shop/images/earring/earring1.png'/>">
                                 </div>
                             </div>
                         </div>
@@ -312,7 +316,7 @@
                                         <h2>collection 2018</h2>
                                         <h1>NICE CHAIR</h1>
                                         <div class="cr__btn">
-                                            <a href="cart.html">Shop Now</a>
+                                            <a href="cart.html">Buy now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -348,7 +352,7 @@
                                 <div class="category">
                                     <div class="ht__cat__thumb">
                                         <a href="product-details.html">
-                                            <img src="<c:url value='resources/shop/images/product/1.jpg'/>" alt="product images">
+                                            <img src="<c:url value='resources/shop/images/banner/big-img/earring.png'/>" alt="product images">
                                         </a>
                                     </div>
                                     <div class="fr__hover__info">
@@ -1149,7 +1153,7 @@
     <script src="<c:url value='resources/shop/js/plugins.js'/>"></script>
     <script src="<c:url value='resources/shop/js/slick.min.js'/>"></script>
     <script src="<c:url value='resources/shop/js/owl.carousel.min.js'/>"></script>
-    <!-- Waypoints.min.js. -->
+    <!-- Waypoints.min.js'/>. -->
     <script src="<c:url value='resources/shop/js/waypoints.min.js'/>"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="<c:url value='resources/shop/js/main.js'/>"></script>
