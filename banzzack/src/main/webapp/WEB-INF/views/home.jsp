@@ -252,7 +252,7 @@
 							<div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
 								<div class="slide__thumb">
 									<img
-										src="<c:url value='resources/shop/images/earring/earring1.png'/>">
+										src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
 								</div>
 							</div>
 						</div>
@@ -307,20 +307,18 @@
 							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 								<div class="category">
 									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/banner/big-img/earring.png'/>"
-											alt="product images">
+										<a href="product-details.html"> 
+										<img src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>" alt="product images">
 										</a>
 									</div>
 									<div class="fr__hover__info">
 										<ul class="product__action">
-											<li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-
-											<li><a href="cart.html"><i
+										
+										<li><a href="cart.html"><i
 													class="icon-handbag icons"></i></a></li>
-
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
+											<!-- <li><a href="wishlist.html"><i
+													class="icon-heart icons"></i></a></li>
+											<li><a href="#"><i class="icon-shuffle icons"></i></a></li> -->
 										</ul>
 									</div>
 									<div class="fr__product__inner">
@@ -334,231 +332,6 @@
 									</div>
 								</div>
 							</div>
-							<!-- End Single Category -->
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/product/2.jpg'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
-											<li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">nemo enim ipsam</a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- End Single Category -->
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/product/3.jpg'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
-											<li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">Chair collection</a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- End Single Category -->
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/product/4.jpg'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
-											<li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">dummy Product name</a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- End Single Category -->
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/product/5.jpg'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
-											<li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">donec ac tempus nrb</a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- End Single Category -->
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/product/6.jpg'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
-											<li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">Product Title Here </a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- End Single Category -->
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/product/7.jpg'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
-											<li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">Product Title Here </a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- End Single Category -->
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/product/8.jpg'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
-											<li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">Product Title Here </a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- End Single Category -->
 						</div>
 					</div>
 				</div>
@@ -581,7 +354,7 @@
 						<div class="prize__inner">
 							<div class="prize__thumb">
 								<img
-									src="<c:url value='resources/shop/images/banner/big-img/1.png'/>"
+									src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>"
 									alt="banner images">
 							</div>
 						</div>
@@ -608,18 +381,13 @@
 							<div class="category">
 								<div class="ht__cat__thumb">
 									<a href="product-details.html"> <img
-										src="<c:url value='resources/shop/images/product/9.jpg'/>"
+										src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"
 										alt="product images">
 									</a>
 								</div>
 								<div class="fr__hover__info">
 									<ul class="product__action">
-										<li><a href="wishlist.html"><i
-												class="icon-heart icons"></i></a></li>
-
 										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-
-										<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
 									</ul>
 								</div>
 								<div class="fr__product__inner">
@@ -633,100 +401,6 @@
 								</div>
 							</div>
 						</div>
-						<!-- End Single Category -->
-						<!-- Start Single Category -->
-						<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-							<div class="category">
-								<div class="ht__cat__thumb">
-									<a href="product-details.html"> <img
-										src="<c:url value='resources/shop/images/product/10.jpg'/>"
-										alt="product images">
-									</a>
-								</div>
-								<div class="fr__hover__info">
-									<ul class="product__action">
-										<li><a href="wishlist.html"><i
-												class="icon-heart icons"></i></a></li>
-
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-
-										<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-									</ul>
-								</div>
-								<div class="fr__product__inner">
-									<h4>
-										<a href="product-details.html">voluptatem accusantium</a>
-									</h4>
-									<ul class="fr__pro__prize">
-										<li class="old__prize">$30.3</li>
-										<li>$25.9</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Category -->
-						<!-- Start Single Category -->
-						<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-							<div class="category">
-								<div class="ht__cat__thumb">
-									<a href="product-details.html"> <img
-										src="<c:url value='resources/shop/images/product/11.jpg'/>"
-										alt="product images">
-									</a>
-								</div>
-								<div class="fr__hover__info">
-									<ul class="product__action">
-										<li><a href="wishlist.html"><i
-												class="icon-heart icons"></i></a></li>
-
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-
-										<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-									</ul>
-								</div>
-								<div class="fr__product__inner">
-									<h4>
-										<a href="product-details.html">Product Dummy Name</a>
-									</h4>
-									<ul class="fr__pro__prize">
-										<li class="old__prize">$30.3</li>
-										<li>$25.9</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Category -->
-						<!-- Start Single Category -->
-						<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-							<div class="category">
-								<div class="ht__cat__thumb">
-									<a href="product-details.html"> <img
-										src="<c:url value='resources/shop/images/product/12.jpg'/>"
-										alt="product images">
-									</a>
-								</div>
-								<div class="fr__hover__info">
-									<ul class="product__action">
-										<li><a href="wishlist.html"><i
-												class="icon-heart icons"></i></a></li>
-
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-
-										<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-									</ul>
-								</div>
-								<div class="fr__product__inner">
-									<h4>
-										<a href="product-details.html">Product Title Here </a>
-									</h4>
-									<ul class="fr__pro__prize">
-										<li class="old__prize">$30.3</li>
-										<li>$25.9</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Category -->
 					</div>
 				</div>
 			</div>
@@ -877,67 +551,13 @@
 							<div class="blog">
 								<div class="blog__thumb">
 									<a href="blog-details.html"> <img
-										src="<c:url value='resources/shop/images/blog/blog-img/1.jpg'/>"
+										src="<c:url value='resources/shop/images/earring/earring1.png'/>"
 										alt="blog images">
 									</a>
 								</div>
 								<div class="blog__details">
 									<div class="bl__date">
 										<span>March 22, 2016</span>
-									</div>
-									<h2>
-										<a href="blog-details.html">Lorem ipsum dolor sit amet,
-											consec tetur adipisicing elit</a>
-									</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua.</p>
-									<div class="blog__btn">
-										<a href="blog-details.html">Read More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						<!-- Start Single Blog -->
-						<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-							<div class="blog">
-								<div class="blog__thumb">
-									<a href="blog-details.html"> <img
-										src="<c:url value='resources/shop/images/blog/blog-img/2.jpg'/>"
-										alt="blog images">
-									</a>
-								</div>
-								<div class="blog__details">
-									<div class="bl__date">
-										<span>May 22, 2017</span>
-									</div>
-									<h2>
-										<a href="blog-details.html">Lorem ipsum dolor sit amet,
-											consec tetur adipisicing elit</a>
-									</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua.</p>
-									<div class="blog__btn">
-										<a href="blog-details.html">Read More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						<!-- Start Single Blog -->
-						<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-							<div class="blog">
-								<div class="blog__thumb">
-									<a href="blog-details.html"> <img
-										src="<c:url value='resources/shop/images/blog/blog-img/3.jpg'/>"
-										alt="blog images">
-									</a>
-								</div>
-								<div class="blog__details">
-									<div class="bl__date">
-										<span>March 22, 2018</span>
 									</div>
 									<h2>
 										<a href="blog-details.html">Lorem ipsum dolor sit amet,
@@ -970,7 +590,8 @@
 							<div class="footer">
 								<h2 class="title__line--2">ABOUT US</h2>
 								<div class="ft__details">
-									<p style="font-family:'돋움'";>악세서리 가상착용 쇼핑몰 입니다. 자신의 사진을 업로드하고 가상으로 착용하는 경험을 선사해드립니다!</p>
+									<p style="font-family: '돋움'";>악세서리 가상착용 쇼핑몰 입니다. 자신의 사진을
+										업로드하고 가상으로 착용하는 경험을 선사해드립니다!</p>
 									<div class="ft__social__link">
 										<ul class="social__link">
 											<li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
@@ -997,11 +618,12 @@
 								<h2 class="title__line--2">Callcenter</h2>
 								<div class="ft__inner">
 									<ul class="ft__list">
-										<li><b><p style="font-size:32px; font-family:'돋움';">1522-0000</p></b></li>
-										<li><p style="font-family:'돋움'";>Open/ 10:00~18:00</p></li>
-										<li><p style="font-family:'돋움'";>Open/ 10:00~18:00</p></li>
+										<li><b><p style="font-size: 32px; font-family: '돋움';">1522-0000</p></b></li>
+										<li><p style="font-family: '돋움'";>Open/ 10:00~18:00</p></li>
+										<li><p style="font-family: '돋움'";>Open/ 10:00~18:00</p></li>
 										<li><h3></h3></li>
-										<li><p style="font-family:'돋움'";>Sat, Sun, Holiday Closed</p></li>
+										<li><p style="font-family: '돋움'";>Sat, Sun, Holiday
+												Closed</p></li>
 									</ul>
 								</div>
 							</div>
@@ -1013,12 +635,13 @@
 								<h2 class="title__line--2">Bank account</h2>
 								<div class="ft__inner">
 									<ul class="ft__list">
-										<li><p style="font-family:'돋움'";>우리 1002-341-409783</p></li>
-										<li><p style="font-family:'돋움'";>기업 537-000004-00-000</p></li>
-										<li><p style="font-family:'돋움'";>국민 088201-00-000000</p></li>
-										<li><p style="font-family:'돋움'";>국민 355-0000-0000-00</p></li>
+										<li><p style="font-family: '돋움'";>우리 1002-341-409783</p></li>
+										<li><p style="font-family: '돋움'";>기업
+												537-000004-00-000</p></li>
+										<li><p style="font-family: '돋움'";>국민 088201-00-000000</p></li>
+										<li><p style="font-family: '돋움'";>국민 355-0000-0000-00</p></li>
 										<li><h3></h3></li>
-										<li><p style="font-family:'돋움'";>예금주 : 주식회사 반짝</p></li>
+										<li><p style="font-family: '돋움'";>예금주 : 주식회사 반짝</p></li>
 									</ul>
 								</div>
 							</div>
@@ -1030,7 +653,10 @@
 								<h2 class="title__line--2">Deilvery</h2>
 								<div class="ft__inner">
 									<ul class="ft__list">
-										<li><p style="font-family:'돋움'";><a href="https://www.doortodoor.co.kr/parcel/pa_004.jsp">CJ 대한통운 : 1588-1255</a></p></li>
+										<li><p style="font-family: '돋움'";>
+												<a href="https://www.doortodoor.co.kr/parcel/pa_004.jsp">CJ
+													대한통운 : 1588-1255</a>
+											</p></li>
 									</ul>
 								</div>
 							</div>
@@ -1047,7 +673,8 @@
 						<div class="col-xs-12">
 							<div class="copyright__inner">
 								<p>
-									Copyright© <a href="https://freethemescloud.com/">Banzzack</a> 2020. All right reserved.
+									Copyright© <a href="https://freethemescloud.com/">Banzzack</a>
+									2020. All right reserved.
 								</p>
 								<a href="#"><img
 									src="<c:url value='resources/shop/images/others/shape/paypol.png'/>"
