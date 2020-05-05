@@ -15,7 +15,7 @@
 <link rel="shortcut icon" type="image/x-icon"
 	href="<c:url value='resources/shop/images/favicon.ico'/>">
 <link rel="apple-touch-icon"
-	href="<c:url value='resources/shop/apple-touch-icon.png'/>'/>">
+	href="<c:url value='resources/shop/apple-touch-icon.png'/>">
 
 
 <!-- All css files are included here. -->
@@ -65,7 +65,7 @@
 							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-5">
 								<div class="logo">
 									<a href="index.html"><img
-										src="<c:url value='resources/shop/images/logo/4.png'/>"
+										src="<c:url value='resources/shop/images/logo/logo.png'/>"
 										alt="logo images"></a>
 								</div>
 							</div>
