@@ -117,7 +117,8 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- add dependency -->
+		
+		<!-- add dependency Start-->
 		<!-- mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -156,7 +157,7 @@
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.4</version>
 		</dependency>
-
+		<!-- add dependence End -->
 	</dependencies>
 	<build>
 		<plugins>
