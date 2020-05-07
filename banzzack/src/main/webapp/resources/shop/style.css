@@ -3527,7 +3527,7 @@ ul.htc__instagram__posts.owl-carousel li img {
 
 /*Buttons*/
 .dark-btn a{
-    display: inline-block;
+    display: block;
     height: 45px;
     line-height: 45px;
     text-align: center;
@@ -3535,7 +3535,6 @@ ul.htc__instagram__posts.owl-carousel li img {
     background: #212121;
     color: #ffffff;
     font-family: "Poppins";
-    padding: 0 45px;
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 16px;

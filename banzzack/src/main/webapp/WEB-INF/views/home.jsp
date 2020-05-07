@@ -69,7 +69,7 @@
 										alt="logo images"></a>
 								</div>
 							</div>
-							<div class="col-md-7 col-lg-8 col-sm-5 col-xs-3">
+							<div class="col-md-6 col-lg-7 col-sm-5 col-xs-3">
 								<nav class="main__menu__nav hidden-xs hidden-sm">
 									<ul class="main__menu">
 										<li class="drop"><a href="home">Home</a></li>
@@ -109,31 +109,45 @@
 								<div class="mobile-menu clearfix visible-xs visible-sm">
 									<nav id="mobile_dropdown">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="blog.html">blog</a></li>
-											<li><a href="#">pages</a>
-												<ul>
-													<li><a href="blog.html">Blog</a></li>
-													<li><a href="blog-details.html">Blog Details</a></li>
-													<li><a href="cart.html">Cart page</a></li>
-													<li><a href="checkout.html">checkout</a></li>
-													<li><a href="contact.html">contact</a></li>
-													<li><a href="product-grid.html">product grid</a></li>
-													<li><a href="product-details.html">product details</a></li>
-													<li><a href="wishlist.html">wishlist</a></li>
-												</ul></li>
-											<li><a href="contact.html">contact</a></li>
+											<li class="drop"><a href="home">Home</a></li>
+										<li class="drop"><a href="#">귀걸이</a>
+											<ul class="dropdown">
+												<!-- Start Single Mega MEnu -->
+												<li><a href="product-grid.html">패션 귀걸이</a></li>
+												<li><a href="cart.html">실버침</a></li>
+												<li><a href="checkout.html">투웨이귀걸이</a></li>
+												<li><a href="wishlist.html">핸드메이드 귀걸이</a></li>
+												<li><a href="wishlist.html">롱귀걸이</a></li>
+												<li><a href="wishlist.html">러블리</a></li>
+												<!-- End Single Mega MEnu -->
+											</ul></li>
+
+										<li class="drop"><a href="#">반지</a>
+											<ul class="dropdown">
+												<li><a href="#">14/18k 링</a></li>
+												<li><a href="#">실버링</a></li>
+												<li><a href="wishlist.html">커플링</a></li>
+												<li><a href="cart.html">심플링</a></li>
+												<li><a href="checkout.html">다이아몬드 링</a></li>
+											</ul></li>
+
+										<li class="drop"><a href="#">목걸이</a>
+											<ul class="dropdown">
+												<li><a href="#">14/18k 목걸이</a></li>
+												<li><a href="#">14/18k 펜던트</a></li>
+												<li><a href="wishlist.html">24k 순금목걸이</a></li>
+												<li><a href="cart.html">탄생석 목걸이</a></li>
+												<li><a href="checkout.html">진주 목걸이</a></li>
+												<li><a href="checkout.html">체인 목걸이</a></li>
+											</ul></li>
 										</ul>
 									</nav>
 								</div>
 							</div>
-							<div class="col-md-3 col-lg-2 col-sm-4 col-xs-4">
+							<div class="col-md-4 col-lg-2 col-sm-4 col-xs-4">
 								<div class="header__right">
-									<div class="header__search search search__open">
-										<a href="#"><i class="icon-magnifier icons"></i></a>
-									</div>
 									<div class="header__account">
-										<a href="#"><i class="icon-user icons"></i></a>
+										<a href="#"><i class="icon-user icons"></i>로그인</a>
 									</div>
 									<div class="htc__shopping__cart">
 										<a class="cart__menu" href="#"><i
@@ -673,7 +687,7 @@
 						<div class="col-xs-12">
 							<div class="copyright__inner">
 								<p>
-									Copyright© <a href="https://freethemescloud.com/">Banzzack</a>
+									Copyright© <a href="home">Banzzack</a>
 									2020. All right reserved.
 								</p>
 								<a href="#"><img

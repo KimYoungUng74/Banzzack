@@ -42,7 +42,7 @@ public class HomeController {
 		System.out.println("디비연결 테스트 : " + userDTO.toString());
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "login";
 	}
 	
 }
