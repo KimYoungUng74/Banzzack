@@ -3526,9 +3526,11 @@ ul.htc__instagram__posts.owl-carousel li img {
 
 
 /*Buttons*/
-.dark-btn a{
-    display: block;
+.dark-btn button{
+	width:100%;
     height: 45px;
+    padding-left: 30px;
+    padding-right: 30px;
     line-height: 45px;
     text-align: center;
     text-transform: uppercase;
@@ -3538,9 +3540,10 @@ ul.htc__instagram__posts.owl-carousel li img {
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 16px;
-    transition: all 0.3s ease-in-out 0s;
+    border:0;
+    outline:0;
 }
-.dark-btn a:hover{
+.dark-btn button:hover{
     background: #FEE76F;
 }
 

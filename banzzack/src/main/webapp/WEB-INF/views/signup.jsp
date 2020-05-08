@@ -196,8 +196,7 @@
 					<div class="shp__cart__wrap">
 						<div class="shp__single__product">
 							<div class="shp__pro__thumb">
-								<a href="#">
-								</a>
+								<a href="#"> </a>
 							</div>
 							<div class="shp__pro__details">
 								<h2>
@@ -212,8 +211,7 @@
 						</div>
 						<div class="shp__single__product">
 							<div class="shp__pro__thumb">
-								<a href="#">
-								</a>
+								<a href="#"> </a>
 							</div>
 							<div class="shp__pro__details">
 								<h2>
@@ -244,14 +242,14 @@
 		<div class="htc__brand__area bg__cat--4">
 			<div class="ht__bradcaump__wrap" style="height: 150px;">
 				<div class="container">
-					<div class="row" >
+					<div class="row">
 						<div class="col-xs-12">
-							<div class="bradcaump__inner" >
+							<div class="bradcaump__inner">
 								<nav class="bradcaump-inner">
 									<a class="breadcrumb-item" href="index.html">Home</a> <span
 										class="brd-separetor"><i
 										class="zmdi zmdi-chevron-right"></i></span> <span
-										class="breadcrumb-item active">Login</span>
+										class="breadcrumb-item active">Signup</span>
 								</nav>
 							</div>
 						</div>
@@ -273,28 +271,71 @@
 
 									<div class="col-md-6"
 										style="border: 1px solid gray; padding: 10px; margin-top: 100px;">
-										<div class="checkout-method__login">
-											<form action="#">
-												<h5 class="checkout-method__title">Login</h5>
-												<h5 class="checkout-method__title">Already Registered? </h5>
-												<div class="single-input">
-													<label for="user-email">ID</label> <input
-														type="text" id="user_id">
+										<form action="#">
+											<div class="row">
+												<div class="col-md-12">
+													<h5 class="checkout-method__title">Signup</h5>
+													<h5 class="checkout-method__title">Welcome to
+														Banzzack!</h5>
 												</div>
-												<div class="single-input">
-													<label for="user-pass">Password</label> <input
-														type="password" id="user_pass">
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-id">ID</label> <input type="text"
+															id="user_id">
+													</div>
 												</div>
-												<div style="margin-top: 10px;">
-												<p><a href="#">Forgot Your ID?</a> &nbsp;&nbsp;&nbsp;<a href="#">Forgot Passwords?</a>&nbsp;&nbsp;&nbsp;<a href="#">Signup?</a></p>
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-pass">Password</label> <input
+															type="password" id="user_pass">
+													</div>
 												</div>
-												<div class="dark-btn" style="margin-top: 10px;">
-													<button>
-													LogIn
-												</button>
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-email">email</label> <input type="email"
+															id="user_email" placeholder="ex) abc@abc.com">
+													</div>
 												</div>
-											</form>
-										</div>
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-phone">Phone Number</label> <input
+															type="text" id="user_phone" placeholder="ex) 01012341234">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="single-input">
+														<label for="user-city">City/State</label> <select
+															name="bil-country" id="useraddress1">
+															<option value="select">지역을 선택해주세요</option>
+															<option value="arb">서울</option>
+															<option value="ban">인천광역시</option>
+															<option value="ind">경기도</option>
+															<option value="uk">강원도</option>
+															<option value="usa">제주도</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="single-input">
+														<label for="user-phone">Post Code</label> <input
+															type="text" id="useraddress2" placeholder="ex) 123-12">
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-phone">Address</label> <input
+															type="text" id="useraddress3" placeholder="ex) 거북골로100 1동 1호">
+													</div>
+												</div>
+												
+												<div class="col-md-12">
+													<div class="dark-btn" style="margin-top: 10px;">
+														<button>Signup</button>
+													</div>
+												</div>
+											</div>
+
+										</form>
 									</div>
 									<div class="col-md-3"></div>
 								</div>
