@@ -239,19 +239,13 @@
 		</div>
 		<!-- End Offset Wrapper -->
 		<!-- Start Bradcaump area -->
-		<div class="htc__brand__area bg__cat--4">
+		<div class="ht__bradcaump__area"
+			style="background: rgba(0, 0, 0, 0) url(resources/shop/images/bg/banner.jpg) no-repeat scroll center center/cover;">
 			<div class="ht__bradcaump__wrap" style="height: 150px;">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="bradcaump__inner">
-								<nav class="bradcaump-inner">
-									<a class="breadcrumb-item" href="index.html">Home</a> <span
-										class="brd-separetor"><i
-										class="zmdi zmdi-chevron-right"></i></span> <span
-										class="breadcrumb-item active">Signup</span>
-								</nav>
-							</div>
+							<div class="bradcaump__inner"></div>
 						</div>
 					</div>
 				</div>

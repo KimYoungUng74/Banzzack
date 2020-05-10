@@ -483,20 +483,20 @@ select {
 }
 input:focus {
     background: transparent;
-    border: 1px solid #FEE76F;
+    border: 1px solid #f5f5f5;
     outline: none;
 }
 textarea {
     resize: none;
-    background: #FEE76F;
-    border: 1px solid #FEE76F;
+    background: #f5f5f5;
+    border: 1px solid #f5f5f5;
     padding: 10px;
     width: 100%;
     font-size: 14px;
 }
 textarea:focus {
     background: transparent;
-    border: 1px solid #FEE76F;
+    border: 1px solid #f5f5f5;
     outline: none;
 }
 /*----------------------------
@@ -573,7 +573,7 @@ textarea:focus {
 .pt--100 { padding-top: 100px }
 .pt--110 { padding-top: 110px }
 .pt--120 { padding-top: 120px }
-.pt--130 { padding-top: 130px }-
+.pt--130 { padding-top: 130px }
 .pt--140 { padding-top: 140px }
 .pt--150 { padding-top: 150px }
 

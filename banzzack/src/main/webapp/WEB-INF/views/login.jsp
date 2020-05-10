@@ -196,8 +196,7 @@
 					<div class="shp__cart__wrap">
 						<div class="shp__single__product">
 							<div class="shp__pro__thumb">
-								<a href="#">
-								</a>
+								<a href="#"> </a>
 							</div>
 							<div class="shp__pro__details">
 								<h2>
@@ -212,8 +211,7 @@
 						</div>
 						<div class="shp__single__product">
 							<div class="shp__pro__thumb">
-								<a href="#">
-								</a>
+								<a href="#"> </a>
 							</div>
 							<div class="shp__pro__details">
 								<h2>
@@ -241,19 +239,13 @@
 		</div>
 		<!-- End Offset Wrapper -->
 		<!-- Start Bradcaump area -->
-		<div class="htc__brand__area bg__cat--4">
+		<div class="ht__bradcaump__area"
+			style="background: rgba(0, 0, 0, 0) url(resources/shop/images/bg/banner.jpg) no-repeat scroll center center/cover;">
 			<div class="ht__bradcaump__wrap" style="height: 150px;">
 				<div class="container">
-					<div class="row" >
+					<div class="row">
 						<div class="col-xs-12">
-							<div class="bradcaump__inner" >
-								<nav class="bradcaump-inner">
-									<a class="breadcrumb-item" href="index.html">Home</a> <span
-										class="brd-separetor"><i
-										class="zmdi zmdi-chevron-right"></i></span> <span
-										class="breadcrumb-item active">Login</span>
-								</nav>
-							</div>
+							<div class="bradcaump__inner"></div>
 						</div>
 					</div>
 				</div>
@@ -275,25 +267,34 @@
 										style="border: 1px solid gray; padding: 10px; margin-top: 100px;">
 										<div class="checkout-method__login">
 											<form action="#">
-												<h5 class="checkout-method__title">Login</h5>
-												<h5 class="checkout-method__title">Already Registered? </h5>
-												<div class="single-input">
-													<label for="user-email">ID</label> <input
-														type="text" id="user_id">
-												</div>
-												<div class="single-input">
-													<label for="user-pass">Password</label> <input
-														type="password" id="user_pass">
-												</div>
-												<div style="margin-top: 10px;">
-												<p><a href="#">Forgot Your ID?</a> &nbsp;&nbsp;&nbsp;<a href="#">Forgot Passwords?</a>&nbsp;&nbsp;&nbsp;<a href="#">Signup?</a></p>
-												</div>
-												<div class="dark-btn" style="margin-top: 10px;">
-													<button>
-													LogIn
-												</button>
+												<div class="row">
+													<div class="col-md-12">
+														<h5 class="checkout-method__title">Login</h5>
+														<h5 class="checkout-method__title">Already
+															Registered?</h5>
+														<div class="single-input">
+															<label for="user-email">ID</label> <input type="text"
+																id="user_id">
+														</div>
+
+														<div class="single-input">
+															<label for="user-pass">Password</label> <input
+																type="password" id="user_pass">
+														</div>
+														<div style="margin-top: 10px;">
+															<p>
+																<a href="#">Forgot Your ID?</a> &nbsp;&nbsp;&nbsp;<a
+																	href="#">Forgot Passwords?</a>&nbsp;&nbsp;&nbsp;<a
+																	href="#">Signup?</a>
+															</p>
+														</div>
+														<div class="dark-btn" style="margin-top: 10px;">
+															<button>LogIn</button>
+														</div>
+													</div>
 												</div>
 											</form>
+
 										</div>
 									</div>
 									<div class="col-md-3"></div>
