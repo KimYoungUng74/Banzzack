@@ -39,12 +39,12 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		/*
-		 * UserDTO userDTO = userSer.Test(); System.out.println("디비연결 테스트 : " +
+		 * UserDTO userDTO = userSer.Test(); System.out.println(": " +
 		 * userDTO.toString());
 		 */
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "productList";
+		return "product-details";
 	}
 	
 }
