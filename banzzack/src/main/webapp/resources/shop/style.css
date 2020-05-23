@@ -2408,7 +2408,7 @@ a.shipping-calculator-button:hover{
 }
 .payment__btn li a:hover,
 .payment__btn li.active a {
-    background: #212121 none repeat scroll 0 0;
+    background: #FEE76F none repeat scroll 0 0;
     color: #fff;
 }
 .payment__btn li.active a:hover{
