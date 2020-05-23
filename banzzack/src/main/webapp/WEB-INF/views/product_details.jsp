@@ -289,8 +289,8 @@
 
 							</div>
 							<!-- Start Small images -->
-							<div>
-								<ul class="product__small__images" role="tablist">
+							<div style="margin-top: 10px;">
+								<ul class="product__small__images">
 									<li role="presentation" class="pot-small-img active"><a
 										href="#img-tab-1" role="tab" data-toggle="tab"> <img
 											src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
@@ -309,9 +309,9 @@
 						</div>
 						<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
 							<div class="ht__product__dtl">
-								<h2>jean shirt to sassy girl</h2>
+								<h2>상품 명 출력란</h2>
 								<h6>
-									Model: <span>MNG01</span>
+									상품번호: <span>0000000</span>
 								</h6>
 								<ul class="rating">
 									<li><i class="icon-star icons"></i></li>
@@ -321,47 +321,25 @@
 									<li class="old"><i class="icon-star icons"></i></li>
 								</ul>
 								<ul class="pro__prize">
-									<li class="old__prize">$82.5</li>
-									<li>$75.2</li>
+									<li>10,000원</li>
 								</ul>
-								<p class="pro__info">Lorem ipsum dolor sit amet,
-									consectetuer adipiscing elit, sed diam nonummy nibh euismod
-									tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-									wisi enim ad minim veniam, quis nostrud exerci tation
-									ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-									consequat. Duis autem vel eum iriure dolor in hendrerit in
-									vulputate velit esse molestie consequat, vel illum dolore eu
-									feugiat nulla facilisis at vero eros et accumsan</p>
+								<p class="pro__info">상품설명 설명</p>
 								<div class="ht__pro__desc">
-									<div class="sin__desc">
-										<p>
-											<span>Availability:</span> In Stock
-										</p>
-									</div>
 									<div class="sin__desc align--left">
 										<p>
-											<span>color:</span>
-										</p>
-										<ul class="pro__color">
-											<li class="red"><a href="#">red</a></li>
-											<li class="green"><a href="#">green</a></li>
-											<li class="balck"><a href="#">balck</a></li>
-										</ul>
-										<div class="pro__more__btn">
-											<a href="#">more</a>
-										</div>
-									</div>
-									<div class="sin__desc align--left">
-										<p>
-											<span>size</span>
+											<span>수량</span>
 										</p>
 										<select class="select__size">
-											<option>s</option>
-											<option>l</option>
-											<option>xs</option>
-											<option>xl</option>
-											<option>m</option>
-											<option>s</option>
+											<option value=1>1</option>
+											<option value=2>2</option>
+											<option value=3>3</option>
+											<option value=4>4</option>
+											<option value=5>5</option>
+											<option value=6>6</option>
+											<option value=7>7</option>
+											<option value=8>8</option>
+											<option value=9>9</option>
+											<option value=10>10</option>
 										</select>
 									</div>
 									<div class="sin__desc align--left">
@@ -369,31 +347,12 @@
 											<span>Categories:</span>
 										</p>
 										<ul class="pro__cat__list">
-											<li><a href="#">Fashion,</a></li>
-											<li><a href="#">Accessories,</a></li>
-											<li><a href="#">Women,</a></li>
-											<li><a href="#">Men,</a></li>
-											<li><a href="#">Kid,</a></li>
-											<li><a href="#">Mobile,</a></li>
-											<li><a href="#">Computer,</a></li>
-											<li><a href="#">Hair,</a></li>
-											<li><a href="#">Clothing,</a></li>
+											<li><a href="#">귀걸이,</a></li>
+											<li><a href="#">패션귀걸이</a></li>
 										</ul>
 									</div>
-									<div class="sin__desc align--left">
-										<p>
-											<span>Product tags:</span>
-										</p>
-										<ul class="pro__cat__list">
-											<li><a href="#">Fashion,</a></li>
-											<li><a href="#">Accessories,</a></li>
-											<li><a href="#">Women,</a></li>
-											<li><a href="#">Men,</a></li>
-											<li><a href="#">Kid,</a></li>
-										</ul>
-									</div>
-
-									<div class="sin__desc product__share__link">
+									<!-- 공유하기 기능  -->
+									<!-- <div class="sin__desc product__share__link">
 										<p>
 											<span>Share this:</span>
 										</p>
@@ -417,7 +376,7 @@
 											<li><a href="#" target="_blank"><i
 													class="icon-social-pinterest icons"></i></a></li>
 										</ul>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -427,173 +386,50 @@
 			<!-- End Product Details Top -->
 		</section>
 		<!-- End Product Details Area -->
-		<!-- Start Product Description -->
-		<section class="htc__produc__decription bg__white">
+
+		<section class="htc__good__sale bg__cat--3">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						<!-- Start List And Grid View -->
-						<ul class="pro__details__tab" role="tablist">
-							<li role="presentation" class="description active"><a
-								href="#description" role="tab" data-toggle="tab">description</a></li>
-							<li role="presentation" class="review"><a href="#review"
-								role="tab" data-toggle="tab">review</a></li>
-							<li role="presentation" class="shipping"><a href="#shipping"
-								role="tab" data-toggle="tab">shipping</a></li>
-						</ul>
-						<!-- End List And Grid View -->
+						<div class="section__title--2 text-center">
+							<h2 class="title__line">구매 후기</h2>
+							<p>해당 상품 구매 고객들의 생생한 구매 후기를 확인하세요!</p>
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="ht__pro__details__content">
-							<!-- Start Single Content -->
-							<div role="tabpanel" id="description"
-								class="pro__single__content tab-pane fade in active">
-								<div class="pro__tab__content__inner">
-									<p>Formfitting clothing is all about a sweet spot. That
-										elusive place where an item is tight but not clingy, sexy but
-										not cloying, cool but not over the top. Alexandra Alvarezâs
-										label, Alix, hits that mark with its range of comfortable,
-										minimal, and neutral-hued bodysuits.</p>
-									<h4 class="ht__pro__title">Description</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Ut wisi enim ad minim
-										veniam, quis nostrud exerci tation ullamcorper suscipit
-										lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-										vel eum iriure dolor in hendrerit in vulputate velit esse
-										molestie consequat, vel illum dolore eu feugiat nulla
-										facilisis at vero eros et accumsan et iusto odio dignissim qui
-										blandit praesent luptatum zzril delenit augue duis dolore te
-										feugait nulla facilisi. Nam liber tempor cum soluta nobis
-										eleifend option congue nihil imperdiet doming id quod mazim
-										placerat facer possim assum. Typi non habent claritatem
-										insitam; est usus legentis in iis qui facit eorum claritatem</p>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Duis autem vel eum iriure
-										dolor in hendrerit in vulputate velit esse molestie consequat,
-										vel illum dolore eu feugiat nulla facilisis at vero eros et
-										accumsan et iusto odio dignissim qui blandit praesent luptatum
-										zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-									<h4 class="ht__pro__title">Standard Featured</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Ut wisi enim ad minim
-										veniam, quis nostrud exerci tation ullamcorper suscipit
-										lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-										vel eum iriure dolor in hendrerit in vulputate velit esse
-										molestie consequat, vel illum dolore eu feugiat nulla
-										facilisis at vero eros et accumsan et iusto odio dignissim qui
-										blandit praesent luptatum zzril delenit augue duis dolore te
-										feugait nulla facilisi. Nam liber tempor cum soluta nobis
-										eleifend option congue nihil imperdiet doming id quod mazim
-										placerat facer possim assum. Typi non habent claritatem
-										insitam; est usus legentis in</p>
+					<div class="ht__blog__wrap clearfix">
+						<!-- Start Single Blog -->
+						<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
+							<div class="blog">
+								<div class="blog__thumb">
+									<a href="blog-details.html"> <img
+										src="<c:url value='resources/shop/images/earring/earring1.png'/>"
+										alt="blog images">
+									</a>
+								</div>
+								<div class="blog__details">
+									<div class="bl__date">
+										<span>March 22, 2016</span>
+									</div>
+									<h2>
+										<a href="blog-details.html">Lorem ipsum dolor sit amet,
+											consec tetur adipisicing elit</a>
+									</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+										sed do eiusmod tempor incididunt ut labore et dolore magna
+										aliqua.</p>
+									<div class="blog__btn">
+										<a href="blog-details.html">Read More</a>
+									</div>
 								</div>
 							</div>
-							<!-- End Single Content -->
-							<!-- Start Single Content -->
-							<div role="tabpanel" id="review"
-								class="pro__single__content tab-pane fade">
-								<div class="pro__tab__content__inner">
-									<p>Formfitting clothing is all about a sweet spot. That
-										elusive place where an item is tight but not clingy, sexy but
-										not cloying, cool but not over the top. Alexandra Alvarezâs
-										label, Alix, hits that mark with its range of comfortable,
-										minimal, and neutral-hued bodysuits.</p>
-									<h4 class="ht__pro__title">Description</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Ut wisi enim ad minim
-										veniam, quis nostrud exerci tation ullamcorper suscipit
-										lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-										vel eum iriure dolor in hendrerit in vulputate velit esse
-										molestie consequat, vel illum dolore eu feugiat nulla
-										facilisis at vero eros et accumsan et iusto odio dignissim qui
-										blandit praesent luptatum zzril delenit augue duis dolore te
-										feugait nulla facilisi. Nam liber tempor cum soluta nobis
-										eleifend option congue nihil imperdiet doming id quod mazim
-										placerat facer possim assum. Typi non habent claritatem
-										insitam; est usus legentis in iis qui facit eorum claritatem</p>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Duis autem vel eum iriure
-										dolor in hendrerit in vulputate velit esse molestie consequat,
-										vel illum dolore eu feugiat nulla facilisis at vero eros et
-										accumsan et iusto odio dignissim qui blandit praesent luptatum
-										zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-									<h4 class="ht__pro__title">Standard Featured</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Ut wisi enim ad minim
-										veniam, quis nostrud exerci tation ullamcorper suscipit
-										lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-										vel eum iriure dolor in hendrerit in vulputate velit esse
-										molestie consequat, vel illum dolore eu feugiat nulla
-										facilisis at vero eros et accumsan et iusto odio dignissim qui
-										blandit praesent luptatum zzril delenit augue duis dolore te
-										feugait nulla facilisi. Nam liber tempor cum soluta nobis
-										eleifend option congue nihil imperdiet doming id quod mazim
-										placerat facer possim assum. Typi non habent claritatem
-										insitam; est usus legentis in iis qui facit eorum claritatem</p>
-								</div>
-							</div>
-							<!-- End Single Content -->
-							<!-- Start Single Content -->
-							<div role="tabpanel" id="shipping"
-								class="pro__single__content tab-pane fade">
-								<div class="pro__tab__content__inner">
-									<p>Formfitting clothing is all about a sweet spot. That
-										elusive place where an item is tight but not clingy, sexy but
-										not cloying, cool but not over the top. Alexandra Alvarezâs
-										label, Alix, hits that mark with its range of comfortable,
-										minimal, and neutral-hued bodysuits.</p>
-									<h4 class="ht__pro__title">Description</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Ut wisi enim ad minim
-										veniam, quis nostrud exerci tation ullamcorper suscipit
-										lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-										vel eum iriure dolor in hendrerit in vulputate velit esse
-										molestie consequat, vel illum dolore eu feugiat nulla
-										facilisis at vero eros et accumsan et iusto odio dignissim qui
-										blandit praesent luptatum zzril delenit augue duis dolore te
-										feugait nulla facilisi. Nam liber tempor cum soluta nobis
-										eleifend option congue nihil imperdiet doming id quod mazim
-										placerat facer possim assum. Typi non habent claritatem
-										insitam; est usus legentis in iis qui facit eorum claritatem</p>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Duis autem vel eum iriure
-										dolor in hendrerit in vulputate velit esse molestie consequat,
-										vel illum dolore eu feugiat nulla facilisis at vero eros et
-										accumsan et iusto odio dignissim qui blandit praesent luptatum
-										zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-									<h4 class="ht__pro__title">Standard Featured</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing
-										elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-										dolore magna aliquam erat volutpat. Ut wisi enim ad minim
-										veniam, quis nostrud exerci tation ullamcorper suscipit
-										lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-										vel eum iriure dolor in hendrerit in vulputate velit esse
-										molestie consequat, vel illum dolore eu feugiat nulla
-										facilisis at vero eros et accumsan et iusto odio dignissim qui
-										blandit praesent luptatum zzril delenit augue duis dolore te
-										feugait nulla facilisi. Nam liber tempor cum soluta nobis
-										eleifend option congue nihil imperdiet doming id quod mazim
-										placerat facer possim assum. Typi non habent claritatem
-										insitam; est usus legentis in iis qui facit eorum claritatem</p>
-								</div>
-							</div>
-							<!-- End Single Content -->
 						</div>
+						<!-- End Single Blog -->
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- End Product Description -->
 		<!-- Start Product Area -->
 		<section class="htc__product__area--2 pb--100 product-details-res">
 			<div class="container">

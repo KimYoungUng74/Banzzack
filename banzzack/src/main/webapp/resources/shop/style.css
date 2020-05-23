@@ -1815,7 +1815,6 @@ select.ht__select {
 }
 
 .product__small__images {
-    bottom: 35px;
     display: flex;
     left: 50%;
     position: absolute;
