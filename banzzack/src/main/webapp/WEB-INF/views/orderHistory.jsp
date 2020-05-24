@@ -252,267 +252,101 @@
 			</div>
 		</div>
 		<!-- End Bradcaump area -->
-		<!-- Start Product Details Area -->
-		<section class="htc__product__details bg__white ptb--100">
-			<!-- Start Product Details Top -->
-			<div class="htc__product__details__top">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
-							<div class="htc__product__details__tab__content">
-								<!-- Start Product Big Images -->
-								<div class="product__big__images">
-									<div class="portfolio-full-image tab-content">
-										<div role="tabpanel" class="tab-pane fade in active"
-											id="img-tab-1">
-											<p style="text-align: center;">
-												<img
-													src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
-											</p>
-										</div>
-										<div role="tabpanel" class="tab-pane fade" id="img-tab-2">
-											<p style="text-align: center;">
-												<img
-													src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>">
-											</p>
-										</div>
-										<div role="tabpanel" class="tab-pane fade" id="img-tab-3">
-											<p style="text-align: center;">
-												<img
-													src="<c:url value='resources/shop/images/earring/눈부신하루 귀걸이.gif'/>">
-											</p>
-										</div>
-
-									</div>
-								</div>
-								<!-- End Product Big Images -->
-
-							</div>
-							<!-- Start Small images -->
-							<div style="margin-top: 10px;">
-								<ul class="product__small__images">
-									<li role="presentation" class="pot-small-img active"><a
-										href="#img-tab-1" role="tab" data-toggle="tab"> <img
-											src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
-									</a></li>
-									<li role="presentation" class="pot-small-img"><a
-										href="#img-tab-2" role="tab" data-toggle="tab"> <img
-											src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>">
-									</a></li>
-									<li role="presentation" class="pot-small-img"><a
-										href="#img-tab-3" role="tab" data-toggle="tab"> <img
-											src="<c:url value='resources/shop/images/earring/눈부신하루 귀걸이.gif'/>">
-									</a></li>
-								</ul>
-							</div>
-							<!-- End Small images -->
-						</div>
-						<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
-							<div class="ht__product__dtl">
-								<h2>상품 명 출력란</h2>
-								<h6>
-									상품번호: <span>0000000</span>
-								</h6>
-								<ul class="rating">
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-								</ul>
-								<ul class="pro__prize">
-									<li>10,000원</li>
-								</ul>
-								<div class="ht__pro__desc">
-									<div class="sin__desc align--left">
-										<p>
-											<span>수량</span>
-										</p>
-										<select class="select__size">
-											<option value=1>1</option>
-											<option value=2>2</option>
-											<option value=3>3</option>
-											<option value=4>4</option>
-											<option value=5>5</option>
-											<option value=6>6</option>
-											<option value=7>7</option>
-											<option value=8>8</option>
-											<option value=9>9</option>
-											<option value=10>10</option>
-										</select>
-									</div>
-									<div class="sin__desc align--left">
-										<p>
-											<span>Categories:</span>
-										</p>
-										<ul class="pro__cat__list">
-											<li><a href="#">귀걸이,</a></li>
-											<li><a href="#">패션귀걸이</a></li>
-										</ul>
-									</div>
-									<!-- 공유하기 기능  -->
-									<!-- <div class="sin__desc product__share__link">
-										<p>
-											<span>Share this:</span>
-										</p>
-										<ul class="pro__share">
-											<li><a href="#" target="_blank"><i
-													class="icon-social-twitter icons"></i></a></li>
-
-											<li><a href="#" target="_blank"><i
-													class="icon-social-instagram icons"></i></a></li>
-
-											<li><a
-												href="https://www.facebook.com/Furny/?ref=bookmarks"
-												target="_blank"><i class="icon-social-facebook icons"></i></a></li>
-
-											<li><a href="#" target="_blank"><i
-													class="icon-social-google icons"></i></a></li>
-
-											<li><a href="#" target="_blank"><i
-													class="icon-social-linkedin icons"></i></a></li>
-
-											<li><a href="#" target="_blank"><i
-													class="icon-social-pinterest icons"></i></a></li>
-										</ul>
-									</div> -->
-									<p class="pro__info">
-										상품설명 설명<br>상품설명 설명상품설명 설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명 설명<br>상품설명설명상품설명 설명설명상품설명 설명 설명<br>상품설명<br>상품설명 설명<br>상품설명<br>상품설명 설명<br>상품설명<br>상품설명 설명<br>상품설명
-										설명상품설명 설명<br>상품설설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명 설명명 설명<br>상품설명 설명
-									</p>
-									<div class="row">
-										<div class="col-md-6">
-											<div class="dark-btn" style="margin-top: 20px">
-												<button>장바구니에 추가</button>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="dark-btn" style="margin-top: 20px">
-												<button>주문하기</button>
-											</div>
-										</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<hr>
-					<div class="row" style="margin-top: 20px">
-						<div class="col-md-4"></div>
-						<div class="col-md-4">
-							<div class="section__title--2 text-center">
-								<h2 class="title__line">가상 착용</h2>
-								<p>해당 상품을 가상으로 착용해보고<br> 나에게 어울리는지 확인해보세요!!</p>
-							</div>
-							<div class="thumbnail" style="margin-top: 20px">
-								<div class="centered">
-									<img alt=""
-										src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
-								</div>
-							</div>
-							<input type="file">
-							<div class="dark-btn" style="margin-top: 20px">
-								<button>가상착용 시작</button>
-							</div>
-						</div>
-						<div class="col-md-4"></div>
-					</div>
-
-				</div>
-			</div>
-			<!-- End Product Details Top -->
-		</section>
-		<!-- End Product Details Area -->
-
-		<section class="htc__good__sale bg__cat--3">
+		<!-- cart-main-area start -->
+		<div class="cart-main-area ptb--100 bg__white">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="section__title--2 text-center">
-							<h2 class="title__line">구매 후기</h2>
-							<p>해당 상품 구매 고객들의 생생한 구매 후기를 확인하세요!</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="ht__blog__wrap clearfix">
-						<!-- Start Single Blog -->
-						<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-							<div class="blog">
-								<div class="blog__thumb">
-									<a href="blog-details.html"> <img
-										src="<c:url value='resources/shop/images/earring/earring1.png'/>"
-										alt="blog images">
-									</a>
-								</div>
-								<div class="blog__details">
-									<div class="bl__date">
-										<span>March 22, 2016</span>
-									</div>
-									<h2>
-										<a href="blog-details.html">Lorem ipsum dolor sit amet,
-											consec tetur adipisicing elit</a>
-									</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua.</p>
-									<div class="blog__btn">
-										<a href="blog-details.html">Read More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Start Product Area -->
-		<section class="htc__product__area--2 pb--100 product-details-res">
-			<div class="container" style="padding-top: 20px">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="section__title--2 text-center">
-							<h2 class="title__line">추천 상품</h2>
-							<p>추천 상품을 확인하고 예쁜 악세서리 구매하세요!</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="product__wrap clearfix">
-						<!-- Start Single Product -->
-						<div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-							<div class="category">
-								<div class="ht__cat__thumb">
-									<a href="product-details.html"> <img
-										src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>">
-									</a>
-								</div>
-								<div class="fr__hover__info">
-									<ul class="product__action">
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-									</ul>
-								</div>
-								<div class="fr__product__inner">
-									<h4>
-										<a href="product-details.html">Product Title Here </a>
-									</h4>
-									<ul class="fr__pro__prize">
-										<li class="old__prize">$30.3</li>
-										<li>$25.9</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Product -->
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="table-content table-responsive">
+							<h2
+								style="padding: 10px; background-color: #FEE76F; color: white;">결제
+								내역</h2>
+							<table>
+								<thead>
+									<tr>
+										<th class="product-thumbnail">상품 이미지</th>
+										<th class="product-name">상품명</th>
+										<th class="product-price">가격</th>
+										<th class="product-quantity">수량</th>
+										<th class="product-subtotal">총 가격</th>
+										<th class="product-remove">결제 일</th>
+										<th class="product-subtotal">리뷰 하기</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="product-thumbnail"><a href="#"><img
+												src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>"></a></td>
+										<td class="product-name"><a href="#">매직스퀘어 귀걸이</a></td>
+										<td class="product-price"><span class="amount">20,000원</span></td>
+										<td class="product-quantity"><input type="number"
+											value="3" readonly="readonly" /></td>
+										<td class="product-subtotal">60,000원</td>
+										<td class="product-subtotal">2020-05-24</td>
+										<td class="product-subtotal">리뷰완료</td>
+									</tr>
 
+									<tr>
+										<td class="product-thumbnail"><a href="#"><img
+												src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"></a></td>
+										<td class="product-name"><a href="#">너의 곁에 나비 귀걸이</a></td>
+										<td class="product-price"><span class="amount">10,000원</span></td>
+										<td class="product-quantity"><input type="number"
+											value="4" readonly="readonly" /></td>
+										<td class="product-subtotal">40,000원</td>
+										<td class="product-subtotal">2020-05-24</td>
+										<td class="product-subtotal"><a class="simpleBtn"
+											href="#">리뷰하기</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div style="padding-bottom: 20px">
+							<ul class="payment__btn">
+								<li><a href="#">계속 쇼핑하기</a></li>
+							</ul>
+						</div>
+						
+						<div class="table-content table-responsive" >
+							<h2
+								style="padding: 10px; background-color: #FEE76F; color: white;">리뷰
+								내역</h2>
+							<table>
+								<thead>
+									<tr>
+										<th class="product-thumbnail">상품 이미지</th>
+										<th class="product-name">상품명</th>
+										<th class="product-name">후기 제목</th>
+										<th class="product-remove">리뷰 작성일</th>
+										<th class="product-remove">리뷰 삭제</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="product-thumbnail"><a href="#"><img
+												src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>"></a></td>
+										<td class="product-name"><a href="#">매직스퀘어 귀걸이</a></td>
+										<td class="product-name"><a href="#">반짝반짝 마음에 들어요</a></td>
+										<td class="product-subtotal">2020-05-24</td>
+										<td class="product-remove"><a href="#"><i class="icon-trash icons"></i></a></td>
+									</tr>
+
+									<tr>
+										<td class="product-thumbnail"><a href="#"><img
+												src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"></a></td>
+										<td class="product-name"><a href="#">너의 곁에 나비 귀걸이</a></td>
+										<td class="product-name"><a href="#">찰랑찰랑 마음에 들어요</a></td>
+										<td class="product-subtotal">2020-05-24</td>
+										<td class="product-remove"><a href="#"><i class="icon-trash icons"></i></a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- End Product Area -->
+		</div>
+		<!-- cart-main-area end -->
 		<!-- Start Brand Area -->
 		<div class="htc__brand__area bg__cat--4" style="margin-top: 100px;">
 			<div class="container">

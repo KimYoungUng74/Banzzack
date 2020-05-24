@@ -2147,6 +2147,22 @@ select.select__size {
 .table-content table td.product-name a:hover,.buttons-cart a:hover{
     color: #FEE76F
 }
+.simpleBtn {
+	background: #ebebeb none repeat scroll 0 0;
+    color: #3f3f3f;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.simpleBtn:hover{
+    background:#212121;
+    color:#fff !important;
+}
 .buttons-cart a {
     background: #ebebeb none repeat scroll 0 0;
     color: #3f3f3f;
