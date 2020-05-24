@@ -376,11 +376,31 @@
 													class="icon-social-pinterest icons"></i></a></li>
 										</ul>
 									</div> -->
-									<p class="pro__info">상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br>상품설명 설명<br></p>
+									<p class="pro__info">
+										상품설명 설명<br>상품설명 설명
+									</p>
 								</div>
 							</div>
 						</div>
+						
 					</div>
+					<div class="row">
+							<div class="col-md-4"></div>
+							<div class="col-md-4">
+								<div class="thumbnail">
+									<div class="centered">
+										<img alt=""
+											src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
+									</div>
+								</div>
+								<input type="file" > 
+								<div class="dark-btn" style="margin-top: 20px">
+								<button> 가상착용 시작 </button>
+								</div>
+							</div>
+							<div class="col-md-4"></div>
+						</div>
+					
 				</div>
 			</div>
 			<!-- End Product Details Top -->
@@ -448,7 +468,7 @@
 							<div class="category">
 								<div class="ht__cat__thumb">
 									<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>">
+										src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>">
 									</a>
 								</div>
 								<div class="fr__hover__info">
@@ -468,7 +488,7 @@
 							</div>
 						</div>
 						<!-- End Single Product -->
-						
+
 					</div>
 				</div>
 			</div>
