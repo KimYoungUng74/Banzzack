@@ -1,6 +1,6 @@
 <!doctype html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <html>
 <head>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
@@ -68,7 +68,7 @@
 										alt="logo images"></a>
 								</div>
 							</div>
-							<div class="col-md-6 col-lg-7 col-sm-5 col-xs-3">
+							<div class="col-md-5 col-lg-7 col-sm-5 col-xs-3">
 								<nav class="main__menu__nav hidden-xs hidden-sm">
 									<ul class="main__menu">
 										<li class="drop"><a href="home">Home</a></li>
@@ -143,16 +143,14 @@
 									</nav>
 								</div>
 							</div>
-							<div class="col-md-4 col-lg-2 col-sm-4 col-xs-4">
+							<div class="col-md-5 col-lg-2 col-sm-4 col-xs-4">
 								<div class="header__right">
-									<div class="header__account">
-										<a href="#"><i class="icon-user icons"></i>로그인</a>
-									</div>
-									<div class="htc__shopping__cart">
-										<a class="cart__menu" href="#"><i
+									<a href="login.do">로그인</a>&nbsp; |&nbsp; <a href="signup.do">회원가입</a>
+									<!-- <div class="htc__shopping__cart">
+										&nbsp; |&nbsp; <a class="cart__menu" href="#"><i
 											class="icon-handbag icons"></i></a> <a href="#"><span
 											class="htc__qua">2</span></a>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -265,7 +263,7 @@
 
 									<div class="col-md-6"
 										style="border: 1px solid gray; padding: 10px; margin-top: 100px;">
-										<form action="#">
+										<form action="signupOk.do" method="post" accept-charset="UTF-8">
 											<div class="row">
 												<div class="col-md-12">
 													<h5 class="checkout-method__title">Signup</h5>
@@ -275,31 +273,36 @@
 												<div class="col-md-12">
 													<div class="single-input">
 														<label for="user-id">ID</label> <input type="text"
-															id="user_id">
+															id="user_id" name="USER_ID">
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="single-input">
 														<label for="user-pass">Password</label> <input
-															type="password" id="user_pass">
+															type="password" id="user_pass" name="USER_PW">
+													</div>
+												</div><div class="col-md-12">
+													<div class="single-input">
+														<label for="user-pass">Name</label> <input
+															type="text" id="USER_NAME" name="USER_NAME">
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="single-input">
 														<label for="user-email">email</label> <input type="email"
-															id="user_email" placeholder="ex) abc@abc.com">
+															id="user_email" name="USER_EMAIL" placeholder="ex) banzzack@banzzack.com">
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="single-input">
 														<label for="user-phone">Phone Number</label> <input
-															type="text" id="user_phone" placeholder="ex) 01012341234">
+															type="text" id="user_phone" name="USER_PHONE" placeholder="ex) 01012341234">
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="single-input">
 														<label for="user-city">City/State</label> <select
-															name="bil-country" id="useraddress1">
+															name="USER_ADDRESS1" id="useraddress1">
 															<option value="select">지역을 선택해주세요</option>
 															<option value="arb">서울</option>
 															<option value="ban">인천광역시</option>
@@ -312,16 +315,16 @@
 												<div class="col-md-6">
 													<div class="single-input">
 														<label for="user-phone">Post Code</label> <input
-															type="text" id="useraddress2" placeholder="ex) 123-12">
+															type="text" id="useraddress2" name="USER_ADDRESS2" placeholder="ex) 123-12">
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="single-input">
-														<label for="user-phone">Address</label> <input
-															type="text" id="useraddress3" placeholder="ex) 거북골로100 1동 1호">
+														<label for="user-phone">Address</label> <input type="text"
+															id="useraddress3"  name="USER_ADDRESS3" placeholder="ex) 거북골로100 1동 1호">
 													</div>
 												</div>
-												
+
 												<div class="col-md-12">
 													<div class="dark-btn" style="margin-top: 10px;">
 														<button>Signup</button>

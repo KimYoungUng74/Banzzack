@@ -6,12 +6,11 @@ public class UserDTO {
 	 	private String USER_ID;		// 유저 아이디
 	    private String USER_PW;		// 유저 비밀번호
 	    private String USER_NAME;	// 유저 이름
-	    private String USER_EMAIL1;	// 유저 이메일
-	    private String USER_EMAIL2; 
-	    private String USER_PHONE1; // 유저 전화번호
-	    private String USER_PHONE2;
-	    private String USER_PHONE3;
-	    private String USER_ADDRESS; // 유저 주소
+	    private String USER_EMAIL;	// 유저 이메일
+	    private String USER_PHONE; // 유저 전화번호
+	    private String USER_ADDRESS1; // 유저 주소
+	    private String USER_ADDRESS2; // 유저 주소
+	    private String USER_ADDRESS3; // 유저 주소
 	    private byte USER_GRANT;	 // 유저 권한
 		public String getUSER_ID() {
 			return USER_ID;
@@ -31,41 +30,35 @@ public class UserDTO {
 		public void setUSER_NAME(String uSER_NAME) {
 			USER_NAME = uSER_NAME;
 		}
-		public String getUSER_EMAIL1() {
-			return USER_EMAIL1;
+		public String getUSER_EMAIL() {
+			return USER_EMAIL;
 		}
-		public void setUSER_EMAIL1(String uSER_EMAIL1) {
-			USER_EMAIL1 = uSER_EMAIL1;
+		public void setUSER_EMAIL(String uSER_EMAIL) {
+			USER_EMAIL = uSER_EMAIL;
 		}
-		public String getUSER_EMAIL2() {
-			return USER_EMAIL2;
+		public String getUSER_PHONE() {
+			return USER_PHONE;
 		}
-		public void setUSER_EMAIL2(String uSER_EMAIL2) {
-			USER_EMAIL2 = uSER_EMAIL2;
+		public void setUSER_PHONE(String uSER_PHONE) {
+			USER_PHONE = uSER_PHONE;
 		}
-		public String getUSER_PHONE1() {
-			return USER_PHONE1;
+		public String getUSER_ADDRESS1() {
+			return USER_ADDRESS1;
 		}
-		public void setUSER_PHONE1(String uSER_PHONE1) {
-			USER_PHONE1 = uSER_PHONE1;
+		public void setUSER_ADDRESS1(String uSER_ADDRESS1) {
+			USER_ADDRESS1 = uSER_ADDRESS1;
 		}
-		public String getUSER_PHONE2() {
-			return USER_PHONE2;
+		public String getUSER_ADDRESS2() {
+			return USER_ADDRESS2;
 		}
-		public void setUSER_PHONE2(String uSER_PHONE2) {
-			USER_PHONE2 = uSER_PHONE2;
+		public void setUSER_ADDRESS2(String uSER_ADDRESS2) {
+			USER_ADDRESS2 = uSER_ADDRESS2;
 		}
-		public String getUSER_PHONE3() {
-			return USER_PHONE3;
+		public String getUSER_ADDRESS3() {
+			return USER_ADDRESS3;
 		}
-		public void setUSER_PHONE3(String uSER_PHONE3) {
-			USER_PHONE3 = uSER_PHONE3;
-		}
-		public String getUSER_ADDRESS() {
-			return USER_ADDRESS;
-		}
-		public void setUSER_ADDRESS(String uSER_ADDRESS) {
-			USER_ADDRESS = uSER_ADDRESS;
+		public void setUSER_ADDRESS3(String uSER_ADDRESS3) {
+			USER_ADDRESS3 = uSER_ADDRESS3;
 		}
 		public byte getUSER_GRANT() {
 			return USER_GRANT;
@@ -77,11 +70,17 @@ public class UserDTO {
 		@Override
 		public String toString() {
 			return "UserDTO [USER_ID=" + USER_ID + ", USER_PW=" + USER_PW + ", USER_NAME=" + USER_NAME
-					+ ", USER_EMAIL1=" + USER_EMAIL1 + ", USER_EMAIL2=" + USER_EMAIL2 + ", USER_PHONE1=" + USER_PHONE1
-					+ ", USER_PHONE2=" + USER_PHONE2 + ", USER_PHONE3=" + USER_PHONE3 + ", USER_ADDRESS=" + USER_ADDRESS
-					+ ", USER_GRANT=" + USER_GRANT + "]";
+					+ ", USER_EMAIL1=" + USER_EMAIL + ", USER_PHONE1=" + USER_PHONE + ", USER_ADDRESS1="
+					+ USER_ADDRESS1 + ", USER_ADDRESS2=" + USER_ADDRESS2 + ", USER_ADDRESS3=" + USER_ADDRESS3
+					+ ", USER_GRANT=" + USER_GRANT + ", getUSER_ID()=" + getUSER_ID() + ", getUSER_PW()=" + getUSER_PW()
+					+ ", getUSER_NAME()=" + getUSER_NAME() + ", getUSER_EMAIL1()=" + getUSER_EMAIL()
+					+ ", getUSER_PHONE1()=" + getUSER_PHONE() + ", getUSER_ADDRESS1()=" + getUSER_ADDRESS1()
+					+ ", getUSER_ADDRESS2()=" + getUSER_ADDRESS2() + ", getUSER_ADDRESS3()=" + getUSER_ADDRESS3()
+					+ ", getUSER_GRANT()=" + getUSER_GRANT() + ", getClass()=" + getClass() + ", hashCode()="
+					+ hashCode() + ", toString()=" + super.toString() + "]";
 		}
 	    
+		
 	    
 	    
 }
