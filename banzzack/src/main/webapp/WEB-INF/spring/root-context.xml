@@ -41,5 +41,17 @@
 		class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.spring.banzzack.service.UserService" />
 	</bean>	
+	
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="268435456" />
+
+	</bean>
+	<!-- 파일업로드를 위한 디렉토리 설정 -->
+	<!-- String uploadPath = new String("업로드 경로") -->
+	<bean id="uploadPath" class="java.lang.String">
+		<!-- 파일업로드 디렉토리 -->
+		<constructor-arg value="D:\\banzzack" />
+	</bean>
 		
 </beans>

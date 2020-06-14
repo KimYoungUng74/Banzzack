@@ -6,6 +6,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
 <meta charset="utf-8">
+
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Asbab - eCommerce HTML5 Templatee</title>
 <meta name="description" content="">
@@ -41,26 +42,76 @@
 <link rel="stylesheet"
 	href="<c:url value='resources/shop/css/custom.css'/>">
 
-
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- Modernizr JS -->
 <script
 	src="<c:url value='resources/shop/js/vendor/modernizr-3.5.0.min.js'/>"></script>
-</head>
 
+<style>
+.fileDrop {
+	height: 200px;
+	border: 1px dotted blue;
+	margin-bottom: 15px;
+}
+
+small {
+	margin-left: 3px;
+	font-weight: bold;
+	color: gray;
+}
+</style>
+<script>
+	var num=1;
+    $(document).ready(function(){
+        $(".fileDrop").on("dragenter dragover", function(event){
+            event.preventDefault(); // 기본효과를 막음
+        });
+        // event : jQuery의 이벤트
+        // originalEvent : javascript의 이벤트
+        $(".fileDrop").on("drop", function(event){
+            event.preventDefault(); // 기본효과를 막음
+            // 드래그된 파일의 정보
+            var files = event.originalEvent.dataTransfer.files;
+            // 첫번째 파일
+            var file = files[0];
+            // 콘솔에서 파일정보 확인
+            console.log(file);
+
+            // ajax로 전달할 폼 객체
+            var formData = new FormData();
+            // 폼 객체에 파일추가, append("변수명", 값)
+            formData.append("file", file);
+
+
+            $.ajax({
+                type: "post",
+                url: "fileUploadAjax.do",
+                data: formData,
+                // processData: true=> get방식, false => post방식
+                dataType: "text",
+                // contentType: true => application/x-www-form-urlencoded, 
+                //                false => multipart/form-data
+                processData: false,
+                contentType: false,
+                success: function(data){
+                	var str = "";
+                	 str = "<div class=\"col-md-4\"><img src='http://localhost:8181/banzzackimg/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG"+num+"\" value=\""+data+"\">";
+                	 num++;
+                    alert(data);
+                    
+                 // 삭제 버튼
+                    str += "[삭제]</div>";
+                    $(".uploadedList").append(str);
+                }
+            });
+        });
+    });
+</script>
+</head>
 <body>
 	<!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-	<c:if test="${msg == 'logout'}">
-		<script>
-			alert("로그아웃 되었습니다.");
-		</script>
-	</c:if>
-	<c:if test="${msg == 'success'}">
-		<script>
-			alert("${sessionScope.userName}님 환영합니다.");
-		</script>
-	</c:if>
 
 	<!-- Body main wrapper start -->
 	<div class="wrapper">
@@ -79,12 +130,13 @@
 										alt="logo images"></a>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-5 col-lg-7 col-sm-5 col-xs-3">
 								<nav class="main__menu__nav hidden-xs hidden-sm">
 									<ul class="main__menu">
 										<li class="drop"><a href="home">Home</a></li>
 										<li class="drop"><a href="#">귀걸이</a>
 											<ul class="dropdown">
+											
 												<!-- Start Single Mega MEnu -->
 												<li><a href="product-grid.html">패션 귀걸이</a></li>
 												<li><a href="cart.html">실버침</a></li>
@@ -154,41 +206,14 @@
 									</nav>
 								</div>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-5 col-lg-2 col-sm-4 col-xs-4">
 								<div class="header__right">
-
-									<div class="header__account">
-										<c:choose>
-											<c:when test="${sessionScope.userId == null}">
-												<a href="login.do"><i class="icon-user icons"></i>로그인</a>
-											</c:when>
-											<c:otherwise>
-												<c:choose>
-													<c:when test="${sessionScope.userId == 'root'}">
-														<a href="productReg.do">상품등록</a>
-													</c:when>
-													<c:otherwise>
-														<a href="mypage.do">마이페이지</a>
-													</c:otherwise>
-												</c:choose>
-											</c:otherwise>
-										</c:choose>
-
-									</div>
-									<c:choose>
-										<c:when test="${sessionScope.userId == null}">
-											<a href="signup.do">회원가입</a>
-										</c:when>
-										<c:otherwise>
-											<a href="logout.do">로그아웃</a>
-											<div class="htc__shopping__cart">
-												<a class="cart__menu" href="#"><i
-													class="icon-handbag icons"></i></a> <a href="#"><span
-													class="htc__qua">2</span></a>
-											</div>
-										</c:otherwise>
-									</c:choose>
-
+									<a href="login.do">로그인</a>&nbsp; |&nbsp; <a href="signup.do">회원가입</a>
+									<!-- <div class="htc__shopping__cart">
+										&nbsp; |&nbsp; <a class="cart__menu" href="#"><i
+											class="icon-handbag icons"></i></a> <a href="#"><span
+											class="htc__qua">2</span></a>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -197,9 +222,9 @@
 				</div>
 			</div>
 			<!-- End Mainmenu Area -->
+			<!-- End Mainmenu Area -->
 		</header>
 		<!-- End Header Area -->
-
 		<div class="body__overlay"></div>
 		<!-- Start Offset Wrapper -->
 		<div class="offset__wrapper">
@@ -232,10 +257,7 @@
 					<div class="shp__cart__wrap">
 						<div class="shp__single__product">
 							<div class="shp__pro__thumb">
-								<a href="#"> <img
-									src="<c:url value='resources/shop/images/product-2/sm-smg/1.jpg'/>"
-									alt="product images">
-								</a>
+								<a href="#"> </a>
 							</div>
 							<div class="shp__pro__details">
 								<h2>
@@ -250,10 +272,7 @@
 						</div>
 						<div class="shp__single__product">
 							<div class="shp__pro__thumb">
-								<a href="#"> <img
-									src="<c:url value='resources/shop/images/product-2/sm-smg/2.jpg'/>"
-									alt="product images">
-								</a>
+								<a href="#"> </a>
 							</div>
 							<div class="shp__pro__details">
 								<h2>
@@ -280,356 +299,150 @@
 			<!-- End Cart Panel -->
 		</div>
 		<!-- End Offset Wrapper -->
-		<!-- Start Slider Area -->
-		<div class="slider__container slider--one bg__cat--3">
-			<div class="slide__container slider__activation__wrap owl-carousel">
-				<!-- Start Single Slide -->
-				<div class="single__slide animation__style01 slider__fixed--height">
-					<div class="container">
-						<div class="row align-items__center">
-							<div class="col-md-7 col-sm-7 col-xs-12 col-lg-6">
-								<div class="slide">
-									<div class="slider__inner">
-										<h2>collection 2020</h2>
-										<h1>New Earring</h1>
-										<div class="cr__btn">
-											<a href="cart.html">Buy now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
-								<div class="slide__thumb">
-									<img
-										src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
-								</div>
-							</div>
+		<!-- Start Bradcaump area -->
+		<div class="ht__bradcaump__area"
+			style="background: rgba(0, 0, 0, 0) url(resources/shop/images/bg/banner.jpg) no-repeat scroll center center/cover;">
+			<div class="ht__bradcaump__wrap" style="height: 150px;">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="bradcaump__inner"></div>
 						</div>
 					</div>
 				</div>
-				<!-- End Single Slide -->
-				<!-- Start Single Slide -->
-				<div class="single__slide animation__style01 slider__fixed--height">
-					<div class="container">
-						<div class="row align-items__center">
-							<div class="col-md-7 col-sm-7 col-xs-12 col-lg-6">
-								<div class="slide">
-									<div class="slider__inner">
-										<h2>collection 2018</h2>
-										<h1>NICE CHAIR</h1>
-										<div class="cr__btn">
-											<a href="cart.html">Buy now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
-								<div class="slide__thumb">
-									<img
-										src="<c:url value='resources/shop/images/slider/fornt-img/2.png'/>"
-										alt="slider images">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Single Slide -->
 			</div>
 		</div>
-		<!-- Start Slider Area -->
-		<!-- Start Category Area -->
-		<section class="htc__category__area ptb--100">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="section__title--2 text-center">
-							<h2 class="title__line">New Banzzack</h2>
-							<p>Find an accessory that will shine on you!</p>
-						</div>
-					</div>
-				</div>
-				<!-- 새상품 블록 -->
-				<div class="htc__product__container">
-					<div class="row">
-						<div class="product__list clearfix mt--30">
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
+		<!-- End Bradcaump area -->
+		<!-- cart-main-area start -->
+		<div class="container">
+			<div class="row">
+				<div>
+					<div class="checkout__inner">
+						<div class="accordion-list">
+							<div class="accordion__body__form">
+								<div class="row">
 
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-											<!-- <li><a href="wishlist.html"><i
-													class="icon-heart icons"></i></a></li>
-											<li><a href="#"><i class="icon-shuffle icons"></i></a></li> -->
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">Largest Water Pot</a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- 새상품 블록 끝 -->
-			</div>
-		</section>
-		<!-- End Category Area -->
-		<!-- Start Prize Good Area -->
-		<section class="htc__good__sale bg__cat--3">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
-						<div class="fr__prize__inner">
-							<h2>추천 악세서리를 확인하세요!</h2>
-							<h3>추천악세서리는 랜덤 입니다.</h3>
-							<a class="fr__btn" href="#">자세히 보기</a>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
-						<div class="prize__inner">
-							<div class="prize__thumb">
-								<img
-									src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>"
-									alt="banner images">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Prize Good Area -->
-		<!-- Start Product Area -->
-		<section class="ftr__product__area ptb--100">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="section__title--2 text-center">
-							<h2 class="title__line">Best Banzzack</h2>
-							<p>Check out the best Seller Accessory</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="product__wrap clearfix">
-						<!-- Start Single Category -->
-						<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-							<div class="category">
-								<div class="ht__cat__thumb">
-									<a href="product-details.html"> <img
-										src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"
-										alt="product images">
-									</a>
-								</div>
-								<div class="fr__hover__info">
-									<ul class="product__action">
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-									</ul>
-								</div>
-								<div class="fr__product__inner">
-									<h4>
-										<a href="product-details.html">Special Wood Basket</a>
-									</h4>
-									<ul class="fr__pro__prize">
-										<li class="old__prize">$30.3</li>
-										<li>$25.9</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Product Area -->
-		<!-- Start Top Rated Area -->
-		<!-- 이부분 추후 추가할 수 있음  -->
-		<%-- 
-		<section class="top__rated__area bg__white pt--100 pb--110">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section__title--2 text-center">
-							<h2 class="title__line">Top Rated</h2>
-							<p>But I must explain to you</p>
-						</div>
-					</div>
-				</div>
-				<div class="row mt--20">
-					<!-- Start Single Product -->
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="htc__best__product">
-							<div class="htc__best__pro__thumb">
-								<a href="product-details.html"> <img
-									src="<c:url value='resources/shop/images/product-2/sm-img-2/1.jpg'/>"
-									alt="small product">
-								</a>
-							</div>
-							<div class="htc__best__product__details">
-								<h2>
-									<a href="product-details.html">dummy Product title</a>
-								</h2>
-								<ul class="rating">
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-								</ul>
-								<ul class="top__pro__prize">
-									<li class="old__prize">$82.5</li>
-									<li>$75.2</li>
-								</ul>
-								<div class="best__product__action">
-									<ul class="product__action--dft">
-										<li><a href="wishlist.html"><i
-												class="icon-heart icons"></i></a></li>
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-										<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single Product -->
-					<!-- Start Single Product -->
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="htc__best__product">
-							<div class="htc__best__pro__thumb">
-								<a href="product-details.html"> <img
-									src="<c:url value='resources/shop/images/product-2/sm-img-2/2.jpg'/>"
-									alt="small product">
-								</a>
-							</div>
-							<div class="htc__best__product__details">
-								<h2>
-									<a href="product-details.html">dummy Product title</a>
-								</h2>
-								<ul class="rating">
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-								</ul>
-								<ul class="top__pro__prize">
-									<li class="old__prize">$82.5</li>
-									<li>$75.2</li>
-								</ul>
-								<div class="best__product__action">
-									<ul class="product__action--dft">
-										<li><a href="wishlist.html"><i
-												class="icon-heart icons"></i></a></li>
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-										<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single Product -->
-					<!-- Start Single Product -->
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="htc__best__product">
-							<div class="htc__best__pro__thumb">
-								<a href="product-details.html"> <img
-									src="<c:url value='resources/shop/images/product-2/sm-img-2/3.jpg'/>"
-									alt="small product">
-								</a>
-							</div>
-							<div class="htc__best__product__details">
-								<h2>
-									<a href="product-details.html">dummy Product title</a>
-								</h2>
-								<ul class="rating">
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-								</ul>
-								<ul class="top__pro__prize">
-									<li class="old__prize">$82.5</li>
-									<li>$75.2</li>
-								</ul>
-								<div class="best__product__action">
-									<ul class="product__action--dft">
-										<li><a href="wishlist.html"><i
-												class="icon-heart icons"></i></a></li>
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
-										<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single Product -->
-				</div>
-			</div>
-		</section> --%>
-		<!-- 이부분 추후 추가 할 수 있음 -->
-		<!-- End Top Rated Area -->
-		<!-- Start Blog Area -->
-		<section class="htc__good__sale bg__cat--3">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="section__title--2 text-center">
-							<h2 class="title__line">구매 후기</h2>
-							<p>고객들의 생생한 구매 후기를 확인하세요!</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="ht__blog__wrap clearfix">
-						<!-- Start Single Blog -->
-						<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-							<div class="blog">
-								<div class="blog__thumb">
-									<a href="blog-details.html"> <img
-										src="<c:url value='resources/shop/images/earring/earring1.png'/>"
-										alt="blog images">
-									</a>
-								</div>
-								<div class="blog__details">
-									<div class="bl__date">
-										<span>March 22, 2016</span>
-									</div>
-									<h2>
-										<a href="blog-details.html">Lorem ipsum dolor sit amet,
-											consec tetur adipisicing elit</a>
-									</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua.</p>
-									<div class="blog__btn">
-										<a href="blog-details.html">Read More</a>
+									<div class="col-md-12"
+										style="border: 1px solid gray; padding: 10px; margin-top: 100px;">
+										<form action="signupOk.do" method="post"
+											accept-charset="UTF-8">
+											<div class="row">
+												<div class="col-md-12">
+													<h5 class="checkout-method__title">상품등록</h5>
+													<h5 class="checkout-method__title">상품을 등록하세요</h5>
+												</div>
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-id">상품명</label> <input type="text"
+															id="user_id" name="USER_ID">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="single-input">
+														<label for="user-city">대분류</label> <select
+															name="USER_ADDRESS1" id="useraddress1">
+															<option value="select">대분류</option>
+															<option value="귀걸이">귀걸이</option>
+															<option value="반지">반지</option>
+															<option value="목걸이">목걸이</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="single-input">
+														<label for="user-city">중분류</label> <select
+															name="USER_ADDRESS1" id="useraddress1">
+															<option value="select">중분류</option>
+															<option value="arb">패션귀걸이</option>
+															<option value="ban">실버침</option>
+															<option value="ind">투웨이귀걸이</option>
+															<option value="uk">핸드메이드귀걸이</option>
+															<option value="usa">롱귀걸이</option>
+															<option value="usa">러블리 귀걸이</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-md-6">
+													<div class="single-input">
+														<label for="user-id">가격</label> <input type="number"
+															style="width: 100%" id="user_id" name="USER_ID"
+															value="10000">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="single-input">
+														<label for="user-id">재고 수량</label> <input type="number"
+															style="width: 100%" id="user_id" name="USER_ID"
+															value="100">
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-pass">상품 설명</label>
+														<textarea rows="8" style="width: 100%; resize: none;"></textarea>
+													</div>
+												</div>
+												<!-- 파일을 업로드할 영역 -->
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-pass">상품 이미지 등록</label>
+														
+														<div class="fileDrop"></div>
+													</div>
+												</div>
+												<!-- 업로드된 파일 목록 -->
+												<div class="col-md-12">
+													<div class="uploadedList"></div>
+												</div>
+
+												<div class="col-md-12">
+													<div class="dark-btn" style="margin-top: 10px;">
+														<button>등록하기</button>
+													</div>
+												</div>
+											</div>
+
+										</form>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- End Single Blog -->
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- cart-main-area end -->
+		<!-- Start Brand Area -->
+		<div class="htc__brand__area bg__cat--4" style="margin-top: 100px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="ht__brand__inner">
+							<ul class="brand__list owl-carousel clearfix">
+								<li><a href="#"><img
+										src="<c:url value='resources/shop/images/brand/1.png'/>"
+										alt="brand images"></a></li>
+								<li><a href="#"><img
+										src="<c:url value='resources/shop/images/brand/2.png'/>"
+										alt="brand images"></a></li>
+								<li><a href="#"><img
+										src="<c:url value='resources/shop/images/brand/3.png'/>"
+										alt="brand images"></a></li>
+								<li><a href="#"><img
+										src="<c:url value='resources/shop/images/brand/4.png'/>"
+										alt="brand images"></a></li>
+								<li><a href="#"><img
+										src="<c:url value='resources/shop/images/brand/5.png'/>"
+										alt="brand images"></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- End Blog Area -->
-		<!-- End Banner Area -->
-		<!-- Start Footer Area -->
+		</div>
+		<!-- End Brand Area -->
 		<footer id="htc__footer">
 			<!-- Start Footer Widget -->
 			<div class="footer__container bg__cat--1">

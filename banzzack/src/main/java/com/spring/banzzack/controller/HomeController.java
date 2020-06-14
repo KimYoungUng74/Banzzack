@@ -44,7 +44,7 @@ public class HomeController {
 		 */
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "orderHistory";
+		return "productReg";
 	}
 	
 	@RequestMapping(value = "home.do", method = RequestMethod.GET)

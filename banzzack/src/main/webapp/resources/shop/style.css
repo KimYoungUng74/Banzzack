@@ -3297,6 +3297,10 @@ ul.htc__instagram__posts.owl-carousel li img {
 .accordion__body__form .checkout-method .checkout-method__single .single-input input[type="radio"]{
     margin-right: 10px;
 }
+.accordion__body__form .checkout-method .checkout-method__single .single-input input[type="number"]{
+	width : 100%;
+    margin-right: 10px;
+}
 .accordion__body .checkout-method__login p.require{
     color: #f10;
     letter-spacing: 1px;
