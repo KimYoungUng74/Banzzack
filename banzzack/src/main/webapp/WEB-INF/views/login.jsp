@@ -266,7 +266,7 @@
 									<div class="col-md-6"
 										style="border: 1px solid gray; padding: 10px; margin-top: 100px;">
 										<div class="checkout-method__login">
-											<form action="#">
+											<form action="loginCheck.do" method="post">
 												<div class="row">
 													<div class="col-md-12">
 														<h5 class="checkout-method__title">Login</h5>
@@ -274,12 +274,12 @@
 															Registered?</h5>
 														<div class="single-input">
 															<label for="user-email">ID</label> <input type="text"
-																id="user_id">
+																name="USER_ID" id="USER_ID">
 														</div>
 
 														<div class="single-input">
 															<label for="user-pass">Password</label> <input
-																type="password" id="user_pass">
+																type="password" name="USER_PW" id="USER_PW">
 														</div>
 														<div style="margin-top: 10px;">
 															<p>

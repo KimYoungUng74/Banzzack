@@ -1,6 +1,6 @@
 <!doctype html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <html>
 <head>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
@@ -51,6 +51,16 @@
 	<!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+	<c:if test="${msg == 'logout'}">
+		<script>
+			alert("로그아웃 되었습니다.");
+		</script>
+	</c:if>
+	<c:if test="${msg == 'success'}">
+		<script>
+			alert("${sessionScope.userName}님 환영합니다.");
+		</script>
+	</c:if>
 
 	<!-- Body main wrapper start -->
 	<div class="wrapper">
@@ -69,7 +79,7 @@
 										alt="logo images"></a>
 								</div>
 							</div>
-							<div class="col-md-6 col-lg-7 col-sm-5 col-xs-3">
+							<div class="col-md-6">
 								<nav class="main__menu__nav hidden-xs hidden-sm">
 									<ul class="main__menu">
 										<li class="drop"><a href="home">Home</a></li>
@@ -110,50 +120,68 @@
 									<nav id="mobile_dropdown">
 										<ul>
 											<li class="drop"><a href="home">Home</a></li>
-										<li class="drop"><a href="#">귀걸이</a>
-											<ul class="dropdown">
-												<!-- Start Single Mega MEnu -->
-												<li><a href="product-grid.html">패션 귀걸이</a></li>
-												<li><a href="cart.html">실버침</a></li>
-												<li><a href="checkout.html">투웨이귀걸이</a></li>
-												<li><a href="wishlist.html">핸드메이드 귀걸이</a></li>
-												<li><a href="wishlist.html">롱귀걸이</a></li>
-												<li><a href="wishlist.html">러블리</a></li>
-												<!-- End Single Mega MEnu -->
-											</ul></li>
+											<li class="drop"><a href="#">귀걸이</a>
+												<ul class="dropdown">
+													<!-- Start Single Mega MEnu -->
+													<li><a href="product-grid.html">패션 귀걸이</a></li>
+													<li><a href="cart.html">실버침</a></li>
+													<li><a href="checkout.html">투웨이귀걸이</a></li>
+													<li><a href="wishlist.html">핸드메이드 귀걸이</a></li>
+													<li><a href="wishlist.html">롱귀걸이</a></li>
+													<li><a href="wishlist.html">러블리</a></li>
+													<!-- End Single Mega MEnu -->
+												</ul></li>
 
-										<li class="drop"><a href="#">반지</a>
-											<ul class="dropdown">
-												<li><a href="#">14/18k 링</a></li>
-												<li><a href="#">실버링</a></li>
-												<li><a href="wishlist.html">커플링</a></li>
-												<li><a href="cart.html">심플링</a></li>
-												<li><a href="checkout.html">다이아몬드 링</a></li>
-											</ul></li>
+											<li class="drop"><a href="#">반지</a>
+												<ul class="dropdown">
+													<li><a href="#">14/18k 링</a></li>
+													<li><a href="#">실버링</a></li>
+													<li><a href="wishlist.html">커플링</a></li>
+													<li><a href="cart.html">심플링</a></li>
+													<li><a href="checkout.html">다이아몬드 링</a></li>
+												</ul></li>
 
-										<li class="drop"><a href="#">목걸이</a>
-											<ul class="dropdown">
-												<li><a href="#">14/18k 목걸이</a></li>
-												<li><a href="#">14/18k 펜던트</a></li>
-												<li><a href="wishlist.html">24k 순금목걸이</a></li>
-												<li><a href="cart.html">탄생석 목걸이</a></li>
-												<li><a href="checkout.html">진주 목걸이</a></li>
-												<li><a href="checkout.html">체인 목걸이</a></li>
-											</ul></li>
+											<li class="drop"><a href="#">목걸이</a>
+												<ul class="dropdown">
+													<li><a href="#">14/18k 목걸이</a></li>
+													<li><a href="#">14/18k 펜던트</a></li>
+													<li><a href="wishlist.html">24k 순금목걸이</a></li>
+													<li><a href="cart.html">탄생석 목걸이</a></li>
+													<li><a href="checkout.html">진주 목걸이</a></li>
+													<li><a href="checkout.html">체인 목걸이</a></li>
+												</ul></li>
 										</ul>
 									</nav>
 								</div>
 							</div>
-							<div class="col-md-4 col-lg-2 col-sm-4 col-xs-4">
+							<div class="col-md-4">
 								<div class="header__right">
+
 									<div class="header__account">
-										<a href="#"><i class="icon-user icons"></i>로그인</a>
+										<c:choose>
+											<c:when test="${sessionScope.userId == null}">
+												<a href="login.do"><i class="icon-user icons"></i>로그인</a>
+											</c:when>
+											<c:otherwise>
+												<a href="mypage.do">마이페이지</a>
+											</c:otherwise>
+										</c:choose>
+
 									</div>
-									<div class="htc__shopping__cart">
-										<a class="cart__menu" href="#"><i
-											class="icon-handbag icons"></i></a> <a href="#"><span
-											class="htc__qua">2</span></a>
-									</div>
+									<c:choose>
+										<c:when test="${sessionScope.userId == null}">
+											<a href="signup.do">회원가입</a>
+										</c:when>
+										<c:otherwise>
+											<a href="logout.do">로그아웃</a>
+											<div class="htc__shopping__cart">
+												<a class="cart__menu" href="#"><i
+													class="icon-handbag icons"></i></a> <a href="#"><span
+													class="htc__qua">2</span></a>
+											</div>
+										</c:otherwise>
+									</c:choose>
+
 								</div>
 							</div>
 						</div>
@@ -321,14 +349,15 @@
 							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 								<div class="category">
 									<div class="ht__cat__thumb">
-										<a href="product-details.html"> 
-										<img src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>" alt="product images">
+										<a href="product-details.html"> <img
+											src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"
+											alt="product images">
 										</a>
 									</div>
 									<div class="fr__hover__info">
 										<ul class="product__action">
-										
-										<li><a href="cart.html"><i
+
+											<li><a href="cart.html"><i
 													class="icon-handbag icons"></i></a></li>
 											<!-- <li><a href="wishlist.html"><i
 													class="icon-heart icons"></i></a></li>
@@ -687,8 +716,8 @@
 						<div class="col-xs-12">
 							<div class="copyright__inner">
 								<p>
-									Copyright© <a href="home">Banzzack</a>
-									2020. All right reserved.
+									Copyright© <a href="home">Banzzack</a> 2020. All right
+									reserved.
 								</p>
 								<a href="#"><img
 									src="<c:url value='resources/shop/images/others/shape/paypol.png'/>"

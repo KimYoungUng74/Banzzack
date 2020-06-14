@@ -62,7 +62,7 @@ public class UserController {
 			}
 
 		// 로그인 처리
-		@RequestMapping(value = "loginCheck.do")
+		@RequestMapping(value = "loginCheck.do", method = RequestMethod.POST)
 		public ModelAndView loginCheck(@ModelAttribute UserDTO dto, HttpSession sessison, HttpServletRequest request,
 				HttpServletResponse response) throws Exception {
 			boolean result = userSer.loginCheck(dto, sessison);
@@ -79,6 +79,18 @@ public class UserController {
 				mav.addObject("msg", "failure");
 				System.out.println("로그인 실패");
 			}
+			return mav;
+		}
+		
+		// 로그아웃
+		@RequestMapping(value = "logout.do")
+		public ModelAndView logOut(HttpSession session, HttpServletRequest request, HttpServletResponse response)
+				throws Exception {
+
+			userSer.logout(session);
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("home");
+			mav.addObject("msg", "logout");
 			return mav;
 		}
 
