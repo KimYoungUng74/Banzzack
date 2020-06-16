@@ -39,7 +39,7 @@
 
 	<bean id="MapperScannerConfigurer"
 		class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.spring.banzzack.service.UserService" />
+		<property name="basePackage" value="com.spring.banzzack.service" />
 	</bean>	
 	
 	<bean id="multipartResolver"

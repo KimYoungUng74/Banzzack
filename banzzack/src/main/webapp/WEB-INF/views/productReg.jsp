@@ -372,7 +372,7 @@ small {
 
 									<div class="col-md-12"
 										style="border: 1px solid gray; padding: 10px; margin-top: 100px;">
-										<form action="signupOk.do" method="post"
+										<form action="registOk.do" method="post"
 											accept-charset="UTF-8">
 											<div class="row">
 												<div class="col-md-12">
@@ -382,13 +382,13 @@ small {
 												<div class="col-md-12">
 													<div class="single-input">
 														<label for="user-id">상품명</label> <input type="text"
-															id="user_id" name="USER_ID">
+															id="user_id" name="PRODUCT_TITLE">
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="single-input">
 														<label for="user-city">대분류</label> <select
-															name="USER_ADDRESS1" id="useraddress1">
+															name="PRODUCT_CATEGORY1" id="useraddress1">
 															<option value="select">대분류</option>
 															<option value="귀걸이">귀걸이</option>
 															<option value="반지">반지</option>
@@ -399,7 +399,7 @@ small {
 												<div class="col-md-6">
 													<div class="single-input">
 														<label for="user-city">중분류</label> <select
-															name="USER_ADDRESS1" id="useraddress1">
+															name="PRODUCT_CATEGORY2" id="useraddress1">
 															<option value="select">중분류</option>
 															<option value="arb">패션귀걸이</option>
 															<option value="ban">실버침</option>
@@ -414,21 +414,21 @@ small {
 												<div class="col-md-6">
 													<div class="single-input">
 														<label for="user-id">가격</label> <input type="number"
-															style="width: 100%" id="user_id" name="USER_ID"
+															style="width: 100%" id="user_id" name="PRODUCT_RPICE"
 															value="10000">
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="single-input">
 														<label for="user-id">재고 수량</label> <input type="number"
-															style="width: 100%" id="user_id" name="USER_ID"
+															style="width: 100%" id="user_id" name="PRODUCT_COUNT"
 															value="100">
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="single-input">
 														<label for="user-pass">상품 설명</label>
-														<textarea rows="8" style="width: 100%; resize: none;"></textarea>
+														<textarea rows="8" style="width: 100%; resize: none;" name="PRODUCT_CONTENTS"></textarea>
 													</div>
 												</div>
 												<!-- 파일을 업로드할 영역 -->

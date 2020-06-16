@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProductMapper">
+	<!-- id는 마음대로 작성 prarameter는 실제DTO클래스 -->
+
+	<!-- 유저 회원가입 -->
+	<insert id="Register" parameterType="ProductDTO">
+		INSERT INTO PRODUCT_TABLE(PRODUCT_NUM, PRODUCT_TITLE, PRODUCT_CONTENTS, PRODUCT_IMG1, PRODUCT_IMG2, PRODUCT_IMG3, PRODUCT_RPICE, PRODUCT_COUNT, PRODUCT_CATEGORY1, PRODUCT_CATEGORY2)
+		VALUES(PRODUCTAUTOINC.nextval, #{PRODUCT_TITLE}, #{PRODUCT_CONTENTS}, #{PRODUCT_IMG1},
+		#{PRODUCT_IMG2}, #{PRODUCT_IMG3}, #{PRODUCT_RPICE}, #{PRODUCT_COUNT}, #{PRODUCT_CATEGORY1}, #{PRODUCT_CATEGORY2})
+	</insert>
+	
+
+</mapper>

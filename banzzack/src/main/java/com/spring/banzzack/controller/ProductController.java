@@ -25,7 +25,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.banzzack.dto.ProductDTO;
 import com.spring.banzzack.dto.UserDTO;
+import com.spring.banzzack.service.ProductService;
 import com.spring.banzzack.service.UserService;
 
 /**
@@ -37,11 +39,11 @@ public class ProductController {
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
 	@Autowired
-	UserService userSer;
-	
+	ProductService productSer;
+
 	@Autowired
-    @Resource(name="uploadPath")
-    String uploadPath;
+	@Resource(name = "uploadPath")
+	String uploadPath;
 
 	// 파일 업로드 Ajax
 	@RequestMapping(value = "/fileUploadAjax.do", method = RequestMethod.POST, produces = "application/text; charset=utf8")
@@ -68,6 +70,22 @@ public class ProductController {
 		}
 		return savedName; // mypage.jsp(결과화면)로 포워딩
 
+	}
+
+	// 상품등록 처리
+	@RequestMapping(value = "registOk.do", method = RequestMethod.POST)
+	public ModelAndView registOk(Locale locale, ProductDTO dto)  throws Exception {
+		ModelAndView mav = new ModelAndView();
+
+		if (1 == productSer.productReg(dto)) {
+			System.out.println("상품등록 되었음");
+			mav.setViewName("home");
+		} else {
+			System.out.println("상품등록 실패");
+			mav.setViewName("login.do");
+		}
+
+		return mav;
 	}
 
 }
