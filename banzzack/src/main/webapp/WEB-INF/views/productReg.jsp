@@ -61,51 +61,99 @@ small {
 }
 </style>
 <script>
-	var num=1;
-    $(document).ready(function(){
-        $(".fileDrop").on("dragenter dragover", function(event){
-            event.preventDefault(); // 기본효과를 막음
-        });
-        // event : jQuery의 이벤트
-        // originalEvent : javascript의 이벤트
-        $(".fileDrop").on("drop", function(event){
-            event.preventDefault(); // 기본효과를 막음
-            // 드래그된 파일의 정보
-            var files = event.originalEvent.dataTransfer.files;
-            // 첫번째 파일
-            var file = files[0];
-            // 콘솔에서 파일정보 확인
-            console.log(file);
+	var PRODUCT_IMG1 = false;
+	var PRODUCT_IMG2 = false;
+	var PRODUCT_IMG3 = false;
+	$(document)
+			.ready(
+					function() {
+						$(".fileDrop").on("dragenter dragover",
+								function(event) {
+									event.preventDefault(); // 기본효과를 막음
+								});
+						// event : jQuery의 이벤트
+						// originalEvent : javascript의 이벤트
+						$(".fileDrop")
+								.on(
+										"drop",
+										function(event) {
+											event.preventDefault(); // 기본효과를 막음
+											// 드래그된 파일의 정보
+											var files = event.originalEvent.dataTransfer.files;
+											// 첫번째 파일
+											var file = files[0];
+											// 콘솔에서 파일정보 확인
+											console.log(file);
 
-            // ajax로 전달할 폼 객체
-            var formData = new FormData();
-            // 폼 객체에 파일추가, append("변수명", 값)
-            formData.append("file", file);
+											// ajax로 전달할 폼 객체
+											var formData = new FormData();
+											// 폼 객체에 파일추가, append("변수명", 값)
+											formData.append("file", file);
 
+											$
+													.ajax({
+														type : "post",
+														url : "fileUploadAjax.do",
+														data : formData,
+														// processData: true=> get방식, false => post방식
+														dataType : "text",
+														// contentType: true => application/x-www-form-urlencoded, 
+														//                false => multipart/form-data
+														processData : false,
+														contentType : false,
+														success : function(data) {
+															var str = "";
+															if (PRODUCT_IMG1 == false) {
+																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG1\" value=\""+data+"\">";
+																PRODUCT_IMG1 = true;
+																// 삭제 버튼
+																str += "<span name=\"PRODUCT_IMG1\">[삭제]</span></div>";
+																$(
+																		".uploadedList")
+																		.append(
+																				str);
+															} else if (PRODUCT_IMG2 == false) {
+																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG2\" value=\""+data+"\">";
+																PRODUCT_IMG2 = true;
+																// 삭제 버튼
+																str += "<span name=\"PRODUCT_IMG2\">[삭제]</span></div>";
+																$(
+																		".uploadedList")
+																		.append(
+																				str);
+															} else if (PRODUCT_IMG3 == false) {
+																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG3\" value=\""+data+"\">";
+																PRODUCT_IMG3 = true;// 삭제 버튼
+																str += "<span name=\"PRODUCT_IMG3\">[삭제]</span></div>";
+																$(
+																		".uploadedList")
+																		.append(
+																				str);
+															}
 
-            $.ajax({
-                type: "post",
-                url: "fileUploadAjax.do",
-                data: formData,
-                // processData: true=> get방식, false => post방식
-                dataType: "text",
-                // contentType: true => application/x-www-form-urlencoded, 
-                //                false => multipart/form-data
-                processData: false,
-                contentType: false,
-                success: function(data){
-                	var str = "";
-                	 str = "<div class=\"col-md-4\"><img src='http://localhost:8181/banzzackimg/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG"+num+"\" value=\""+data+"\">";
-                	 num++;
-                    alert(data);
-                    
-                 // 삭제 버튼
-                    str += "[삭제]</div>";
-                    $(".uploadedList").append(str);
-                }
-            });
-        });
-    });
+															alert(data);
+
+														}
+													});
+										});
+
+						$(".uploadedList").on("click", "span", function(event) {
+							alert("이미지 삭제")
+							var that = $(this); // 여기서 this는 클릭한 span태그
+							// 클릭한 span태그가 속한 div를 제거
+							alert(that.attr('name'));
+							if ('PRODUCT_IMG1' == that.attr('name')) {
+								PRODUCT_IMG1 = false;
+							} else if ('PRODUCT_IMG2' == that.attr('name')) {
+								PRODUCT_IMG2 = false;
+							} else if ('PRODUCT_IMG3' == that.attr('name')) {
+								PRODUCT_IMG3 = false;
+							}
+
+							that.parent("div").remove();
+						});
+
+					});
 </script>
 </head>
 <body>
@@ -136,7 +184,7 @@ small {
 										<li class="drop"><a href="home">Home</a></li>
 										<li class="drop"><a href="#">귀걸이</a>
 											<ul class="dropdown">
-											
+
 												<!-- Start Single Mega MEnu -->
 												<li><a href="product-grid.html">패션 귀걸이</a></li>
 												<li><a href="cart.html">실버침</a></li>
@@ -387,7 +435,7 @@ small {
 												<div class="col-md-12">
 													<div class="single-input">
 														<label for="user-pass">상품 이미지 등록</label>
-														
+
 														<div class="fileDrop"></div>
 													</div>
 												</div>
