@@ -52,6 +52,7 @@
 	height: 200px;
 	border: 1px dotted blue;
 	margin-bottom: 15px;
+	background-image: url("http://localhost:8181/banzzackimg/profile2.jpg");
 }
 
 small {
@@ -130,8 +131,6 @@ small {
 																		.append(
 																				str);
 															}
-
-															alert(data);
 
 														}
 													});
@@ -428,7 +427,8 @@ small {
 												<div class="col-md-12">
 													<div class="single-input">
 														<label for="user-pass">상품 설명</label>
-														<textarea rows="8" style="width: 100%; resize: none;" name="PRODUCT_CONTENTS"></textarea>
+														<textarea rows="8" style="width: 100%; resize: none;"
+															name="PRODUCT_CONTENTS"></textarea>
 													</div>
 												</div>
 												<!-- 파일을 업로드할 영역 -->

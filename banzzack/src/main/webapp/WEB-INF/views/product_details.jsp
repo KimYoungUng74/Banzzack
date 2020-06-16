@@ -41,10 +41,55 @@
 <link rel="stylesheet"
 	href="<c:url value='resources/shop/css/custom.css'/>">
 
-
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- Modernizr JS -->
 <script
 	src="<c:url value='resources/shop/js/vendor/modernizr-3.5.0.min.js'/>"></script>
+
+
+<script>
+	var PRODUCT_IMG1 = false;
+	var PRODUCT_IMG2 = false;
+	var PRODUCT_IMG3 = false;
+	$(document).ready(function() {
+		$(".fileDrop").on("dragenter dragover", function(event) {
+			event.preventDefault(); // 기본효과를 막음
+		});
+		// event : jQuery의 이벤트
+		// originalEvent : javascript의 이벤트
+		$(".fileDrop").on("drop", function(event) {
+			event.preventDefault(); // 기본효과를 막음
+			// 드래그된 파일의 정보
+			var files = event.originalEvent.dataTransfer.files;
+			// 첫번째 파일
+			var file = files[0];
+			// 콘솔에서 파일정보 확인
+			console.log(file);
+
+			// ajax로 전달할 폼 객체
+			var formData = new FormData();
+			// 폼 객체에 파일추가, append("변수명", 값)
+			formData.append("file", file);
+
+			$.ajax({
+				type : "post",
+				url : "fileUploadAjax.do",
+				data : formData,
+				// processData: true=> get방식, false => post방식
+				dataType : "text",
+				// contentType: true => application/x-www-form-urlencoded, 
+				//                false => multipart/form-data
+				processData : false,
+				contentType : false,
+				success : function(data) {
+					alert("성공");
+
+				}
+			});
+		});
+
+	});
+</script>
 </head>
 <body>
 	<!--[if lt IE 8]>
@@ -377,8 +422,11 @@
 										</ul>
 									</div> -->
 									<p class="pro__info">
-										상품설명 설명<br>상품설명 설명상품설명 설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명 설명<br>상품설명설명상품설명 설명설명상품설명 설명 설명<br>상품설명<br>상품설명 설명<br>상품설명<br>상품설명 설명<br>상품설명<br>상품설명 설명<br>상품설명
-										설명상품설명 설명<br>상품설설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명 설명명 설명<br>상품설명 설명
+										상품설명 설명<br>상품설명 설명상품설명 설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명
+										설명<br>상품설명설명상품설명 설명설명상품설명 설명 설명<br>상품설명<br>상품설명
+										설명<br>상품설명<br>상품설명 설명<br>상품설명<br>상품설명 설명<br>상품설명
+										설명상품설명 설명<br>상품설설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명
+										설명설명상품설명 설명설명상품설명 설명명 설명<br>상품설명 설명
 									</p>
 									<div class="row">
 										<div class="col-md-6">
@@ -404,13 +452,18 @@
 						<div class="col-md-4">
 							<div class="section__title--2 text-center">
 								<h2 class="title__line">가상 착용</h2>
-								<p>해당 상품을 가상으로 착용해보고<br> 나에게 어울리는지 확인해보세요!!</p>
+								<p>
+									해당 상품을 가상으로 착용해보고<br> 나에게 어울리는지 확인해보세요!!
+								</p>
 							</div>
 							<div class="thumbnail" style="margin-top: 20px">
-								<div class="centered">
-									<img alt=""
-										src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
+								<div class="fileDrop">
+									<div class="centered">
+										<img alt=""
+											src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
+									</div>
 								</div>
+
 							</div>
 							<input type="file">
 							<div class="dark-btn" style="margin-top: 20px">
