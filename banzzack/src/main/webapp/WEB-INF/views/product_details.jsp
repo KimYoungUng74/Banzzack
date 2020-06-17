@@ -87,6 +87,13 @@
 				}
 			});
 		});
+		
+		
+		$(".thumbnail").on("click", function(event) {
+			$(".virsualImg").css({left: event.offsetX, top: event.offsetY});
+			alert(event.currentTarget.className);
+			alert("현재 좌표는 : " + event.offsetX + "/" + event.offsetY);
+		});
 
 	});
 </script>
@@ -421,9 +428,7 @@
 													class="icon-social-pinterest icons"></i></a></li>
 										</ul>
 									</div> -->
-									<p class="pro__info">
-										 ${dto.PRODUCT_CONTENTS}
-									</p>
+									<p class="pro__info">${dto.PRODUCT_CONTENTS}</p>
 									<div class="row">
 										<div class="col-md-6">
 											<div class="dark-btn" style="margin-top: 20px">
@@ -454,10 +459,16 @@
 							</div>
 							<div class="thumbnail" style="margin-top: 20px">
 								<div class="fileDrop">
-									<div class="centered">
-										<img alt=""
-											src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
+									<div class="centered" >
+										<img class="myImg" alt="" 
+											src="<c:url value='http://localhost:8181/banzzackimg/iconfinder_Paper Mario_33755.ico'/>">
+
 									</div>
+									<div class="virsual">
+										<img class="virsualImg" alt="" style="width: 30px;"
+											src="<c:url value='http://localhost:8181/banzzackimg/navigation.png'/>">
+									</div>
+
 								</div>
 
 							</div>

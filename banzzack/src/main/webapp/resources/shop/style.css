@@ -3609,3 +3609,12 @@ ul.htc__instagram__posts.owl-carousel li img {
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
+
+
+.thumbnail .virsual img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width: 100%;
+	height: auto;
+}
