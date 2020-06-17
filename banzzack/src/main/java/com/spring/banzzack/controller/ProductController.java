@@ -21,6 +21,7 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -47,7 +48,7 @@ public class ProductController {
 
 	// 파일 업로드 Ajax
 	@RequestMapping(value = "/fileUploadAjax.do", method = RequestMethod.POST, produces = "application/text; charset=utf8")
-	public @ResponseBody String uplodaFormAjax(MultipartFile file, ModelAndView mav) {
+	public @ResponseBody String uplodaFormAjax(MultipartFile file, ModelAndView mav, HttpSession session) {
 		System.out.println(file);
 		System.out.println("fileUploadAjax에 접근함");
 		logger.info("파일이름 :" + file.getOriginalFilename());
@@ -74,9 +75,8 @@ public class ProductController {
 
 	// 상품등록 처리
 	@RequestMapping(value = "registOk.do", method = RequestMethod.POST)
-	public ModelAndView registOk(Locale locale, ProductDTO dto)  throws Exception {
+	public ModelAndView registOk(Locale locale, ProductDTO dto, HttpSession session) throws Exception {
 		ModelAndView mav = new ModelAndView();
-
 		if (1 == productSer.productReg(dto)) {
 			System.out.println("상품등록 되었음");
 			mav.setViewName("home");
@@ -84,6 +84,19 @@ public class ProductController {
 			System.out.println("상품등록 실패");
 			mav.setViewName("login.do");
 		}
+		
+		return mav;
+	}
+
+	// 상품등록 처리
+	@RequestMapping(value = "productDetail.do")
+	public ModelAndView productDetail(@RequestParam int PRODUCT_NUM, Locale locale, ProductDTO dto, HttpSession session) throws Exception {
+		ModelAndView mav = new ModelAndView();
+
+		dto = productSer.productSearch(PRODUCT_NUM);
+		System.out.println("정상적인 접근");
+		mav.addObject("dto", dto);
+		mav.setViewName("product_details");
 
 		return mav;
 	}

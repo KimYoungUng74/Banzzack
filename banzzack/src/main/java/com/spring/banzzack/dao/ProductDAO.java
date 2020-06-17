@@ -13,8 +13,16 @@ public class ProductDAO {
 	@Autowired
 	public SqlSessionTemplate mybatis;
 
+	// 상품 등록
 	public void productReg(ProductDTO dto) {
 		mybatis.insert("ProductMapper.Register", dto);
+	}
+
+	// 상품 상세 정보
+	public ProductDTO productSearch(int pRODUCT_NUM) {
+		ProductDTO dto = new ProductDTO();
+		dto.setPRODUCT_NUM(pRODUCT_NUM);
+		return mybatis.selectOne("ProductMapper.ProductSearch", pRODUCT_NUM);
 	}
 
 }

@@ -312,19 +312,19 @@
 											id="img-tab-1">
 											<p style="text-align: center;">
 												<img
-													src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
+													src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG1}'/>">
 											</p>
 										</div>
 										<div role="tabpanel" class="tab-pane fade" id="img-tab-2">
 											<p style="text-align: center;">
 												<img
-													src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>">
+													src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG2}'/>">
 											</p>
 										</div>
 										<div role="tabpanel" class="tab-pane fade" id="img-tab-3">
 											<p style="text-align: center;">
 												<img
-													src="<c:url value='resources/shop/images/earring/눈부신하루 귀걸이.gif'/>">
+													src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG3}'/>">
 											</p>
 										</div>
 
@@ -338,15 +338,15 @@
 								<ul class="product__small__images">
 									<li role="presentation" class="pot-small-img active"><a
 										href="#img-tab-1" role="tab" data-toggle="tab"> <img
-											src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
+											src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG1}'/>">
 									</a></li>
 									<li role="presentation" class="pot-small-img"><a
 										href="#img-tab-2" role="tab" data-toggle="tab"> <img
-											src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>">
+											src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG2}'/>">
 									</a></li>
 									<li role="presentation" class="pot-small-img"><a
 										href="#img-tab-3" role="tab" data-toggle="tab"> <img
-											src="<c:url value='resources/shop/images/earring/눈부신하루 귀걸이.gif'/>">
+											src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG3}'/>">
 									</a></li>
 								</ul>
 							</div>
@@ -354,9 +354,9 @@
 						</div>
 						<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
 							<div class="ht__product__dtl">
-								<h2>상품 명 출력란</h2>
+								<h2>${dto.PRODUCT_TITLE}</h2>
 								<h6>
-									상품번호: <span>0000000</span>
+									상품번호: <span>${dto.PRODUCT_NUM}</span>
 								</h6>
 								<ul class="rating">
 									<li><i class="icon-star icons"></i></li>
@@ -366,7 +366,7 @@
 									<li class="old"><i class="icon-star icons"></i></li>
 								</ul>
 								<ul class="pro__prize">
-									<li>10,000원</li>
+									<li>${dto.PRODUCT_RPICE}원</li>
 								</ul>
 								<div class="ht__pro__desc">
 									<div class="sin__desc align--left">
@@ -391,8 +391,8 @@
 											<span>Categories:</span>
 										</p>
 										<ul class="pro__cat__list">
-											<li><a href="#">귀걸이,</a></li>
-											<li><a href="#">패션귀걸이</a></li>
+											<li><a href="#">${dto.PRODUCT_CATEGORY1}</a></li>
+											<li><a href="#">${dto.PRODUCT_CATEGORY2}</a></li>
 										</ul>
 									</div>
 									<!-- 공유하기 기능  -->
@@ -422,11 +422,7 @@
 										</ul>
 									</div> -->
 									<p class="pro__info">
-										상품설명 설명<br>상품설명 설명상품설명 설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명
-										설명<br>상품설명설명상품설명 설명설명상품설명 설명 설명<br>상품설명<br>상품설명
-										설명<br>상품설명<br>상품설명 설명<br>상품설명<br>상품설명 설명<br>상품설명
-										설명상품설명 설명<br>상품설설명상품설명 설명설명상품설명 설명설명상품설명 설명설명상품설명
-										설명설명상품설명 설명설명상품설명 설명명 설명<br>상품설명 설명
+										 ${dto.PRODUCT_CONTENTS}
 									</p>
 									<div class="row">
 										<div class="col-md-6">
