@@ -89,10 +89,13 @@
 		});
 		
 		
-		$(".thumbnail").on("click", function(event) {
-			$(".virsualImg").css({left: event.offsetX, top: event.offsetY});
-			alert(event.currentTarget.className);
-			alert("현재 좌표는 : " + event.offsetX + "/" + event.offsetY);
+		$(".myImg").on("click", function(event) {
+			var width = $(".centered").width() / 2 - $(".myImg").width() / 2;
+			var height = $(".centered").height() / 2 - $(".myImg").height() / 2;
+			var virtualwidth = $(".virsualImg").width() / 2;
+			$(".virsualImg").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+			/* alert(event.currentTarget.className);
+			alert("현재 좌표는 : " + event.offsetX + "/" + event.offsetY); */
 		});
 
 	});
@@ -461,12 +464,12 @@
 								<div class="fileDrop">
 									<div class="centered" >
 										<img class="myImg" alt="" 
-											src="<c:url value='http://localhost:8181/banzzackimg/iconfinder_Paper Mario_33755.ico'/>">
+											src="<c:url value='http://localhost:8181/banzzackimg/profile2.jpg'/>">
 
 									</div>
 									<div class="virsual">
 										<img class="virsualImg" alt="" style="width: 30px;"
-											src="<c:url value='http://localhost:8181/banzzackimg/navigation.png'/>">
+											src="<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>">
 									</div>
 
 								</div>

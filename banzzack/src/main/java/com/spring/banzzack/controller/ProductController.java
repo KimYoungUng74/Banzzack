@@ -72,6 +72,23 @@ public class ProductController {
 		return savedName; // mypage.jsp(결과화면)로 포워딩
 
 	}
+	
+	@RequestMapping(value = "productReg.do", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		/*
+		 * UserDTO userDTO = userSer.Test(); System.out.println(": " +
+		 * userDTO.toString());
+		 */
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "productReg";
+	}
 
 	// 상품등록 처리
 	@RequestMapping(value = "registOk.do", method = RequestMethod.POST)
