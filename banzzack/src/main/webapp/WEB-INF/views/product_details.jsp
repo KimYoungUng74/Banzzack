@@ -51,6 +51,14 @@
 	var PRODUCT_IMG1 = false;
 	var PRODUCT_IMG2 = false;
 	var PRODUCT_IMG3 = false;
+	
+	var Move_Type = 0;	// 1,2 귀걸이 3 목걸이 4 반지
+	
+	var Earring1 = false;	// 귀걸이 1
+	var Earring2 = false;	// 귀걸이 2
+	var Necklace = false;	// 목걸이
+	var Ring = false;	// 반지
+	
 	$(document).ready(function() {
 		$(".fileDrop").on("dragenter dragover", function(event) {
 			event.preventDefault(); // 기본효과를 막음
@@ -88,14 +96,90 @@
 			});
 		});
 		
+		// 가상아이템 불러오기
+		$(".earring1").on("click", function(event) {
+			if(Earring1 == false) {
+				var str = "<img class=\"virsualEarring1\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>\">";
+				$(".Virtual").append(str);
+				alert("귀걸이가 추가되었습니다 원하는 위치를 클릭해주세요!"); 
+				Earring1 = true;
+				Move_Type = 1;
+			}else {
+				alert("이미 귀걸이를 불러왔습니다 화면을 클릭해보세요!"); 
+			}
+		});
+		$(".earring2").on("click", function(event) {
+			if(Earring2 == false) {
+				var str = "<img class=\"virsualEarring2\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>\">";
+				$(".Virtual").append(str);
+				alert("귀걸이가 추가되었습니다 원하는 위치를 클릭해주세요!"); 
+				Earring2 = true;
+				Move_Type = 2;
+			}else {
+				alert("이미 귀걸이를 불러왔습니다 화면을 클릭해보세요!"); 
+			}
+		});
+		$(".necklace").on("click", function(event) {
+			if(Necklace == false) {
+				var str = "<img class=\"virsualNecklace\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>\">";
+				$(".Virtual").append(str);
+				alert("목걸이가 추가되었습니다 원하는 위치를 클릭해주세요!"); 
+				Necklace = true;
+				Move_Type = 3;
+			}else {
+				alert("이미 목걸이를 불러왔습니다 화면을 클릭해보세요!"); 
+			}
+		});
+		$(".ring").on("click", function(event) {
+			if(Ring == false) {
+				var str = "<img class=\"virsualRing\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>\">";
+				$(".Virtual").append(str);
+				alert("반지가 추가되었습니다 원하는 위치를 클릭해주세요!"); 
+				Ring = true;
+				Move_Type = 4;
+			}else {
+				alert("이미 반지를 불러왔습니다 화면을 클릭해보세요!"); 
+			}
+		});
+		
 		
 		$(".myImg").on("click", function(event) {
 			var width = $(".centered").width() / 2 - $(".myImg").width() / 2;
 			var height = $(".centered").height() / 2 - $(".myImg").height() / 2;
-			var virtualwidth = $(".virsualImg").width() / 2;
-			$(".virsualImg").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+			
+			switch(Move_Type) {
+			case 1: // 귀걸이1
+				var virtualwidth = $(".virsualEarring1").width() / 2;
+				$(".virsualEarring1").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+				break;
+			case 2:	// 귀걸이2
+				var virtualwidth = $(".virsualEarring2").width() / 2;
+				$(".virsualEarring2").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+				break;
+			case 3: // 목걸이
+				var virtualwidth = $(".virsualNecklace").width() / 2;
+				$(".virsualNecklace").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+				break;
+			case 4: // 반지
+				var virtualwidth = $(".virsualRing").width() / 2;
+				$(".virsualRing").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+				break;
+			}
 			/* alert(event.currentTarget.className);
 			alert("현재 좌표는 : " + event.offsetX + "/" + event.offsetY); */
+		});
+		
+		$(".range1").on("change", function(event) {
+			$(".virsualEarring1").css({width: $(".range1").val(),});
+		});
+		$(".range2").on("change", function(event) {
+			$(".virsualEarring2").css({width: $(".range2").val(),});
+		});
+		$(".range3").on("change", function(event) {
+			$(".virsualNecklace").css({width: $(".range3").val(),});
+		});
+		$(".range4").on("change", function(event) {
+			$(".virsualRing").css({width: $(".range4").val(),});
 		});
 
 	});
@@ -454,30 +538,39 @@
 					<div class="row" style="margin-top: 20px">
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
-							<div class="section__title--2 text-center">
-								<h2 class="title__line">가상 착용</h2>
-								<p>
-									해당 상품을 가상으로 착용해보고<br> 나에게 어울리는지 확인해보세요!!
-								</p>
-							</div>
-							<div class="thumbnail" style="margin-top: 20px">
-								<div class="fileDrop">
-									<div class="centered" >
-										<img class="myImg" alt="" 
-											src="<c:url value='http://localhost:8181/banzzackimg/profile2.jpg'/>">
-
+							<div class="row">
+								<div class="col-md-12">
+									<div class="section__title--2 text-center">
+										<h2 class="title__line">가상 착용</h2>
+										<p>
+											해당 상품을 가상으로 착용해보고<br> 나에게 어울리는지 확인해보세요!!
+										</p>
 									</div>
-									<div class="virsual">
-										<img class="virsualImg" alt="" style="width: 30px;"
-											src="<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>">
-									</div>
+									<div class="thumbnail" style="margin-top: 20px">
+										<div class="fileDrop">
+											<div class="centered">
+												<img class="myImg" alt=""
+													src="<c:url value='http://localhost:8181/banzzackimg/profile2.jpg'/>">
 
+											</div>
+											<div class="Virtual">
+												
+											</div>
+
+										</div>
+									</div>
 								</div>
 
-							</div>
-							<input type="file">
-							<div class="dark-btn" style="margin-top: 20px">
-								<button>가상착용 시작</button>
+								<div class="col-md-6 dark-btn" style="margin-top: 20px;">
+									<button class="earring1" style="margin-bottom: 20px;">귀걸이1 착용</button>
+									<h4>크기 조절</h4>
+									<input class="range1" type="range" value="30" min="5" max="100" style="margin-top: 5px;">
+								</div>
+								<div class="col-md-6 dark-btn" style="margin-top: 20px; margin-bottom: 20px;">
+									<button  class="earring2" style="margin-bottom: 20px;">귀걸이2 착용</button>
+									<h4>크기 조절</h4>
+									<input class="range2" type="range" value="30" min="5" max="100" style="margin-top: 5px;">
+								</div>
 							</div>
 						</div>
 						<div class="col-md-4"></div>

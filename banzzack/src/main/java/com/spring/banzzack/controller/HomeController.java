@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.spring.banzzack.dto.UserDTO;
 import com.spring.banzzack.service.UserService;
 
 
@@ -44,7 +43,7 @@ public class HomeController {
 		 */
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "product_details";
+		return "productList";
 	}
 	
 	@RequestMapping(value = "home.do", method = RequestMethod.GET)
