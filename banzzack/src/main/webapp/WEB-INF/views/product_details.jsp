@@ -91,7 +91,34 @@
 				contentType : false,
 				success : function(data) {
 					alert("성공");
-
+					var text = "<img class=\"myImg\" alt=\"\"src=\"<c:url value='http://localhost:8181/banzzackimg/"+$.trim(data)+"'/>\">";
+					$(".centered").html(text); 
+					
+					$(".myImg").on("click", function(event) {
+						var width = $(".centered").width() / 2 - $(".myImg").width() / 2;
+						var height = $(".centered").height() / 2 - $(".myImg").height() / 2;
+						
+						switch(Move_Type) {
+						case 1: // 귀걸이1
+							var virtualwidth = $(".virsualEarring1").width() / 2;
+							$(".virsualEarring1").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+							break;
+						case 2:	// 귀걸이2
+							var virtualwidth = $(".virsualEarring2").width() / 2;
+							$(".virsualEarring2").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+							break;
+						case 3: // 목걸이
+							var virtualwidth = $(".virsualNecklace").width() / 2;
+							$(".virsualNecklace").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+							break;
+						case 4: // 반지
+							var virtualwidth = $(".virsualRing").width() / 2;
+							$(".virsualRing").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
+							break;
+						}
+						/* alert(event.currentTarget.className);
+						alert("현재 좌표는 : " + event.offsetX + "/" + event.offsetY); */
+					});
 				}
 			});
 		});
@@ -105,7 +132,7 @@
 				Earring1 = true;
 				Move_Type = 1;
 			}else {
-				alert("이미 귀걸이를 불러왔습니다 화면을 클릭해보세요!"); 
+				Move_Type = 1;
 			}
 		});
 		$(".earring2").on("click", function(event) {
@@ -116,7 +143,7 @@
 				Earring2 = true;
 				Move_Type = 2;
 			}else {
-				alert("이미 귀걸이를 불러왔습니다 화면을 클릭해보세요!"); 
+				Move_Type = 2;
 			}
 		});
 		$(".necklace").on("click", function(event) {
@@ -143,37 +170,15 @@
 		});
 		
 		
-		$(".myImg").on("click", function(event) {
-			var width = $(".centered").width() / 2 - $(".myImg").width() / 2;
-			var height = $(".centered").height() / 2 - $(".myImg").height() / 2;
-			
-			switch(Move_Type) {
-			case 1: // 귀걸이1
-				var virtualwidth = $(".virsualEarring1").width() / 2;
-				$(".virsualEarring1").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
-				break;
-			case 2:	// 귀걸이2
-				var virtualwidth = $(".virsualEarring2").width() / 2;
-				$(".virsualEarring2").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
-				break;
-			case 3: // 목걸이
-				var virtualwidth = $(".virsualNecklace").width() / 2;
-				$(".virsualNecklace").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
-				break;
-			case 4: // 반지
-				var virtualwidth = $(".virsualRing").width() / 2;
-				$(".virsualRing").css({left: width+event.offsetX-virtualwidth, top: height+event.offsetY});
-				break;
-			}
-			/* alert(event.currentTarget.className);
-			alert("현재 좌표는 : " + event.offsetX + "/" + event.offsetY); */
-		});
+		
 		
 		$(".range1").on("change", function(event) {
 			$(".virsualEarring1").css({width: $(".range1").val(),});
+			Move_Type = 1;
 		});
 		$(".range2").on("change", function(event) {
 			$(".virsualEarring2").css({width: $(".range2").val(),});
+			Move_Type = 2;
 		});
 		$(".range3").on("change", function(event) {
 			$(".virsualNecklace").css({width: $(".range3").val(),});
@@ -550,8 +555,7 @@
 										<div class="fileDrop">
 											<div class="centered">
 												<img class="myImg" alt=""
-													src="<c:url value='http://localhost:8181/banzzackimg/profile2.jpg'/>">
-
+													src="<c:url value='resources/shop/images/logo/가상착용이미지.png'/>">
 											</div>
 											<div class="Virtual">
 												
@@ -562,12 +566,12 @@
 								</div>
 
 								<div class="col-md-6 dark-btn" style="margin-top: 20px;">
-									<button class="earring1" style="margin-bottom: 20px;">귀걸이1 착용</button>
+									<button class="earring1" style="margin-bottom: 20px;">귀걸이1</button>
 									<h4>크기 조절</h4>
 									<input class="range1" type="range" value="30" min="5" max="100" style="margin-top: 5px;">
 								</div>
 								<div class="col-md-6 dark-btn" style="margin-top: 20px; margin-bottom: 20px;">
-									<button  class="earring2" style="margin-bottom: 20px;">귀걸이2 착용</button>
+									<button  class="earring2" style="margin-bottom: 20px;">귀걸이2</button>
 									<h4>크기 조절</h4>
 									<input class="range2" type="range" value="30" min="5" max="100" style="margin-top: 5px;">
 								</div>
