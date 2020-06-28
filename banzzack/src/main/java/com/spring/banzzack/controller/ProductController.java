@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
@@ -92,25 +93,34 @@ public class ProductController {
 
 	// 상품등록 페이지
 	@RequestMapping(value = "productReg.do", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-		/*
-		 * UserDTO userDTO = userSer.Test(); System.out.println(": " +
-		 * userDTO.toString());
-		 */
-		model.addAttribute("serverTime", formattedDate);
-
+	public String productReg(Locale locale, Model model) {
 		return "productReg";
 	}
+	
+	// 상품 리스트
+		@RequestMapping(value = "productList.do")
+		public ModelAndView productList(Locale locale,  @RequestParam String PRODUCT_CATEGORY1,  @RequestParam String PRODUCT_CATEGORY2, HttpSession session)
+				throws Exception {
+			ModelAndView mav = new ModelAndView();
+			List<ProductDTO> list = null;
+			List<ProductDTO> list2 = null;
+			System.out.println("productList 정상적인 접근");
+			if(PRODUCT_CATEGORY2.equals("all")) {list = productSer.productListAll(PRODUCT_CATEGORY1);
+			}
+			else {list = productSer.productListSelect(PRODUCT_CATEGORY1, PRODUCT_CATEGORY2);}
+			list2 = productSer.bestSellerproduct(PRODUCT_CATEGORY1);
+			mav.addObject("list", list);
+			mav.addObject("list2", list2);
+			mav.addObject("PRODUCT_CATEGORY1", "귀걸이");
+			mav.setViewName("productList");
+
+			return mav;
+		}
+
 
 	// 상품등록 처리
 	@RequestMapping(value = "registOk.do", method = RequestMethod.POST)
-	public ModelAndView registOk(Locale locale, ProductDTO dto, @RequestParam String VIRTUAL_IMG,HttpSession session) throws Exception {
+	public ModelAndView registOk(Locale locale, ProductDTO dto, @RequestParam String VIRTUAL_IMG, @RequestParam String VIRTUAL_IMG2,HttpSession session) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
 		if (1 == productSer.productReg(dto)) {
@@ -119,6 +129,7 @@ public class ProductController {
 			VirtualDTO virDto = new VirtualDTO();
 			virDto.setPRODUCT_NUM(dto.getPRODUCT_NUM());
 			virDto.setVIRTUAL_IMG(VIRTUAL_IMG);
+			virDto.setVIRTUAL_IMG2(VIRTUAL_IMG2);
 			productSer.virtualReg(virDto);
 			mav.setViewName("home");
 		} else {
@@ -131,8 +142,9 @@ public class ProductController {
 
 	// 상품 상세 페이지
 	@RequestMapping(value = "productDetail.do")
-	public ModelAndView productDetail(@RequestParam int PRODUCT_NUM, Locale locale, ProductDTO dto, HttpSession session)
+	public ModelAndView productDetail(@RequestParam int PRODUCT_NUM, Locale locale,  HttpSession session)
 			throws Exception {
+		ProductDTO dto = new ProductDTO();
 		ModelAndView mav = new ModelAndView();
 		VirtualDTO dto2 = new VirtualDTO();
 		System.out.println(PRODUCT_NUM);

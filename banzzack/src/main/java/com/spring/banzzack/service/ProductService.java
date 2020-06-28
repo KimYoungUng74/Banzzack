@@ -1,6 +1,8 @@
 package com.spring.banzzack.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -49,6 +51,21 @@ public class ProductService{
 		}
 		
 		return dto;
+	}
+
+	public List<ProductDTO> productListAll(String PRODUCT_CATEGORY) {
+		// TODO Auto-generated method stub
+		return dao.productListAll(PRODUCT_CATEGORY); // 상품 등록
+	}
+
+	public List<ProductDTO> productListSelect(String RODUCT_CATEGORY1, String RODUCT_CATEGORY2) {
+		// TODO Auto-generated method stub
+		return dao.productListSelect(RODUCT_CATEGORY1, RODUCT_CATEGORY2); // 상품 등록
+	}
+
+	public List<ProductDTO> bestSellerproduct(String pRODUCT_CATEGORY1) {
+		// TODO Auto-generated method stub
+		return dao.bestSellerproduct(pRODUCT_CATEGORY1); // 상품 등록
 	}
 
 	

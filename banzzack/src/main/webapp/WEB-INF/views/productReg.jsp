@@ -67,6 +67,7 @@ small {
 	var PRODUCT_IMG3 = false;
 	
 	var VIRTUAL_IMG = false;
+	var VIRTUAL_IMG2 = false;
 	$(document)
 			.ready(
 					function() {
@@ -183,11 +184,20 @@ small {
 												success : function(data) {
 													if(VIRTUAL_IMG == false) {
 														var str = "";
-														str = "<div class=\"col-md-12 imglist\"><img src='http://localhost:8181/banzzackimg/virtual/"+data+"'><input type=\"hidden\" name=\"VIRTUAL_IMG\" value=\""+data+"\">";
+														str = "<div class=\"col-md-6 imglist\"><img src='http://localhost:8181/banzzackimg/virtual/"+data+"'><input type=\"hidden\" name=\"VIRTUAL_IMG\" value=\""+data+"\">";
 														// 삭제 버튼
 														VIRTUAL_IMG = true;
 														str += "<span name=\"virtualListImg\">[삭제]</span></div>";
 														$(".virtualList").append(str);
+													}  else if (VIRTUAL_IMG2 == false) {
+														str = "<div class=\"col-md-6 imglist\"><img src='http://localhost:8181/banzzackimg/virtual/"+data+"'><input type=\"hidden\" name=\"VIRTUAL_IMG2\" value=\""+data+"\">";
+														VIRTUAL_IMG2 = true;
+														// 삭제 버튼
+														str += "<span name=\"virtualListImg2\">[삭제]</span></div>";
+														$(
+																".virtualList")
+																.append(
+																		str);
 													}
 
 													}
@@ -197,9 +207,12 @@ small {
 				$(".virtualList").on("click", "span", function(event) {
 					alert("이미지 삭제")
 					var that = $(this); // 여기서 this는 클릭한 span태그
-
+					if ('virtualListImg' == that.attr('name')) {
+						VIRTUAL_IMG = false;
+					} else if ('virtualListImg2' == that.attr('name')) {
+						VIRTUAL_IMG2 = false;
+					} 
 					that.parent("div").remove();
-					VIRTUAL_IMG = false;
 				});
 				
 				// 카테고리 선택
@@ -216,9 +229,9 @@ small {
 								vnum = new Array("패션 귀걸이", "실버침", "투웨이귀걸이", "핸드메이드 귀걸이",
 										"롱귀걸이", "러블리");
 							} else if ($("#PRODUCT_CATEGORY1 option:selected").val() == "반지") {
-								num = new Array("14/18k 링", "실버링", "커플링",
+								num = new Array("14/18k", "실버링", "커플링",
 										"심플링", "다이아몬드 링");
-								vnum = new Array("14/18k 링", "실버링", "커플링",
+								vnum = new Array("14/18k", "실버링", "커플링",
 										"심플링", "다이아몬드 링");
 							} else if ($("#PRODUCT_CATEGORY1 option:selected").val() == "목걸이") {
 								num = new Array("패션 목걸이", "탄생석 목걸이", "진주 목걸이",

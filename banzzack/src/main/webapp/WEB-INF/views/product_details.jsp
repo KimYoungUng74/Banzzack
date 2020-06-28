@@ -364,8 +364,7 @@
 								<span class="quantity">QTY: 1</span> <span class="shp__price">$25.00</span>
 							</div>
 							<div class="remove__btn">
-								<a href="#" title="Remove this item"><i
-									class="zmdi zmdi-close"></i></a>
+								<a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
 							</div>
 						</div>
 					</div>

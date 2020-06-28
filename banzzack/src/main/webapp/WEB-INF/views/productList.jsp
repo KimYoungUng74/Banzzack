@@ -269,7 +269,7 @@
 									</select>
 								</div>
 								<div class="ht__pro__qun">
-									<span>Showing 1-12 of 1033 products</span>
+									<!-- <span>Showing 1-12 of 1033 products</span> -->
 								</div>
 							</div>
 							<!-- Start Product View -->
@@ -277,167 +277,43 @@
 								<div class="shop__grid__view__wrap">
 									<div role="tabpanel" id="grid-view"
 										class="single-grid-view tab-pane fade in active clearfix">
+										<c:forEach var="row" items="${list}">
+											<!-- Start Single Product -->
+											<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
 
-										<!-- Start Single Product -->
-										<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-											<div class="category">
-												<div class="ht__cat__thumb">
-													<a href="product-details.html"> <img
-														src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
-													</a>
-												</div>
-												<div class="fr__hover__info">
-													<ul class="product__action">
-														<li><a href="cart.html"><i
-																class="icon-handbag icons"></i></a></li>
-													</ul>
-												</div>
-												<div class="fr__product__inner">
-													<h4>
-														<a href="product-details.html">Largest Water Pot</a>
-													</h4>
-													<ul class="fr__pro__prize">
-														<li class="old__prize">$3.3</li>
-														<li>$25.9</li>
-													</ul>
+												<div class="category">
+													<div class="ht__cat__thumb">
+														<a href="productDetail.do?PRODUCT_NUM=${row.PRODUCT_NUM}">
+															<img
+															src="<c:url value='http://localhost:8181/banzzackimg/product/${row.PRODUCT_IMG1}'/>">
+														</a>
+													</div>
+													<div class="fr__hover__info">
+														<ul class="product__action">
+															<li><a href="cart.html"><i
+																	class="icon-handbag icons"></i></a></li>
+														</ul>
+													</div>
+
+													<div class="fr__product__inner">
+														<h4>
+															<a href="productDetail.do?PRODUCT_NUM=${row.PRODUCT_NUM}">${row.PRODUCT_TITLE}</a>
+														</h4>
+														<ul class="fr__pro__prize">
+															<li>${row.PRODUCT_RPICE}원</li>
+														</ul>
+													</div>
 												</div>
 											</div>
-										</div>
-										<!-- End Single Product -->
-
+											<!-- End Single Product -->
+										</c:forEach>
 									</div>
 									<div role="tabpanel" id="list-view"
 										class="single-grid-view tab-pane fade clearfix">
 										<div class="col-xs-12">
 											<div class="ht__list__wrap">
-												<!-- Start List Product -->
-												<div class="ht__list__product">
-													<div class="ht__list__thumb">
-														<a href="product-details.html"><img
-															src="images/product-2/pro-1/1.jpg" alt="product images"></a>
-													</div>
-													<div class="htc__list__details">
-														<h2>
-															<a href="product-details.html">Product Title Here </a>
-														</h2>
-														<ul class="pro__prize">
-															<li class="old__prize">$82.5</li>
-															<li>$75.2</li>
-														</ul>
-														<ul class="rating">
-															<li><i class="icon-star icons"></i></li>
-															<li><i class="icon-star icons"></i></li>
-															<li><i class="icon-star icons"></i></li>
-															<li class="old"><i class="icon-star icons"></i></li>
-															<li class="old"><i class="icon-star icons"></i></li>
-														</ul>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisLorem
-															ipsum dolor sit amet, consec adipisicing elit, sed do
-															eiusmod tempor incididunt ut labore et dolore magna
-															aliqul Ut enim ad minim veniam, quis nostrud exercitation
-															ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-														<div class="fr__list__btn">
-															<a class="fr__btn" href="cart.html">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<!-- End List Product -->
-												<!-- Start List Product -->
-												<div class="ht__list__product">
-													<div class="ht__list__thumb">
-														<a href="product-details.html"><img
-															src="images/product-2/pro-1/2.jpg" alt="product images"></a>
-													</div>
-													<div class="htc__list__details">
-														<h2>
-															<a href="product-details.html">Product Title Here </a>
-														</h2>
-														<ul class="pro__prize">
-															<li class="old__prize">$82.5</li>
-															<li>$75.2</li>
-														</ul>
-														<ul class="rating">
-															<li><i class="icon-star icons"></i></li>
-															<li><i class="icon-star icons"></i></li>
-															<li><i class="icon-star icons"></i></li>
-															<li class="old"><i class="icon-star icons"></i></li>
-															<li class="old"><i class="icon-star icons"></i></li>
-														</ul>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisLorem
-															ipsum dolor sit amet, consec adipisicing elit, sed do
-															eiusmod tempor incididunt ut labore et dolore magna
-															aliqul Ut enim ad minim veniam, quis nostrud exercitation
-															ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-														<div class="fr__list__btn">
-															<a class="fr__btn" href="cart.html">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<!-- End List Product -->
-												<!-- Start List Product -->
-												<div class="ht__list__product">
-													<div class="ht__list__thumb">
-														<a href="product-details.html"><img
-															src="images/product-2/pro-1/3.jpg" alt="product images"></a>
-													</div>
-													<div class="htc__list__details">
-														<h2>
-															<a href="product-details.html">Product Title Here </a>
-														</h2>
-														<ul class="pro__prize">
-															<li class="old__prize">$82.5</li>
-															<li>$75.2</li>
-														</ul>
-														<ul class="rating">
-															<li><i class="icon-star icons"></i></li>
-															<li><i class="icon-star icons"></i></li>
-															<li><i class="icon-star icons"></i></li>
-															<li class="old"><i class="icon-star icons"></i></li>
-															<li class="old"><i class="icon-star icons"></i></li>
-														</ul>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisLorem
-															ipsum dolor sit amet, consec adipisicing elit, sed do
-															eiusmod tempor incididunt ut labore et dolore magna
-															aliqul Ut enim ad minim veniam, quis nostrud exercitation
-															ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-														<div class="fr__list__btn">
-															<a class="fr__btn" href="cart.html">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<!-- End List Product -->
-												<!-- Start List Product -->
-												<div class="ht__list__product">
-													<div class="ht__list__thumb">
-														<a href="product-details.html"><img
-															src="images/product-2/pro-1/4.jpg" alt="product images"></a>
-													</div>
-													<div class="htc__list__details">
-														<h2>
-															<a href="product-details.html">Product Title Here </a>
-														</h2>
-														<ul class="pro__prize">
-															<li class="old__prize">$82.5</li>
-															<li>$75.2</li>
-														</ul>
-														<ul class="rating">
-															<li><i class="icon-star icons"></i></li>
-															<li><i class="icon-star icons"></i></li>
-															<li><i class="icon-star icons"></i></li>
-															<li class="old"><i class="icon-star icons"></i></li>
-															<li class="old"><i class="icon-star icons"></i></li>
-														</ul>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisLorem
-															ipsum dolor sit amet, consec adipisicing elit, sed do
-															eiusmod tempor incididunt ut labore et dolore magna
-															aliqul Ut enim ad minim veniam, quis nostrud exercitation
-															ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-														<div class="fr__list__btn">
-															<a class="fr__btn" href="cart.html">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<!-- End List Product -->
+
+												
 											</div>
 										</div>
 									</div>
@@ -446,7 +322,8 @@
 							<!-- End Product View -->
 						</div>
 						<!-- Start Pagenation -->
-						<div class="row">
+						<!-- 페이징 -->
+						<!-- <div class="row">
 							<div class="col-xs-12">
 								<ul class="htc__pagenation">
 									<li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
@@ -456,7 +333,7 @@
 									<li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 						<!-- End Pagenation -->
 					</div>
 					<div
@@ -487,15 +364,76 @@
 							<!-- End Prize Range -->
 							<!-- Start Category Area -->
 							<div class="htc__category">
-								<h4 class="title__line--4">귀걸이</h4>
-								<ul class="ht__cat__list">
-									<li><a href="product-grid.html">패션 귀걸이</a></li>
-									<li><a href="cart.html">실버침</a></li>
-									<li><a href="checkout.html">투웨이귀걸이</a></li>
-									<li><a href="wishlist.html">핸드메이드 귀걸이</a></li>
-									<li><a href="wishlist.html">롱귀걸이</a></li>
-									<li><a href="wishlist.html">러블리</a></li>
-								</ul>
+								<c:choose>
+									<c:when test="${PRODUCT_CATEGORY1 == '귀걸이'}">
+										<h3 class="title__line--4">
+											<a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=all">귀걸이</a>
+										</h3>
+										<ul class="ht__cat__list">
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=패션 귀걸이">패션
+													귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=실버침">실버침</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=투웨이귀걸이">투웨이귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=핸드메이드 귀걸이">핸드메이드
+													귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=롱귀걸이">롱귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=러블리">러블리</a></li>
+										</ul>
+									</c:when>
+									<c:when test="${PRODUCT_CATEGORY1 == '반지'}">
+										<h3 class="title__line--4">
+											<a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=all">반지</a>
+										</h3>
+										<ul class="ht__cat__list">
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=14/18k">14/18k</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=실버링">실버링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=커플링">커플링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=시플링">시플링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=다이아몬드 링">다이아몬드
+													링</a></li>
+										</ul>
+									</c:when>
+									<c:when test="${PRODUCT_CATEGORY1 == '목걸이'}">
+										<h3 class="title__line--4">
+											<a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=all">목걸이</a>
+										</h3>
+										<ul class="ht__cat__list">
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 목걸">14/18k
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 펜던트">14/18k
+													펜던트</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=24k 순금목걸이">24k
+													순금목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=탄생석 목걸이">탄생석
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=진주 목걸이">진주
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=체인 목걸이">체인
+													목걸이</a></li>
+										</ul>
+									</c:when>
+								</c:choose>
+
 							</div>
 							<!-- End Category Area -->
 
@@ -519,81 +457,39 @@
 							<div class="htc__recent__product">
 								<h2 class="title__line--4">best seller</h2>
 								<div class="htc__recent__product__inner">
-									<!-- Start Single Product -->
-									<div class="htc__best__product">
-										<div class="htc__best__pro__thumb">
-											<a href="product-details.html"> <img
-												src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
-											</a>
+
+
+
+									<c:forEach var="i" begin="0" end="2">
+										<!-- Start Single Product -->
+										<div class="htc__best__product">
+											<div class="htc__best__pro__thumb">
+												<a
+													href="productDetail.do?PRODUCT_NUM=${list2[i].PRODUCT_NUM}">
+													<img
+													src="<c:url value='http://localhost:8181/banzzackimg/product/${list2[i].PRODUCT_IMG1}'/>">
+												</a>
+											</div>
+											<div class="htc__best__product__details">
+												<h2>
+													<a
+														href="productDetail.do?PRODUCT_NUM=${list2[i].PRODUCT_NUM}">${list2[i].PRODUCT_TITLE}</a>
+												</h2>
+												<ul class="rating">
+													<li><i class="icon-star icons"></i></li>
+													<li><i class="icon-star icons"></i></li>
+													<li><i class="icon-star icons"></i></li>
+													<li class="old"><i class="icon-star icons"></i></li>
+													<li class="old"><i class="icon-star icons"></i></li>
+												</ul>
+												<ul class="pro__prize">
+													<li>${list2[i].PRODUCT_RPICE}원</li>
+												</ul>
+											</div>
 										</div>
-										<div class="htc__best__product__details">
-											<h2>
-												<a href="product-details.html">Product Title Here</a>
-											</h2>
-											<ul class="rating">
-												<li><i class="icon-star icons"></i></li>
-												<li><i class="icon-star icons"></i></li>
-												<li><i class="icon-star icons"></i></li>
-												<li class="old"><i class="icon-star icons"></i></li>
-												<li class="old"><i class="icon-star icons"></i></li>
-											</ul>
-											<ul class="pro__prize">
-												<li class="old__prize">$82.5</li>
-												<li>$75.2</li>
-											</ul>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="htc__best__product">
-										<div class="htc__best__pro__thumb">
-											<a href="product-details.html"> <img
-												src="images/product-2/sm-smg/2.jpg" alt="small product">
-											</a>
-										</div>
-										<div class="htc__best__product__details">
-											<h2>
-												<a href="product-details.html">Product Title Here</a>
-											</h2>
-											<ul class="rating">
-												<li><i class="icon-star icons"></i></li>
-												<li><i class="icon-star icons"></i></li>
-												<li><i class="icon-star icons"></i></li>
-												<li class="old"><i class="icon-star icons"></i></li>
-												<li class="old"><i class="icon-star icons"></i></li>
-											</ul>
-											<ul class="pro__prize">
-												<li class="old__prize">$82.5</li>
-												<li>$75.2</li>
-											</ul>
-										</div>
-									</div>
-									<!-- End Single Product -->
-									<!-- Start Single Product -->
-									<div class="htc__best__product">
-										<div class="htc__best__pro__thumb">
-											<a href="product-details.html"> <img
-												src="images/product-2/sm-smg/1.jpg" alt="small product">
-											</a>
-										</div>
-										<div class="htc__best__product__details">
-											<h2>
-												<a href="product-details.html">Product Title Here</a>
-											</h2>
-											<ul class="rating">
-												<li><i class="icon-star icons"></i></li>
-												<li><i class="icon-star icons"></i></li>
-												<li><i class="icon-star icons"></i></li>
-												<li class="old"><i class="icon-star icons"></i></li>
-												<li class="old"><i class="icon-star icons"></i></li>
-											</ul>
-											<ul class="pro__prize">
-												<li class="old__prize">$82.5</li>
-												<li>$75.2</li>
-											</ul>
-										</div>
-									</div>
-									<!-- End Single Product -->
+										<!-- End Single Product -->
+									</c:forEach>
+									
 								</div>
 							</div>
 							<!-- End Best Sell Area -->
