@@ -400,7 +400,7 @@
 											<li><a
 												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=커플링">커플링</a></li>
 											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=시플링">시플링</a></li>
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=심플링">심플링</a></li>
 											<li><a
 												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=다이아몬드 링">다이아몬드
 													링</a></li>
@@ -457,6 +457,7 @@
 							<div class="htc__recent__product">
 								<h2 class="title__line--4">best seller</h2>
 								<div class="htc__recent__product__inner">
+
 
 
 

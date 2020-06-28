@@ -173,18 +173,18 @@
 		
 		
 		$(".range1").on("change", function(event) {
-			$(".virsualEarring1").css({width: $(".range1").val(),});
+			$(".virsualEarring1").css({width: $(".range1").val()});
 			Move_Type = 1;
 		});
 		$(".range2").on("change", function(event) {
-			$(".virsualEarring2").css({width: $(".range2").val(),});
+			$(".virsualEarring2").css({width: $(".range2").val()});
 			Move_Type = 2;
 		});
 		$(".range3").on("change", function(event) {
-			$(".virsualNecklace").css({width: $(".range3").val(),});
+			$(".virsualNecklace").css({width: $(".range3").val()});
 		});
 		$(".range4").on("change", function(event) {
-			$(".virsualRing").css({width: $(".range4").val(),});
+			$(".virsualRing").css({width: $(".range4").val()});
 		});
 
 	});

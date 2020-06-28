@@ -233,11 +233,15 @@ small {
 										"심플링", "다이아몬드 링");
 								vnum = new Array("14/18k", "실버링", "커플링",
 										"심플링", "다이아몬드 링");
+								var str= "<input type=\"hidden\" name=\"VIRTUAL_IMG2\" value=null>";
+								$(".virtualList").append(str);
 							} else if ($("#PRODUCT_CATEGORY1 option:selected").val() == "목걸이") {
 								num = new Array("패션 목걸이", "탄생석 목걸이", "진주 목걸이",
 										"체인 목걸이");
 								vnum = new Array("패션 목걸이", "탄생석 목걸이", "진주 목걸이",
 										"체인 목걸이");
+								var str= "<input type=\"hidden\" name=\"VIRTUAL_IMG2\" value=null>";
+								$(".virtualList").append(str);
 							}
 
 

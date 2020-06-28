@@ -109,9 +109,10 @@ public class ProductController {
 			}
 			else {list = productSer.productListSelect(PRODUCT_CATEGORY1, PRODUCT_CATEGORY2);}
 			list2 = productSer.bestSellerproduct(PRODUCT_CATEGORY1);
+			System.out.println(list2);
 			mav.addObject("list", list);
 			mav.addObject("list2", list2);
-			mav.addObject("PRODUCT_CATEGORY1", "귀걸이");
+			mav.addObject("PRODUCT_CATEGORY1", PRODUCT_CATEGORY1);
 			mav.setViewName("productList");
 
 			return mav;
@@ -148,13 +149,14 @@ public class ProductController {
 		ModelAndView mav = new ModelAndView();
 		VirtualDTO dto2 = new VirtualDTO();
 		System.out.println(PRODUCT_NUM);
-		dto2 = productSer.virtualImg(PRODUCT_NUM);
+		
 		dto = productSer.productSearch(PRODUCT_NUM);
 		
-		
+		dto2 = productSer.virtualImg(PRODUCT_NUM);
 		System.out.println("정상적인 접근");
 		mav.addObject("dto", dto);
 		mav.addObject("dto2", dto2);
+		
 		mav.setViewName("product_details");
 
 		return mav;
