@@ -81,7 +81,7 @@
 
 			$.ajax({
 				type : "post",
-				url : "fileUploadAjax.do",
+				url : "virtualUploadAjax.do",
 				data : formData,
 				// processData: true=> get방식, false => post방식
 				dataType : "text",
@@ -91,7 +91,7 @@
 				contentType : false,
 				success : function(data) {
 					alert("성공");
-					var text = "<img class=\"myImg\" alt=\"\"src=\"<c:url value='http://localhost:8181/banzzackimg/"+$.trim(data)+"'/>\">";
+					var text = "<img class=\"myImg\" alt=\"\"src=\"<c:url value='http://localhost:8181/banzzackimg/virtual/"+$.trim(data)+"'/>\">";
 					$(".centered").html(text); 
 					
 					$(".myImg").on("click", function(event) {
@@ -126,7 +126,7 @@
 		// 가상아이템 불러오기
 		$(".earring1").on("click", function(event) {
 			if(Earring1 == false) {
-				var str = "<img class=\"virsualEarring1\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>\">";
+				var str = "<img class=\"virsualEarring1\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/virtual/${dto2.VIRTUAL_IMG}'/>\">";
 				$(".Virtual").append(str);
 				alert("귀걸이가 추가되었습니다 원하는 위치를 클릭해주세요!"); 
 				Earring1 = true;
@@ -137,7 +137,7 @@
 		});
 		$(".earring2").on("click", function(event) {
 			if(Earring2 == false) {
-				var str = "<img class=\"virsualEarring2\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>\">";
+				var str = "<img class=\"virsualEarring2\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/virtual/${dto2.VIRTUAL_IMG2}'/>\">";
 				$(".Virtual").append(str);
 				alert("귀걸이가 추가되었습니다 원하는 위치를 클릭해주세요!"); 
 				Earring2 = true;
@@ -148,7 +148,7 @@
 		});
 		$(".necklace").on("click", function(event) {
 			if(Necklace == false) {
-				var str = "<img class=\"virsualNecklace\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>\">";
+				var str = "<img class=\"virsualNecklace\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/virtual/${dto2.VIRTUAL_IMG}'/>\">";
 				$(".Virtual").append(str);
 				alert("목걸이가 추가되었습니다 원하는 위치를 클릭해주세요!"); 
 				Necklace = true;
@@ -159,7 +159,7 @@
 		});
 		$(".ring").on("click", function(event) {
 			if(Ring == false) {
-				var str = "<img class=\"virsualRing\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/봄의 향기 귀걸이 착용.png'/>\">";
+				var str = "<img class=\"virsualRing\" alt=\"\" style=\"width: 30px;\" src=\"<c:url value='http://localhost:8181/banzzackimg/virtual/${dto2.VIRTUAL_IMG}'/>\">";
 				$(".Virtual").append(str);
 				alert("반지가 추가되었습니다 원하는 위치를 클릭해주세요!"); 
 				Ring = true;
@@ -411,19 +411,19 @@
 											id="img-tab-1">
 											<p style="text-align: center;">
 												<img
-													src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG1}'/>">
+													src="<c:url value='http://localhost:8181/banzzackimg/product/${dto.PRODUCT_IMG1}'/>">
 											</p>
 										</div>
 										<div role="tabpanel" class="tab-pane fade" id="img-tab-2">
 											<p style="text-align: center;">
 												<img
-													src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG2}'/>">
+													src="<c:url value='http://localhost:8181/banzzackimg/product/${dto.PRODUCT_IMG2}'/>">
 											</p>
 										</div>
 										<div role="tabpanel" class="tab-pane fade" id="img-tab-3">
 											<p style="text-align: center;">
 												<img
-													src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG3}'/>">
+													src="<c:url value='http://localhost:8181/banzzackimg/product/${dto.PRODUCT_IMG3}'/>">
 											</p>
 										</div>
 
@@ -437,15 +437,15 @@
 								<ul class="product__small__images">
 									<li role="presentation" class="pot-small-img active"><a
 										href="#img-tab-1" role="tab" data-toggle="tab"> <img
-											src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG1}'/>">
+											src="<c:url value='http://localhost:8181/banzzackimg/product/${dto.PRODUCT_IMG1}'/>">
 									</a></li>
 									<li role="presentation" class="pot-small-img"><a
 										href="#img-tab-2" role="tab" data-toggle="tab"> <img
-											src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG2}'/>">
+											src="<c:url value='http://localhost:8181/banzzackimg/product/${dto.PRODUCT_IMG2}'/>">
 									</a></li>
 									<li role="presentation" class="pot-small-img"><a
 										href="#img-tab-3" role="tab" data-toggle="tab"> <img
-											src="<c:url value='http://localhost:8181/banzzackimg/${dto.PRODUCT_IMG3}'/>">
+											src="<c:url value='http://localhost:8181/banzzackimg/product/${dto.PRODUCT_IMG3}'/>">
 									</a></li>
 								</ul>
 							</div>

@@ -256,7 +256,7 @@ small {
 						<div class="menumenu__container clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-5">
 								<div class="logo">
-									<a href="index.html"><img
+									<a href="home.do"><img
 										src="<c:url value='resources/shop/images/logo/logo.png'/>"
 										alt="logo images"></a>
 								</div>

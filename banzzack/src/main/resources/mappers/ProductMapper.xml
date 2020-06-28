@@ -13,8 +13,8 @@
 	</insert>
 	<!-- 가상이미지 등록 -->
 	<insert id="VirtualRegister" parameterType="VirtualDTO">
-		INSERT INTO VIRTUAL_TABLE(PRODUCT_NUM, VIRTUAL_IMG)
-		VALUES(VIRTUALCTAUTOINC.nextval, #{VIRTUAL_IMG})
+		INSERT INTO VIRTUAL_TABLE(PRODUCT_NUM, VIRTUAL_IMG, VIRTUAL_IMG2)
+		VALUES(VIRTUALCTAUTOINC.nextval, #{VIRTUAL_IMG}, #{VIRTUAL_IMG2})
 	</insert>
 	
 	<!-- 제품 정보 조회 -->
@@ -34,6 +34,16 @@
 		FROM PRODUCT_TABLE
 		WHERE PRODUCT_NUM = #{PRODUCT_NUM}
 	</select>
-	
+		
+	<!-- 제품 정보 조회 -->
+	<select id="VirtualSearch" parameterType="VirtualDTO"
+		resultType="VirtualDTO">
+		SELECT
+		PRODUCT_NUM,
+		VIRTUAL_IMG,
+		VIRTUAL_IMG2
+		FROM VIRTUAL_TABLE
+		WHERE PRODUCT_NUM = #{PRODUCT_NUM}
+	</select>
 
 </mapper>

@@ -134,10 +134,15 @@ public class ProductController {
 	public ModelAndView productDetail(@RequestParam int PRODUCT_NUM, Locale locale, ProductDTO dto, HttpSession session)
 			throws Exception {
 		ModelAndView mav = new ModelAndView();
-
+		VirtualDTO dto2 = new VirtualDTO();
+		System.out.println(PRODUCT_NUM);
+		dto2 = productSer.virtualImg(PRODUCT_NUM);
 		dto = productSer.productSearch(PRODUCT_NUM);
+		
+		
 		System.out.println("정상적인 접근");
 		mav.addObject("dto", dto);
+		mav.addObject("dto2", dto2);
 		mav.setViewName("product_details");
 
 		return mav;

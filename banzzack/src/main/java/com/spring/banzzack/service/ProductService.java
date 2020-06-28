@@ -28,7 +28,7 @@ public class ProductService{
 	public ProductDTO productSearch(int pRODUCT_NUM) {
 		ProductDTO dto = new ProductDTO();
 		try {
-			dto = dao.productSearch(pRODUCT_NUM); // 상품 등록
+			dto = dao.productSearch(pRODUCT_NUM); // 상품 찾기
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -38,6 +38,17 @@ public class ProductService{
 
 	public void virtualReg(VirtualDTO dto) {
 		dao.virtualReg(dto); // 상품 등록
+	}
+
+	public VirtualDTO virtualImg(int pRODUCT_NUM) {
+		VirtualDTO dto = new VirtualDTO();
+		try {
+			dto = dao.virtualImg(pRODUCT_NUM); // 상품 찾기
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return dto;
 	}
 
 	
