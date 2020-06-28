@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.spring.banzzack.dao.ProductDAO;
 
 import com.spring.banzzack.dto.ProductDTO;
+import com.spring.banzzack.dto.VirtualDTO;
 
 
 @Service("IProductService")
@@ -33,6 +34,10 @@ public class ProductService{
 		}
 		
 		return dto;
+	}
+
+	public void virtualReg(VirtualDTO dto) {
+		dao.virtualReg(dto); // 상품 등록
 	}
 
 	

@@ -8,6 +8,7 @@
 		<!-- <typeAlias type="com.spring.travel.dto.UserDTO" alias="UserDTO"></typeAlias> -->
 		<typeAlias type="com.spring.banzzack.dto.UserDTO" alias="UserDTO"></typeAlias>
 		<typeAlias type="com.spring.banzzack.dto.ProductDTO" alias="ProductDTO"></typeAlias>
+		<typeAlias type="com.spring.banzzack.dto.ProductDTO" alias="VirtualDTO"></typeAlias>
 	</typeAliases>
 	
 	

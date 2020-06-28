@@ -65,6 +65,8 @@ small {
 	var PRODUCT_IMG1 = false;
 	var PRODUCT_IMG2 = false;
 	var PRODUCT_IMG3 = false;
+	
+	var VIRTUAL_IMG = false;
 	$(document)
 			.ready(
 					function() {
@@ -74,7 +76,7 @@ small {
 								});
 						// event : jQuery의 이벤트
 						// originalEvent : javascript의 이벤트
-						$(".fileDrop")
+						$("#productFileDrop")
 								.on(
 										"drop",
 										function(event) {
@@ -105,29 +107,29 @@ small {
 														success : function(data) {
 															var str = "";
 															if (PRODUCT_IMG1 == false) {
-																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG1\" value=\""+data+"\">";
+																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/product/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG1\" value=\""+data+"\">";
 																PRODUCT_IMG1 = true;
 																// 삭제 버튼
 																str += "<span name=\"PRODUCT_IMG1\">[삭제]</span></div>";
 																$(
-																		".uploadedList")
+																		".productList")
 																		.append(
 																				str);
 															} else if (PRODUCT_IMG2 == false) {
-																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG2\" value=\""+data+"\">";
+																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/product/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG2\" value=\""+data+"\">";
 																PRODUCT_IMG2 = true;
 																// 삭제 버튼
 																str += "<span name=\"PRODUCT_IMG2\">[삭제]</span></div>";
 																$(
-																		".uploadedList")
+																		".productList")
 																		.append(
 																				str);
 															} else if (PRODUCT_IMG3 == false) {
-																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG3\" value=\""+data+"\">";
+																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/product/"+data+"'><input type=\"hidden\" name=\"PRODUCT_IMG3\" value=\""+data+"\">";
 																PRODUCT_IMG3 = true;// 삭제 버튼
 																str += "<span name=\"PRODUCT_IMG3\">[삭제]</span></div>";
 																$(
-																		".uploadedList")
+																		".productList")
 																		.append(
 																				str);
 															}
@@ -136,11 +138,10 @@ small {
 													});
 										});
 
-						$(".uploadedList").on("click", "span", function(event) {
+						$(".productList").on("click", "span", function(event) {
 							alert("이미지 삭제")
 							var that = $(this); // 여기서 this는 클릭한 span태그
 							// 클릭한 span태그가 속한 div를 제거
-							alert(that.attr('name'));
 							if ('PRODUCT_IMG1' == that.attr('name')) {
 								PRODUCT_IMG1 = false;
 							} else if ('PRODUCT_IMG2' == that.attr('name')) {
@@ -151,6 +152,89 @@ small {
 
 							that.parent("div").remove();
 						});
+						
+						// 가상이미지
+						$("#virtualImg")
+						.on(
+								"drop",
+								function(event) {
+									event.preventDefault(); // 기본효과를 막음
+									// 드래그된 파일의 정보
+									var files = event.originalEvent.dataTransfer.files;
+									// 첫번째 파일
+									var file = files[0];
+									// 콘솔에서 파일정보 확인
+									console.log(file);
+
+									// ajax로 전달할 폼 객체
+									var formData = new FormData();
+									// 폼 객체에 파일추가, append("변수명", 값)
+									formData.append("file", file);
+									$.ajax({
+												type : "post",
+												url : "virtualUploadAjax.do",
+												data : formData,
+												// processData: true=> get방식, false => post방식
+												dataType : "text",
+												// contentType: true => application/x-www-form-urlencoded, 
+												//                false => multipart/form-data
+												processData : false,
+												contentType : false,
+												success : function(data) {
+													if(VIRTUAL_IMG == false) {
+														var str = "";
+														str = "<div class=\"col-md-12 imglist\"><img src='http://localhost:8181/banzzackimg/virtual/"+data+"'><input type=\"hidden\" name=\"VIRTUAL_IMG\" value=\""+data+"\">";
+														// 삭제 버튼
+														VIRTUAL_IMG = true;
+														str += "<span name=\"virtualListImg\">[삭제]</span></div>";
+														$(".virtualList").append(str);
+													}
+
+													}
+											});
+								});
+
+				$(".virtualList").on("click", "span", function(event) {
+					alert("이미지 삭제")
+					var that = $(this); // 여기서 this는 클릭한 span태그
+
+					that.parent("div").remove();
+					VIRTUAL_IMG = false;
+				});
+				
+				// 카테고리 선택
+				$('#PRODUCT_CATEGORY1')
+				.change(
+						function() {
+							$('#PRODUCT_CATEGORY2').children('option').remove();
+							if ($("#PRODUCT_CATEGORY1 option:selected").val() == "") {
+								num = new Array("중분류 선택");
+								vnum = new Array("");
+							} else if ($("#PRODUCT_CATEGORY1 option:selected").val() == "귀걸이") {
+								num = new Array("패션 귀걸이", "실버침", "투웨이귀걸이", "핸드메이드 귀걸이",
+										"롱귀걸이", "러블리");
+								vnum = new Array("패션 귀걸이", "실버침", "투웨이귀걸이", "핸드메이드 귀걸이",
+										"롱귀걸이", "러블리");
+							} else if ($("#PRODUCT_CATEGORY1 option:selected").val() == "반지") {
+								num = new Array("14/18k 링", "실버링", "커플링",
+										"심플링", "다이아몬드 링");
+								vnum = new Array("14/18k 링", "실버링", "커플링",
+										"심플링", "다이아몬드 링");
+							} else if ($("#PRODUCT_CATEGORY1 option:selected").val() == "목걸이") {
+								num = new Array("패션 목걸이", "탄생석 목걸이", "진주 목걸이",
+										"체인 목걸이");
+								vnum = new Array("패션 목걸이", "탄생석 목걸이", "진주 목걸이",
+										"체인 목걸이");
+							}
+
+
+							for (var i = 0; i < num.length; i++) {
+								$("#PRODUCT_CATEGORY2").append(
+										"<option value='"+vnum[i]+"'>" + num[i]
+												+ "</option>");
+							}
+						})
+
 
 					});
 </script>
@@ -205,12 +289,10 @@ small {
 
 										<li class="drop"><a href="#">목걸이</a>
 											<ul class="dropdown">
-												<li><a href="#">14/18k 목걸이</a></li>
-												<li><a href="#">14/18k 펜던트</a></li>
-												<li><a href="wishlist.html">24k 순금목걸이</a></li>
-												<li><a href="cart.html">탄생석 목걸이</a></li>
-												<li><a href="checkout.html">진주 목걸이</a></li>
-												<li><a href="checkout.html">체인 목걸이</a></li>
+												<li><a href="#">패션 목걸이</a></li>
+												<li><a href="#">탄생석 목걸이</a></li>
+												<li><a href="wishlist.html">진주 목걸이</a></li>
+												<li><a href="cart.html">체인 목걸이</a></li>
 											</ul></li>
 									</ul>
 								</nav>
@@ -387,8 +469,8 @@ small {
 												<div class="col-md-6">
 													<div class="single-input">
 														<label for="user-city">대분류</label> <select
-															name="PRODUCT_CATEGORY1" id="useraddress1">
-															<option value="select">대분류</option>
+															name="PRODUCT_CATEGORY1" id="PRODUCT_CATEGORY1">
+															<option value="">대분류</option>
 															<option value="귀걸이">귀걸이</option>
 															<option value="반지">반지</option>
 															<option value="목걸이">목걸이</option>
@@ -398,7 +480,7 @@ small {
 												<div class="col-md-6">
 													<div class="single-input">
 														<label for="user-city">중분류</label> <select
-															name="PRODUCT_CATEGORY2" id="useraddress1">
+															name="PRODUCT_CATEGORY2" id="PRODUCT_CATEGORY2">
 															<option value="select">중분류</option>
 															<option value="arb">패션귀걸이</option>
 															<option value="ban">실버침</option>
@@ -436,12 +518,25 @@ small {
 													<div class="single-input">
 														<label for="user-pass">상품 이미지 등록</label>
 
-														<div class="fileDrop"></div>
+														<div class="fileDrop" id="productFileDrop"></div>
 													</div>
 												</div>
 												<!-- 업로드된 파일 목록 -->
 												<div class="col-md-12">
-													<div class="uploadedList"></div>
+													<div class="productList" id="productList"></div>
+												</div>
+												
+												<!-- 가상착용 업로드할 영역 -->
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-pass">가상착용 이미지 등록</label>
+
+														<div class="fileDrop" id="virtualImg"></div>
+													</div>
+												</div>
+												<!-- 업로드된 파일 목록 -->
+												<div class="col-md-12">
+													<div class="virtualList" id="virtualList"></div>
 												</div>
 
 												<div class="col-md-12">

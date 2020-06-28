@@ -5,14 +5,19 @@
 <mapper namespace="ProductMapper">
 	<!-- id는 마음대로 작성 prarameter는 실제DTO클래스 -->
 
-	<!-- 유저 회원가입 -->
+	<!-- 제품 등록 -->
 	<insert id="Register" parameterType="ProductDTO">
 		INSERT INTO PRODUCT_TABLE(PRODUCT_NUM, PRODUCT_TITLE, PRODUCT_CONTENTS, PRODUCT_IMG1, PRODUCT_IMG2, PRODUCT_IMG3, PRODUCT_RPICE, PRODUCT_COUNT, PRODUCT_CATEGORY1, PRODUCT_CATEGORY2)
 		VALUES(PRODUCTAUTOINC.nextval, #{PRODUCT_TITLE}, #{PRODUCT_CONTENTS}, #{PRODUCT_IMG1},
 		#{PRODUCT_IMG2}, #{PRODUCT_IMG3}, #{PRODUCT_RPICE}, #{PRODUCT_COUNT}, #{PRODUCT_CATEGORY1}, #{PRODUCT_CATEGORY2})
 	</insert>
+	<!-- 가상이미지 등록 -->
+	<insert id="VirtualRegister" parameterType="VirtualDTO">
+		INSERT INTO VIRTUAL_TABLE(PRODUCT_NUM, VIRTUAL_IMG)
+		VALUES(VIRTUALCTAUTOINC.nextval, #{VIRTUAL_IMG})
+	</insert>
 	
-	<!-- 회원 정보 조회 -->
+	<!-- 제품 정보 조회 -->
 	<select id="ProductSearch" parameterType="ProductDTO"
 		resultType="ProductDTO">
 		SELECT

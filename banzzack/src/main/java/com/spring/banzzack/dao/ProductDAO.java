@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.spring.banzzack.dto.ProductDTO;
+import com.spring.banzzack.dto.VirtualDTO;
 
 @Repository
 public class ProductDAO {
@@ -23,6 +24,10 @@ public class ProductDAO {
 		ProductDTO dto = new ProductDTO();
 		dto.setPRODUCT_NUM(pRODUCT_NUM);
 		return mybatis.selectOne("ProductMapper.ProductSearch", pRODUCT_NUM);
+	}
+
+	public void virtualReg(VirtualDTO dto) {
+		mybatis.insert("ProductMapper.VirtualRegister", dto);
 	}
 
 }
