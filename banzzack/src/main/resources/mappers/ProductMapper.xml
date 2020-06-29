@@ -16,6 +16,19 @@
 		INSERT INTO VIRTUAL_TABLE(PRODUCT_NUM, VIRTUAL_IMG, VIRTUAL_IMG2)
 		VALUES(VIRTUALCTAUTOINC.nextval, #{VIRTUAL_IMG}, #{VIRTUAL_IMG2})
 	</insert>
+	
+	<!-- 제품 리스트 전체 조회 -->
+	<select id="mainListAll" parameterType="ProductDTO"
+		resultType="ProductDTO">
+		SELECT
+		PRODUCT_NUM,
+		PRODUCT_TITLE,
+		PRODUCT_IMG1,
+		PRODUCT_RPICE
+		FROM PRODUCT_TABLE
+		ORDER BY PRODUCT_NUM DESC
+	</select>
+	
 	<!-- 제품 리스트 전체 조회 -->
 	<select id="productListAll" parameterType="ProductDTO"
 		resultType="ProductDTO">
@@ -56,7 +69,18 @@
 		FROM PRODUCT_TABLE
 		WHERE PRODUCT_NUM = #{PRODUCT_NUM}
 	</select>
-	
+	<select id="bestListAll"
+		resultType="ProductDTO">
+		SELECT  SUM(o.orders_amount) 구매수량,
+        p.PRODUCT_NUM,
+		PRODUCT_TITLE,
+		PRODUCT_IMG1,
+		PRODUCT_RPICE
+		FROM ORDERS_TABLE o, product_table p
+		where o.product_num = p.product_num
+		group by p.PRODUCT_NUM,PRODUCT_TITLE,PRODUCT_IMG1,PRODUCT_RPICE
+		ORDER BY SUM(o.orders_amount) DESC
+	</select>
 	<select id="bestSellerproduct" parameterType="ProductDTO"
 		resultType="ProductDTO">
 		SELECT  SUM(o.orders_amount) 구매수량,
@@ -69,7 +93,7 @@
 		group by p.PRODUCT_NUM,PRODUCT_TITLE,PRODUCT_IMG1,PRODUCT_RPICE
 		ORDER BY SUM(o.orders_amount) DESC
 	</select>
-		
+
 	<!-- 가상 착용 정보 조회 -->
 	<select id="VirtualSearch" parameterType="VirtualDTO"
 		resultType="VirtualDTO">

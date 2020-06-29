@@ -38,7 +38,6 @@ public class ProductDAO {
 		VirtualDTO dto = new VirtualDTO();
 		dto.setPRODUCT_NUM(PRODUCT_NUM);
 		dto = mybatis.selectOne("ProductMapper.VirtualSearch", dto);
-		System.out.println(dto);
 		return dto; 
 	}
 
@@ -60,6 +59,15 @@ public class ProductDAO {
 		ProductDTO dto = new ProductDTO();
 		dto.setPRODUCT_CATEGORY1(PDUCT_CATEGORY1);
 		return mybatis.selectList("ProductMapper.bestSellerproduct", dto);
+	}
+
+	public List<ProductDTO> mainListAll() {
+		return mybatis.selectList("ProductMapper.mainListAll");
+	}
+
+	public List<ProductDTO> bestListAll() {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("ProductMapper.bestListAll");
 	}
 
 }

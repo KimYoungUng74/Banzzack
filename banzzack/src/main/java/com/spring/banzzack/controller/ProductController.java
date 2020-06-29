@@ -102,16 +102,16 @@ public class ProductController {
 		public ModelAndView productList(Locale locale,  @RequestParam String PRODUCT_CATEGORY1,  @RequestParam String PRODUCT_CATEGORY2, HttpSession session)
 				throws Exception {
 			ModelAndView mav = new ModelAndView();
-			List<ProductDTO> list = null;
-			List<ProductDTO> list2 = null;
+			List<ProductDTO> list = null;	// 카테고리
+			List<ProductDTO> list2 = null;	// 베스트 셀러
 			System.out.println("productList 정상적인 접근");
 			if(PRODUCT_CATEGORY2.equals("all")) {list = productSer.productListAll(PRODUCT_CATEGORY1);
 			}
 			else {list = productSer.productListSelect(PRODUCT_CATEGORY1, PRODUCT_CATEGORY2);}
 			list2 = productSer.bestSellerproduct(PRODUCT_CATEGORY1);
 			System.out.println(list2);
-			mav.addObject("list", list);
-			mav.addObject("list2", list2);
+			mav.addObject("list", list);	// 카테고리
+			mav.addObject("list2", list2);	// 베스트 셀러
 			mav.addObject("PRODUCT_CATEGORY1", PRODUCT_CATEGORY1);
 			mav.setViewName("productList");
 
@@ -128,11 +128,13 @@ public class ProductController {
 			System.out.println("상품등록 되었음");
 			
 			VirtualDTO virDto = new VirtualDTO();
+			dto.setPRODUCT_CONTENTS(dto.getPRODUCT_CONTENTS().replace("\n", "<br>"));
 			virDto.setPRODUCT_NUM(dto.getPRODUCT_NUM());
 			virDto.setVIRTUAL_IMG(VIRTUAL_IMG);
 			virDto.setVIRTUAL_IMG2(VIRTUAL_IMG2);
 			productSer.virtualReg(virDto);
-			mav.setViewName("home");
+			
+			mav = setHome();
 		} else {
 			System.out.println("상품등록 실패");
 			mav.setViewName("login.do");
@@ -148,12 +150,12 @@ public class ProductController {
 		ProductDTO dto = new ProductDTO();
 		ModelAndView mav = new ModelAndView();
 		VirtualDTO dto2 = new VirtualDTO();
-		System.out.println(PRODUCT_NUM);
-		
+		List<ProductDTO> list = null; // 베스트셀러 악세서리
 		dto = productSer.productSearch(PRODUCT_NUM);
-		
+		list = productSer.bestListAll();
 		dto2 = productSer.virtualImg(PRODUCT_NUM);
 		System.out.println("정상적인 접근");
+		mav.addObject("list", list); // 최신 악세서리
 		mav.addObject("dto", dto);
 		mav.addObject("dto2", dto2);
 		
@@ -164,7 +166,7 @@ public class ProductController {
 
 	// 파일명 랜덤생성 메서드
 	private String uploadFile(String originalName, byte[] fileData, String dirName) throws Exception {
-
+			
 		// 폴더 생성
 		makeDir(uploadPath, dirName);
 		// uuid 생성(Universal Unique IDentifier, 범용 고유 식별자)
@@ -193,6 +195,20 @@ public class ProductController {
 				dirPath.mkdir(); // 디렉토리 생성
 			}
 		}
+	}
+	
+	public ModelAndView setHome() {
+		ModelAndView mav = new ModelAndView();
+		List<ProductDTO> list = null; // 최신 악세서리
+		List<ProductDTO> list2 = null; // 베스트셀러 악세서리
+		list = productSer.mainListAll();
+		list2 = productSer.bestListAll();
+		
+		mav.addObject("list", list); // 최신 악세서리
+		mav.addObject("list2", list2); // 베스트셀러 악세서리
+		mav.setViewName("home");
+
+		return mav;
 	}
 
 }

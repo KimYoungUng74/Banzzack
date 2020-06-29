@@ -41,12 +41,39 @@
 <link rel="stylesheet"
 	href="<c:url value='resources/shop/css/custom.css'/>">
 
-
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- Modernizr JS -->
 <script
 	src="<c:url value='resources/shop/js/vendor/modernizr-3.5.0.min.js'/>"></script>
 </head>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		var randomnumber = Math.floor(Math.random() * 10) + 1;
+		var str = new Array();
+		var str2 = new Array();
+		str[0] = "productDetail.do?PRODUCT_NUM=${list[0].PRODUCT_NUM}";
+		str[1] = "productDetail.do?PRODUCT_NUM=${list[1].PRODUCT_NUM}";
+		str[2] = "productDetail.do?PRODUCT_NUM=${list[2].PRODUCT_NUM}";
+		str[3] = "productDetail.do?PRODUCT_NUM=${list[3].PRODUCT_NUM}";
+		str[4] = "productDetail.do?PRODUCT_NUM=${list[4].PRODUCT_NUM}";
+		str[5] = "productDetail.do?PRODUCT_NUM=${list[5].PRODUCT_NUM}";
+		str[6] = "productDetail.do?PRODUCT_NUM=${list[6].PRODUCT_NUM}";
+		str[7] = "productDetail.do?PRODUCT_NUM=${list[7].PRODUCT_NUM}";
+		
+		str2[0] ="<c:url value='http://localhost:8181/banzzackimg/product/${list[0].PRODUCT_IMG1}'/>";
+		str2[1] ="<c:url value='http://localhost:8181/banzzackimg/product/${list[1].PRODUCT_IMG1}'/>";
+		str2[2] ="<c:url value='http://localhost:8181/banzzackimg/product/${list[2].PRODUCT_IMG1}'/>";
+		str2[3] ="<c:url value='http://localhost:8181/banzzackimg/product/${list[3].PRODUCT_IMG1}'/>";
+		str2[4] ="<c:url value='http://localhost:8181/banzzackimg/product/${list[4].PRODUCT_IMG1}'/>";
+		str2[5] ="<c:url value='http://localhost:8181/banzzackimg/product/${list[5].PRODUCT_IMG1}'/>";
+		str2[6] ="<c:url value='http://localhost:8181/banzzackimg/product/${list[6].PRODUCT_IMG1}'/>";
+		str2[7] ="<c:url value='http://localhost:8181/banzzackimg/product/${list[7].PRODUCT_IMG1}'/>";
+		
+		$("#random").attr("href", str[randomnumber]);
+		$("#randomImg").attr("src", str2[randomnumber]);
+		
+	});
+</script>
 <body>
 	<!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -291,9 +318,10 @@
 								<div class="slide">
 									<div class="slider__inner">
 										<h2>collection 2020</h2>
-										<h1>New Earring</h1>
+										<h1>New Accessory</h1>
 										<div class="cr__btn">
-											<a href="cart.html">Buy now</a>
+											<a href="productDetail.do?PRODUCT_NUM=${list[0].PRODUCT_NUM}">Buy
+												now</a>
 										</div>
 									</div>
 								</div>
@@ -301,7 +329,7 @@
 							<div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
 								<div class="slide__thumb">
 									<img
-										src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>">
+										src="<c:url value='http://localhost:8181/banzzackimg/product/${list[0].PRODUCT_IMG1}'/>">
 								</div>
 							</div>
 						</div>
@@ -315,10 +343,11 @@
 							<div class="col-md-7 col-sm-7 col-xs-12 col-lg-6">
 								<div class="slide">
 									<div class="slider__inner">
-										<h2>collection 2018</h2>
-										<h1>NICE CHAIR</h1>
+										<h2>collection 2020</h2>
+										<h1>New Accessory</h1>
 										<div class="cr__btn">
-											<a href="cart.html">Buy now</a>
+											<a href="productDetail.do?PRODUCT_NUM=${list[1].PRODUCT_NUM}">Buy
+												now</a>
 										</div>
 									</div>
 								</div>
@@ -326,7 +355,7 @@
 							<div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
 								<div class="slide__thumb">
 									<img
-										src="<c:url value='resources/shop/images/slider/fornt-img/2.png'/>"
+										src="<c:url value='http://localhost:8181/banzzackimg/product/${list[1].PRODUCT_IMG1}'/>"
 										alt="slider images">
 								</div>
 							</div>
@@ -352,36 +381,40 @@
 				<div class="htc__product__container">
 					<div class="row">
 						<div class="product__list clearfix mt--30">
-							<!-- Start Single Category -->
-							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-								<div class="category">
-									<div class="ht__cat__thumb">
-										<a href="product-details.html"> <img
-											src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"
-											alt="product images">
-										</a>
-									</div>
-									<div class="fr__hover__info">
-										<ul class="product__action">
+							<c:forEach var="i" begin="0" end="3">
+								<!-- Start Single Category -->
+								<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
+									<div class="category">
+										<div class="ht__cat__thumb">
+											<a href="productDetail.do?PRODUCT_NUM=${list[i].PRODUCT_NUM}">
+												<img
+												src="<c:url value='http://localhost:8181/banzzackimg/product/${list[i].PRODUCT_IMG1}'/>"
+												alt="product images">
+											</a>
+										</div>
+										<div class="fr__hover__info">
+											<ul class="product__action">
 
-											<li><a href="cart.html"><i
-													class="icon-handbag icons"></i></a></li>
-											<!-- <li><a href="wishlist.html"><i
+												<li><a href="cart.html"><i
+														class="icon-handbag icons"></i></a></li>
+												<!-- <li><a href="wishlist.html"><i
 													class="icon-heart icons"></i></a></li>
 											<li><a href="#"><i class="icon-shuffle icons"></i></a></li> -->
-										</ul>
-									</div>
-									<div class="fr__product__inner">
-										<h4>
-											<a href="product-details.html">Largest Water Pot</a>
-										</h4>
-										<ul class="fr__pro__prize">
-											<li class="old__prize">$30.3</li>
-											<li>$25.9</li>
-										</ul>
+											</ul>
+										</div>
+										<div class="fr__product__inner">
+											<h4>
+												<a
+													href="productDetail.do?PRODUCT_NUM=${list[i].PRODUCT_NUM}">${list[i].PRODUCT_TITLE}</a>
+											</h4>
+											<ul class="fr__pro__prize">
+												<li>${list[i].PRODUCT_RPICE}원</li>
+											</ul>
+										</div>
 									</div>
 								</div>
-							</div>
+								<!-- End Single Category -->
+							</c:forEach>
 						</div>
 					</div>
 				</div>
@@ -394,16 +427,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+
+
 						<div class="fr__prize__inner">
 							<h2>추천 악세서리를 확인하세요!</h2>
 							<h3>추천악세서리는 랜덤 입니다.</h3>
-							<a class="fr__btn" href="#">자세히 보기</a>
+							<a class="fr__btn" id="random" href="">자세히 보기</a>
 						</div>
 					</div>
+
 					<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
 						<div class="prize__inner">
 							<div class="prize__thumb">
-								<img
+								<img id="randomImg"
 									src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>"
 									alt="banner images">
 							</div>
@@ -426,31 +462,32 @@
 				</div>
 				<div class="row">
 					<div class="product__wrap clearfix">
+					<c:forEach var="i" begin="0" end="3">
 						<!-- Start Single Category -->
 						<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
 							<div class="category">
 								<div class="ht__cat__thumb">
-									<a href="product-details.html"> <img
-										src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"
+									<a href="productDetail.do?PRODUCT_NUM=${list2[i].PRODUCT_NUM}"> <img
+										src="<c:url value='http://localhost:8181/banzzackimg/product/${list2[i].PRODUCT_IMG1}'/>"
 										alt="product images">
 									</a>
 								</div>
 								<div class="fr__hover__info">
 									<ul class="product__action">
-										<li><a href="cart.html"><i class="icon-handbag icons"></i></a></li>
+										<li><a href="productDetail.do?PRODUCT_NUM=${list2[i].PRODUCT_NUM}"><i class="icon-handbag icons"></i></a></li>
 									</ul>
 								</div>
 								<div class="fr__product__inner">
 									<h4>
-										<a href="product-details.html">Special Wood Basket</a>
+										<a href="productDetail.do?PRODUCT_NUM=${list2[i].PRODUCT_NUM}">${list2[i].PRODUCT_TITLE}</a>
 									</h4>
 									<ul class="fr__pro__prize">
-										<li class="old__prize">$30.3</li>
-										<li>$25.9</li>
+										<li>${list2[i].PRODUCT_RPICE}원</li>
 									</ul>
 								</div>
 							</div>
 						</div>
+						</c:forEach>
 					</div>
 				</div>
 			</div>

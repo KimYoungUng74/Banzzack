@@ -68,5 +68,15 @@ public class ProductService{
 		return dao.bestSellerproduct(pRODUCT_CATEGORY1); // 상품 등록
 	}
 
+	public List<ProductDTO> mainListAll() {
+		// TODO Auto-generated method stub
+		return dao.mainListAll(); // 메인 최신 상품
+	}
+
+	public List<ProductDTO> bestListAll() {
+		// TODO Auto-generated method stub
+		return dao.bestListAll(); // 메인 베스트 상품
+	}
+
 	
 }
