@@ -364,7 +364,8 @@
 								<span class="quantity">QTY: 1</span> <span class="shp__price">$25.00</span>
 							</div>
 							<div class="remove__btn">
-								<a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
+								<a href="#" title="Remove this item"><i
+									class="zmdi zmdi-close"></i></a>
 							</div>
 						</div>
 					</div>
@@ -489,8 +490,8 @@
 											<span>Categories:</span>
 										</p>
 										<ul class="pro__cat__list">
-											<li><a href="#">${dto.PRODUCT_CATEGORY1}</a></li>
-											<li><a href="#">${dto.PRODUCT_CATEGORY2}</a></li>
+											<li><a href="productList.do?PRODUCT_CATEGORY1=${dto.PRODUCT_CATEGORY1}&PRODUCT_CATEGORY2=all">${dto.PRODUCT_CATEGORY1}</a></li>
+											<li><a href="productList.do?PRODUCT_CATEGORY1=${dto.PRODUCT_CATEGORY1}&PRODUCT_CATEGORY2=${dto.PRODUCT_CATEGORY2}">${dto.PRODUCT_CATEGORY2}</a></li>
 										</ul>
 									</div>
 									<!-- 공유하기 기능  -->
@@ -556,24 +557,57 @@
 												<img class="myImg" alt=""
 													src="<c:url value='resources/shop/images/logo/가상착용이미지.png'/>">
 											</div>
-											<div class="Virtual">
-												
-											</div>
+											<div class="Virtual"></div>
 
 										</div>
 									</div>
 								</div>
-
-								<div class="col-md-6 dark-btn" style="margin-top: 20px;">
-									<button class="earring1" style="margin-bottom: 20px;">귀걸이1</button>
-									<h4>크기 조절</h4>
-									<input class="range1" type="range" value="30" min="5" max="100" style="margin-top: 5px;">
-								</div>
-								<div class="col-md-6 dark-btn" style="margin-top: 20px; margin-bottom: 20px;">
-									<button  class="earring2" style="margin-bottom: 20px;">귀걸이2</button>
-									<h4>크기 조절</h4>
-									<input class="range2" type="range" value="30" min="5" max="100" style="margin-top: 5px;">
-								</div>
+								<c:choose>
+									<c:when test="${dto.PRODUCT_CATEGORY1 == '귀걸이'}">
+										<div>
+										<div class="col-md-6 dark-btn" style="margin-top: 20px;">
+											<button class="earring1" style="margin-bottom: 20px;">귀걸이1
+												착용</button>
+											<h4>크기 조절</h4>
+											<input class="range1" type="range" value="30" min="5"
+												max="100" style="margin-top: 5px;">
+										</div>
+										<div class="col-md-6 dark-btn"
+											style="margin-top: 20px; margin-bottom: 20px;">
+											<button class="earring2" style="margin-bottom: 20px;">귀걸이2
+												착용</button>
+											<h4>크기 조절</h4>
+											<input class="range2" type="range" value="30" min="5"
+												max="100" style="margin-top: 5px;">
+										</div>
+									</div>
+									</c:when>
+									
+									<c:when test="${dto.PRODUCT_CATEGORY1 == '목걸이'}">
+									<div>
+										<div class="col-md-12 dark-btn" style="margin-top: 20px;">
+											<button class="necklace" style="margin-bottom: 20px;">목걸이
+												착용</button>
+											<h4>크기 조절</h4>
+											<input class="range3" type="range" value="30" min="5"
+												max="100" style="margin-top: 5px;">
+										</div>
+									</div>
+									</c:when>
+									
+									<c:when test="${dto.PRODUCT_CATEGORY1 == '반지'}">
+									<div>
+										<div class="col-md-12 dark-btn" style="margin-top: 20px;">
+											<button class="ring" style="margin-bottom: 20px;">반지
+												착용</button>
+											<h4>크기 조절</h4>
+											<input class="range4" type="range" value="30" min="5"
+												max="100" style="margin-top: 5px;">
+										</div>
+									</div>
+									</c:when>
+									
+									</c:choose>
 							</div>
 						</div>
 						<div class="col-md-4"></div>
@@ -641,33 +675,36 @@
 				</div>
 				<div class="row">
 					<div class="product__wrap clearfix">
-					<c:forEach var="i" begin="0" end="3">
-						<!-- Start Single Category -->
-						<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-							<div class="category">
-								<div class="ht__cat__thumb">
-									<a href="productDetail.do?PRODUCT_NUM=${list[i].PRODUCT_NUM}"> <img
-										src="<c:url value='http://localhost:8181/banzzackimg/product/${list[i].PRODUCT_IMG1}'/>"
-										alt="product images">
-									</a>
-								</div>
-								<div class="fr__hover__info">
-									<ul class="product__action">
-										<li><a href="productDetail.do?PRODUCT_NUM=${list[i].PRODUCT_NUM}"><i class="icon-handbag icons"></i></a></li>
-									</ul>
-								</div>
-								<div class="fr__product__inner">
-									<h4>
-										<a href="productDetail.do?PRODUCT_NUM=${list[i].PRODUCT_NUM}">${list[i].PRODUCT_TITLE}</a>
-									</h4>
-									<ul class="fr__pro__prize">
-										<li>${list[i].PRODUCT_RPICE}원</li>
-									</ul>
+						<c:forEach var="i" begin="0" end="3">
+							<!-- Start Single Category -->
+							<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
+								<div class="category">
+									<div class="ht__cat__thumb">
+										<a href="productDetail.do?PRODUCT_NUM=${list[i].PRODUCT_NUM}">
+											<img
+											src="<c:url value='http://localhost:8181/banzzackimg/product/${list[i].PRODUCT_IMG1}'/>"
+											alt="product images">
+										</a>
+									</div>
+									<div class="fr__hover__info">
+										<ul class="product__action">
+											<li><a
+												href="productDetail.do?PRODUCT_NUM=${list[i].PRODUCT_NUM}"><i
+													class="icon-handbag icons"></i></a></li>
+										</ul>
+									</div>
+									<div class="fr__product__inner">
+										<h4>
+											<a href="productDetail.do?PRODUCT_NUM=${list[i].PRODUCT_NUM}">${list[i].PRODUCT_TITLE}</a>
+										</h4>
+										<ul class="fr__pro__prize">
+											<li>${list[i].PRODUCT_RPICE}원</li>
+										</ul>
+									</div>
 								</div>
 							</div>
-						</div>
 						</c:forEach>
-						
+
 					</div>
 				</div>
 			</div>
