@@ -16,19 +16,23 @@
 		#{PRODUCT_IMG2}, #{PRODUCT_IMG3}, #{PRODUCT_RPICE},
 		#{PRODUCT_COUNT}, #{PRODUCT_CATEGORY1}, #{PRODUCT_CATEGORY2})
 	</insert>
-	
+
 	<!-- 리뷰 등록 -->
 	<insert id="review" parameterType="ReviewDTO">
 		INSERT INTO
-		REVIEW_TABLE(REVIEW_NUM, ORDERS_NUM, REVIEW_TITLE, REVIEW_CONTENTS, USER_ID, PRODUCT_NUM, REVIEW_IMG)
-		VALUES(REVIEWAUTOINC.nextval, #{ORDERS_NUM}, #{REVIEW_TITLE}, #{REVIEW_CONTENTS},
-		#{USER_ID}, #{PRODUCT_NUM}, #{REVIEW_IMG})
+		REVIEW_TABLE(REVIEW_NUM, ORDERS_NUM, REVIEW_TITLE, REVIEW_CONTENTS,
+		USER_ID, PRODUCT_NUM, REVIEW_IMG)
+		VALUES(REVIEWAUTOINC.nextval,
+		#{ORDERS_NUM}, #{REVIEW_TITLE}, #{REVIEW_CONTENTS},
+		#{USER_ID},
+		#{PRODUCT_NUM}, #{REVIEW_IMG})
 	</insert>
-	
+
 	<update id="changeReview" parameterType="ReviewDTO">
 		UPDATE ORDERS_TABLE
-    	SET IS_REVIEW = 1
-    	WHERE ORDERS_NUM = #{ORDERS_NUM}
+		SET
+		IS_REVIEW = 1
+		WHERE ORDERS_NUM = #{ORDERS_NUM}
 	</update>
 	<!-- 가상이미지 등록 -->
 	<insert id="VirtualRegister" parameterType="VirtualDTO">
@@ -109,7 +113,44 @@
 		ORDER BY
 		SUM(o.orders_amount) DESC
 	</select>
+	<!-- 상품별 뷰 리스트 -->
+	<select id="productReviewList" resultType="ReviewDTO">
+		SELECT REVIEW_NUM, review_img, ORDERS_NUM,
+		review_title, review_contents, review_time
+		FROM REVIEW_TABLE 
+		WHERE PRODUCT_NUM = #{PRODUCT_NUM}
+		ORDER BY review_time DESC
+	</select>
+	<!-- 내 리뷰 리스트 -->
+	<select id="myReviewListAll" resultType="ReviewDTO">
+		SELECT REVIEW_NUM, review_img, ORDERS_NUM,
+		review_title, review_contents, review_time
+		FROM REVIEW_TABLE 
+		WHERE USER_ID = #{USER_ID}
+		ORDER BY review_time DESC
+	</select>
+	
+	<!-- 리뷰 리스트 -->
+	<select id="reviewListAll" resultType="ReviewDTO">
+		SELECT REVIEW_NUM, review_img, ORDERS_NUM,
+		review_title, review_contents, review_time
+		FROM REVIEW_TABLE 
+		ORDER BY review_time DESC
+	</select>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="deletReivew" parameterType="ReviewDTO">
+		DELETE FROM REVIEW_TABLE
+		WHERE REVIEW_NUM = #{REVIEW_NUM}
+	</delete>
+	 <!-- 삭제후 처리 -->
+	<update id="UpdateisReivew" parameterType="ReviewDTO">
+		UPDATE ORDERS_TABLE
+    	SET IS_REVIEW = 0 
+    	WHERE ORDERS_NUM = #{ORDERS_NUM}
+	</update>
 
+	
 	<!-- 해당 카테고리 베스트 셀러 -->
 	<select id="bestSellerproduct" parameterType="ProductDTO"
 		resultType="ProductDTO">
@@ -129,11 +170,14 @@
 	</select>
 
 	<!-- 구매내역 리스트 -->
-	<select id="myOrdersListAll" parameterType="MyOrderDTO" resultType="MyOrderDTO">
+	<select id="myOrdersListAll" parameterType="MyOrderDTO"
+		resultType="MyOrderDTO">
 		SELECT o.ORDERS_NUM, p.product_num, p.product_img1,
-		p.product_title, p.PRODUCT_RPICE, o.ORDERS_AMOUNT, o.orders_time, o.is_review
+		p.product_title, p.PRODUCT_RPICE, o.ORDERS_AMOUNT, o.orders_time,
+		o.is_review
 		FROM PRODUCT_TABLE p, ORDERS_TABLE o
-		WHERE p.product_num = o.product_num AND o.user_id =  #{USER_ID}
+		WHERE p.product_num =
+		o.product_num AND o.user_id = #{USER_ID}
 		ORDER BY o.orders_time
 	</select>
 

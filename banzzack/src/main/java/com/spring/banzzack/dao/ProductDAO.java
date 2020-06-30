@@ -95,5 +95,28 @@ public class ProductDAO {
 	public void changeReview(ReviewDTO dto) {
 		mybatis.insert("ProductMapper.changeReview", dto);
 	}
+	// 내 리뷰 리스트
+	public List<ReviewDTO> myReviewListAll(ReviewDTO dto) {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("ProductMapper.myReviewListAll", dto);
+	}
+
+	public void deletReivew(ReviewDTO dto) {
+		mybatis.delete("ProductMapper.deletReivew", dto);
+	}
+
+	public void UpdateisReivew(ReviewDTO dto) {
+		mybatis.update("ProductMapper.UpdateisReivew", dto);
+	}
+
+	public List<ReviewDTO> reviewListAll() {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("ProductMapper.reviewListAll");
+	}
+
+	public List<ReviewDTO> productReviewList(ReviewDTO dto) {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("ProductMapper.productReviewList", dto);
+	}
 
 }

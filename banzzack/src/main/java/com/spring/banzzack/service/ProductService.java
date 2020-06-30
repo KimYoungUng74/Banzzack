@@ -81,6 +81,15 @@ public class ProductService{
 		// TODO Auto-generated method stub
 		return dao.bestListAll(); // 메인 베스트 상품
 	}
+	
+	// 내 리뷰 내역
+	public List<ReviewDTO> myReviewListAll(String userid) {
+		ReviewDTO dto = new ReviewDTO();
+		dto.setUSER_ID(userid);
+		
+		return dao.myReviewListAll(dto); 
+	}
+
 
 	public int orderProduct(OrderDTO dto) {
 		dao.orderProduct(dto); // 상품 등록
@@ -104,6 +113,27 @@ public class ProductService{
 		dao.changeReview(dto); // 상품 등록
 	}
 
+	public void deletReivew(ReviewDTO dto) {
+		dao.deletReivew(dto); // 메인 베스트 상품
+	}
+
+	public void UpdateisReivew(ReviewDTO dto) {
+		dao.UpdateisReivew(dto); // 리뷰 상태 변경
+	}
+
+	public List<ReviewDTO> reviewListAll() {
+		// TODO Auto-generated method stub
+		return dao.reviewListAll(); // 메인 리뷰
+	}
+
+	public List<ReviewDTO> productReviewList(int pRODUCT_NUM) {
+		ReviewDTO dto = new ReviewDTO();
+		dto.setPRODUCT_NUM(pRODUCT_NUM);
+		return dao.productReviewList(dto); // 상품 리뷰 목록
+	}
+
+
+	
 
 	
 }

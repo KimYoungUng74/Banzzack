@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.banzzack.dto.MyOrderDTO;
 import com.spring.banzzack.dto.ProductDTO;
+import com.spring.banzzack.dto.ReviewDTO;
 import com.spring.banzzack.dto.UserDTO;
 import com.spring.banzzack.dto.VirtualDTO;
 import com.spring.banzzack.service.ProductService;
@@ -44,13 +45,13 @@ public class UserController {
 	
 	// 회원가입 화면
 		@RequestMapping(value = "signup.do")
-		public String signup(Locale locale, Model model) {
+		public String signup(Locale locale, Model model, HttpSession session) {
 			return "signup";
 		}
 
 		// 회원 가입 처리
 		@RequestMapping(value = "signupOk.do", method = RequestMethod.POST)
-		public ModelAndView signupOk(Locale locale, UserDTO dto) {
+		public ModelAndView signupOk(Locale locale, UserDTO dto, HttpSession session) {
 			System.out.println("userName : " + dto.getUSER_NAME());
 			ModelAndView mav = new ModelAndView();
 			userSer.signupUser(dto);
@@ -67,7 +68,7 @@ public class UserController {
 		
 		// 로그인 화면
 			@RequestMapping(value = "login.do")
-			public String login(Locale locale, Model model) {
+			public String login(Locale locale, Model model, HttpSession session) {
 				return "login";
 			}
 
@@ -113,13 +114,16 @@ public class UserController {
 
 			ModelAndView mav = new ModelAndView();
 
-			List<MyOrderDTO> list = null; // 베스트셀러 악세서리
-
+			List<MyOrderDTO> list = null; // 주문내역
+			List<ReviewDTO> list2 = null; // 리뷰내역
+			
+			
 			list = productSer.myOrdersListAll(session.getAttribute("userId").toString());
+			list2 = productSer.myReviewListAll(session.getAttribute("userId").toString());
 
 			System.out.println("정상적인 접근");
-			mav.addObject("list", list); // 최신 악세서리
-
+			mav.addObject("list", list); // 주문내역
+			mav.addObject("list2", list2); // 리뷰내역
 
 			mav.setViewName("orderHistory");
 
@@ -130,11 +134,15 @@ public class UserController {
 			ModelAndView mav = new ModelAndView();
 			List<ProductDTO> list = null; // 최신 악세서리
 			List<ProductDTO> list2 = null; // 베스트셀러 악세서리
+			List<ReviewDTO> list3 = null; // 리뷰 리스트
+			
 			list = productSer.mainListAll();
 			list2 = productSer.bestListAll();
+			list3 = productSer.reviewListAll();
 			
 			mav.addObject("list", list); // 최신 악세서리
 			mav.addObject("list2", list2); // 베스트셀러 악세서리
+			mav.addObject("list3", list3); // 리뷰 리스트
 			mav.setViewName("home");
 
 			return mav;

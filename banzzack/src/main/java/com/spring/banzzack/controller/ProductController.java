@@ -117,7 +117,7 @@ public class ProductController {
 
 	// 상품등록 페이지
 	@RequestMapping(value = "productReg.do", method = RequestMethod.GET)
-	public String productReg(Locale locale, Model model) {
+	public String productReg(Locale locale, Model model, HttpSession session) {
 		return "productReg";
 	}
 
@@ -178,11 +178,14 @@ public class ProductController {
 		ModelAndView mav = new ModelAndView();
 		VirtualDTO dto2 = new VirtualDTO();
 		List<ProductDTO> list = null; // 베스트셀러 악세서리
+		List<ReviewDTO> list2 = null; // 리뷰 리스트
 		dto = productSer.productSearch(PRODUCT_NUM);
 		list = productSer.bestListAll();
+		list2 = productSer.productReviewList(PRODUCT_NUM);
 		dto2 = productSer.virtualImg(PRODUCT_NUM);
 		System.out.println("정상적인 접근");
 		mav.addObject("list", list); // 최신 악세서리
+		mav.addObject("list2", list2); // 리뷰 리스트
 		mav.addObject("dto", dto);
 		mav.addObject("dto2", dto2);
 
@@ -214,7 +217,7 @@ public class ProductController {
 	// 상품 구매
 		@RequestMapping(value = "review.do")
 		public ModelAndView review(Locale locale, @RequestParam int PRODUCT_NUM,
-				@RequestParam int ORDERS_NUM) throws Exception {
+				@RequestParam int ORDERS_NUM, HttpSession session) throws Exception {
 			ModelAndView mav = new ModelAndView();
 			
 			mav.addObject("PRODUCT_NUM", PRODUCT_NUM); // 최신 악세서리
@@ -223,7 +226,24 @@ public class ProductController {
 
 			return mav;
 		}
+		
+		
+		// 리뷰 삭제
+		@RequestMapping(value = "/myReivewAjax.do", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+		public @ResponseBody String myReivewAjax(String REVIEW_NUM, String ORDERS_NUM, ModelAndView mav, HttpSession session)
+				throws IOException, Exception {
+System.out.println("ORDERS_NUM = "+ORDERS_NUM);
+			System.out.println("fileUploadAjax에 접근함");
+			ReviewDTO dto = new ReviewDTO();
+			dto.setREVIEW_NUM(Integer.parseInt(REVIEW_NUM));
+			dto.setORDERS_NUM(Integer.parseInt(ORDERS_NUM));
+			
+			productSer.deletReivew(dto);
+			productSer.UpdateisReivew(dto);
+			
+			return "deleted"; // mypage.jsp(결과화면)로 포워딩
 
+		}
 	// 상품리뷰 처리
 	@RequestMapping(value = "reviewOk.do", method = RequestMethod.POST)
 	public ModelAndView reviewOk(Locale locale, ReviewDTO dto, HttpSession session) throws Exception {
@@ -235,13 +255,15 @@ public class ProductController {
 		productSer.changeReview(dto.getORDERS_NUM());
 		System.out.println("리뷰등록 되었음");
 
-		List<MyOrderDTO> list = null; // 베스트셀러 악세서리
+		List<MyOrderDTO> list = null; // 주문내역
+		List<ReviewDTO> list2 = null; // 리뷰내역
 
 		list = productSer.myOrdersListAll(session.getAttribute("userId").toString());
+		list2 = productSer.myReviewListAll(session.getAttribute("userId").toString());
 
 		System.out.println("정상적인 접근");
-		mav.addObject("list", list); // 최신 악세서리
-
+		mav.addObject("list", list); // 최신 주문내역
+		mav.addObject("list2", list2); // 리뷰내역
 
 		mav.setViewName("orderHistory");
 		
@@ -282,15 +304,20 @@ public class ProductController {
 		}
 	}
 
+	// 홈페이지 설정
 	public ModelAndView setHome() {
 		ModelAndView mav = new ModelAndView();
 		List<ProductDTO> list = null; // 최신 악세서리
 		List<ProductDTO> list2 = null; // 베스트셀러 악세서리
+		List<ReviewDTO> list3 = null; // 리뷰 리스트
+		
 		list = productSer.mainListAll();
 		list2 = productSer.bestListAll();
-
+		list3 = productSer.reviewListAll();
+		
 		mav.addObject("list", list); // 최신 악세서리
 		mav.addObject("list2", list2); // 베스트셀러 악세서리
+		mav.addObject("list3", list3); // 리뷰 리스트
 		mav.setViewName("home");
 
 		return mav;

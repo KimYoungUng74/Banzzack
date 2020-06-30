@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.banzzack.dto.ProductDTO;
+import com.spring.banzzack.dto.ReviewDTO;
 import com.spring.banzzack.service.ProductService;
 import com.spring.banzzack.service.UserService;
 
@@ -40,19 +41,19 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String mainpage(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		List<ProductDTO> list = null; // 최신 악세서리
+		List<ProductDTO> list2 = null; // 베스트셀러 악세서리
+		List<ReviewDTO> list3 = null; // 리뷰 리스트
+		
+		list = productSer.mainListAll();
+		list2 = productSer.bestListAll();
+		list3 = productSer.reviewListAll();
 
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-		/*
-		 * UserDTO userDTO = userSer.Test(); System.out.println(": " +
-		 * userDTO.toString());
-		 */
-		model.addAttribute("serverTime", formattedDate);
-
-		return "reviewPage";
+		model.addAttribute("list", list); 
+		model.addAttribute("list2", list2); 
+		model.addAttribute("list3", list3); // 리뷰 리스트
+		
+		return "home";
 	}
 
 	// 상품 리스트
@@ -69,11 +70,15 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView();
 		List<ProductDTO> list = null; // 최신 악세서리
 		List<ProductDTO> list2 = null; // 베스트셀러 악세서리
+		List<ReviewDTO> list3 = null; // 리뷰 리스트
+		
 		list = productSer.mainListAll();
 		list2 = productSer.bestListAll();
-		
+		list3 = productSer.reviewListAll();
+
 		mav.addObject("list", list); // 최신 악세서리
 		mav.addObject("list2", list2); // 베스트셀러 악세서리
+		mav.addObject("list3", list3); // 리뷰 리스트
 		mav.setViewName("home");
 
 		return mav;

@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Asbab - eCommerce HTML5 Templatee</title>
+<title>반짝 반짝 아름다운 Banzzack에 오신걸 환영합니다.</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -278,38 +278,65 @@ small {
 										alt="logo images"></a>
 								</div>
 							</div>
-							<div class="col-md-5 col-lg-7 col-sm-5 col-xs-3">
+							<div class="col-md-6">
 								<nav class="main__menu__nav hidden-xs hidden-sm">
 									<ul class="main__menu">
-										<li class="drop"><a href="home">Home</a></li>
-										<li class="drop"><a href="#">귀걸이</a>
+										<li class="drop"><a href="home.do">Home</a></li>
+										<li class="drop"><a href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=all">귀걸이</a>
 											<ul class="dropdown">
-
 												<!-- Start Single Mega MEnu -->
-												<li><a href="product-grid.html">패션 귀걸이</a></li>
-												<li><a href="cart.html">실버침</a></li>
-												<li><a href="checkout.html">투웨이귀걸이</a></li>
-												<li><a href="wishlist.html">핸드메이드 귀걸이</a></li>
-												<li><a href="wishlist.html">롱귀걸이</a></li>
-												<li><a href="wishlist.html">러블리</a></li>
+												<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=패션 귀걸이">패션
+													귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=실버침">실버침</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=투웨이귀걸이">투웨이귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=핸드메이드 귀걸이">핸드메이드
+													귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=롱귀걸이">롱귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=러블리">러블리</a></li>
 												<!-- End Single Mega MEnu -->
 											</ul></li>
 
-										<li class="drop"><a href="#">반지</a>
+										<li class="drop"><a href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=all">반지</a>
 											<ul class="dropdown">
-												<li><a href="#">14/18k 링</a></li>
-												<li><a href="#">실버링</a></li>
-												<li><a href="wishlist.html">커플링</a></li>
-												<li><a href="cart.html">심플링</a></li>
-												<li><a href="checkout.html">다이아몬드 링</a></li>
+												<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=14/18k">14/18k</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=실버링">실버링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=커플링">커플링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=심플링">심플링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=다이아몬드 링">다이아몬드
+													링</a></li>
 											</ul></li>
 
-										<li class="drop"><a href="#">목걸이</a>
+										<li class="drop"><a href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=all">목걸이</a>
 											<ul class="dropdown">
-												<li><a href="#">패션 목걸이</a></li>
-												<li><a href="#">탄생석 목걸이</a></li>
-												<li><a href="wishlist.html">진주 목걸이</a></li>
-												<li><a href="cart.html">체인 목걸이</a></li>
+												<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 목걸">14/18k
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 펜던트">14/18k
+													펜던트</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=24k 순금목걸이">24k
+													순금목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=탄생석 목걸이">탄생석
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=진주 목걸이">진주
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=체인 목걸이">체인
+													목걸이</a></li>
 											</ul></li>
 									</ul>
 								</nav>
@@ -321,45 +348,93 @@ small {
 											<li class="drop"><a href="#">귀걸이</a>
 												<ul class="dropdown">
 													<!-- Start Single Mega MEnu -->
-													<li><a href="product-grid.html">패션 귀걸이</a></li>
-													<li><a href="cart.html">실버침</a></li>
-													<li><a href="checkout.html">투웨이귀걸이</a></li>
-													<li><a href="wishlist.html">핸드메이드 귀걸이</a></li>
-													<li><a href="wishlist.html">롱귀걸이</a></li>
-													<li><a href="wishlist.html">러블리</a></li>
+													<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=패션 귀걸이">패션
+													귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=실버침">실버침</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=투웨이귀걸이">투웨이귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=핸드메이드 귀걸이">핸드메이드
+													귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=롱귀걸이">롱귀걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=러블리">러블리</a></li>
 													<!-- End Single Mega MEnu -->
 												</ul></li>
 
 											<li class="drop"><a href="#">반지</a>
 												<ul class="dropdown">
-													<li><a href="#">14/18k 링</a></li>
-													<li><a href="#">실버링</a></li>
-													<li><a href="wishlist.html">커플링</a></li>
-													<li><a href="cart.html">심플링</a></li>
-													<li><a href="checkout.html">다이아몬드 링</a></li>
-												</ul></li>
+													<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=14/18k">14/18k</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=실버링">실버링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=커플링">커플링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=심플링">심플링</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=다이아몬드 링">다이아몬드
+													링</a></li>
 
 											<li class="drop"><a href="#">목걸이</a>
 												<ul class="dropdown">
-													<li><a href="#">14/18k 목걸이</a></li>
-													<li><a href="#">14/18k 펜던트</a></li>
-													<li><a href="wishlist.html">24k 순금목걸이</a></li>
-													<li><a href="cart.html">탄생석 목걸이</a></li>
-													<li><a href="checkout.html">진주 목걸이</a></li>
-													<li><a href="checkout.html">체인 목걸이</a></li>
+													<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 목걸">14/18k
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 펜던트">14/18k
+													펜던트</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=24k 순금목걸이">24k
+													순금목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=탄생석 목걸이">탄생석
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=진주 목걸이">진주
+													목걸이</a></li>
+											<li><a
+												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=체인 목걸이">체인
+													목걸이</a></li>
+											</ul></li>
 												</ul></li>
 										</ul>
 									</nav>
 								</div>
 							</div>
-							<div class="col-md-5 col-lg-2 col-sm-4 col-xs-4">
+							<div class="col-md-4">
 								<div class="header__right">
-									<a href="login.do">로그인</a>&nbsp; |&nbsp; <a href="signup.do">회원가입</a>
-									<!-- <div class="htc__shopping__cart">
-										&nbsp; |&nbsp; <a class="cart__menu" href="#"><i
-											class="icon-handbag icons"></i></a> <a href="#"><span
-											class="htc__qua">2</span></a>
-									</div> -->
+
+									<div class="header__account">
+										<c:choose>
+											<c:when test="${sessionScope.userId == null}">
+												<a href="login.do"><i class="icon-user icons"></i>로그인</a>
+											</c:when>
+											<c:otherwise>
+												<c:choose>
+													<c:when test="${sessionScope.userId == 'root'}">
+														<a href="productReg.do">상품등록</a>
+													</c:when>
+													<c:otherwise>
+														<a href="myPage.do">마이페이지</a>
+													</c:otherwise>
+												</c:choose>
+											</c:otherwise>
+										</c:choose>
+
+									</div>
+									<c:choose>
+										<c:when test="${sessionScope.userId == null}">
+											<a href="signup.do">회원가입</a>
+										</c:when>
+										<c:otherwise>
+											<a href="logout.do">로그아웃</a>
+										</c:otherwise>
+									</c:choose>
+
 								</div>
 							</div>
 						</div>
@@ -367,7 +442,6 @@ small {
 					<div class="mobile-menu-area"></div>
 				</div>
 			</div>
-			<!-- End Mainmenu Area -->
 			<!-- End Mainmenu Area -->
 		</header>
 		<!-- End Header Area -->
