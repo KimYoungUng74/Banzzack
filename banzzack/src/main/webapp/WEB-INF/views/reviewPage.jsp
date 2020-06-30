@@ -1,11 +1,12 @@
 <!doctype html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <html>
 <head>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
 <meta charset="utf-8">
+
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Asbab - eCommerce HTML5 Templatee</title>
 <meta name="description" content="">
@@ -41,10 +42,92 @@
 <link rel="stylesheet"
 	href="<c:url value='resources/shop/css/custom.css'/>">
 
-
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- Modernizr JS -->
 <script
 	src="<c:url value='resources/shop/js/vendor/modernizr-3.5.0.min.js'/>"></script>
+
+<style>
+.fileDrop {
+	height: 200px;
+	border: 1px dotted blue;
+	margin-bottom: 15px;
+	background-image: url("http://localhost:8181/banzzackimg/profile2.jpg");
+}
+
+small {
+	margin-left: 3px;
+	font-weight: bold;
+	color: gray;
+}
+</style>
+<script>
+	var REVIEW_IMG = false;
+
+	$(document)
+			.ready(
+					function() {
+						$(".fileDrop").on("dragenter dragover",
+								function(event) {
+									event.preventDefault(); // 기본효과를 막음
+								});
+						// event : jQuery의 이벤트
+						// originalEvent : javascript의 이벤트
+						$("#productFileDrop")
+								.on(
+										"drop",
+										function(event) {
+											event.preventDefault(); // 기본효과를 막음
+											// 드래그된 파일의 정보
+											var files = event.originalEvent.dataTransfer.files;
+											// 첫번째 파일
+											var file = files[0];
+											// 콘솔에서 파일정보 확인
+											console.log(file);
+
+											// ajax로 전달할 폼 객체
+											var formData = new FormData();
+											// 폼 객체에 파일추가, append("변수명", 값)
+											formData.append("file", file);
+
+											$
+													.ajax({
+														type : "post",
+														url : "reviewUploadAjax.do",
+														data : formData,
+														// processData: true=> get방식, false => post방식
+														dataType : "text",
+														// contentType: true => application/x-www-form-urlencoded, 
+														//                false => multipart/form-data
+														processData : false,
+														contentType : false,
+														success : function(data) {
+															var str = "";
+															if (REVIEW_IMG == false) {
+																str = "<div class=\"col-md-4 imglist\"><img src='http://localhost:8181/banzzackimg/reivew/"+data+"'><input type=\"hidden\" name=\"REVIEW_IMG\" value=\""+data+"\">";
+																PRODUCT_IMG1 = true;
+																// 삭제 버튼
+																str += "<span name=\"PRODUCT_IMG1\">[삭제]</span></div>";
+																$(
+																		".productList")
+																		.append(
+																				str);
+															} 
+														}
+													});
+										});
+
+						$(".productList").on("click", "span", function(event) {
+							alert("이미지 삭제")
+							var that = $(this); // 여기서 this는 클릭한 span태그
+							// 클릭한 span태그가 속한 div를 제거
+							if ('PRODUCT_IMG1' == that.attr('name')) {
+								PRODUCT_IMG1 = false;
+							} 							that.parent("div").remove();
+						});
+						
+					});
+</script>
 </head>
 <body>
 	<!--[if lt IE 8]>
@@ -63,17 +146,18 @@
 						<div class="menumenu__container clearfix">
 							<div class="col-lg-2 col-md-2 col-sm-3 col-xs-5">
 								<div class="logo">
-									<a href="index.html"><img
+									<a href="home.do"><img
 										src="<c:url value='resources/shop/images/logo/logo.png'/>"
 										alt="logo images"></a>
 								</div>
 							</div>
-							<div class="col-md-6 col-lg-7 col-sm-5 col-xs-3">
+							<div class="col-md-5 col-lg-7 col-sm-5 col-xs-3">
 								<nav class="main__menu__nav hidden-xs hidden-sm">
 									<ul class="main__menu">
 										<li class="drop"><a href="home">Home</a></li>
 										<li class="drop"><a href="#">귀걸이</a>
 											<ul class="dropdown">
+
 												<!-- Start Single Mega MEnu -->
 												<li><a href="product-grid.html">패션 귀걸이</a></li>
 												<li><a href="cart.html">실버침</a></li>
@@ -95,12 +179,10 @@
 
 										<li class="drop"><a href="#">목걸이</a>
 											<ul class="dropdown">
-												<li><a href="#">14/18k 목걸이</a></li>
-												<li><a href="#">14/18k 펜던트</a></li>
-												<li><a href="wishlist.html">24k 순금목걸이</a></li>
-												<li><a href="cart.html">탄생석 목걸이</a></li>
-												<li><a href="checkout.html">진주 목걸이</a></li>
-												<li><a href="checkout.html">체인 목걸이</a></li>
+												<li><a href="#">패션 목걸이</a></li>
+												<li><a href="#">탄생석 목걸이</a></li>
+												<li><a href="wishlist.html">진주 목걸이</a></li>
+												<li><a href="cart.html">체인 목걸이</a></li>
 											</ul></li>
 									</ul>
 								</nav>
@@ -143,16 +225,14 @@
 									</nav>
 								</div>
 							</div>
-							<div class="col-md-4 col-lg-2 col-sm-4 col-xs-4">
+							<div class="col-md-5 col-lg-2 col-sm-4 col-xs-4">
 								<div class="header__right">
-									<div class="header__account">
-										<a href="#"><i class="icon-user icons"></i>로그인</a>
-									</div>
-									<div class="htc__shopping__cart">
-										<a class="cart__menu" href="#"><i
+									<a href="login.do">로그인</a>&nbsp; |&nbsp; <a href="signup.do">회원가입</a>
+									<!-- <div class="htc__shopping__cart">
+										&nbsp; |&nbsp; <a class="cart__menu" href="#"><i
 											class="icon-handbag icons"></i></a> <a href="#"><span
 											class="htc__qua">2</span></a>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -253,91 +333,67 @@
 		</div>
 		<!-- End Bradcaump area -->
 		<!-- cart-main-area start -->
-		<div class="cart-main-area ptb--100 bg__white">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="table-content table-responsive">
-							<h2
-								style="padding: 10px; background-color: #FEE76F; color: white;">결제
-								내역</h2>
-							<table>
-								<thead>
-									<tr>
-										<th class="product-thumbnail">상품 이미지</th>
-										<th class="product-name">상품명</th>
-										<th class="product-price">가격</th>
-										<th class="product-quantity">수량</th>
-										<th class="product-subtotal">총 가격</th>
-										<th class="product-remove">결제 일</th>
-										<th class="product-subtotal">리뷰 하기</th>
-									</tr>
-								</thead>
-								<tbody>
-								<c:forEach var="row" items="${list}">
-									<tr>
-										<td class="product-thumbnail"><a href="productDetail.do?PRODUCT_NUM=${row.PRODUCT_NUM}"><img
-												src="<c:url value='http://localhost:8181/banzzackimg/product/${row.PRODUCT_IMG1}'/>"></a></td>
-										<td class="product-name"><a href="productDetail.do?PRODUCT_NUM=${row.PRODUCT_NUM}">${row.PRODUCT_TITLE}</a></td>
-										<td class="product-price"><span class="amount">${row.PRODUCT_RPICE}원</span></td>
-										<td class="product-quantity"><input type="number"
-											value="${row.ORDERS_AMOUNT}" readonly="readonly" /></td>
-										<td class="product-subtotal">${row.PRODUCT_RPICE*row.ORDERS_AMOUNT}원</td>
-										<td class="product-subtotal">${row.ORDERS_TIME}</td>
-										<c:choose>
-										<c:when test="${row.IS_REVIEW==1}"><td class="product-subtotal">리뷰완료</td></c:when>
-										<c:otherwise><td class="product-subtotal"><a class="simpleBtn"
-											href="review.do?PRODUCT_NUM=${row.PRODUCT_NUM}&ORDERS_NUM=${row.ORDERS_NUM}">리뷰하기</a></td></c:otherwise>
-										</c:choose>
-										
-									</tr>
-								</c:forEach>
-								</tbody>
-							</table>
-						</div>
-						<div style="padding-bottom: 20px">
-							<ul class="payment__btn">
-								<li><a href="#">계속 쇼핑하기</a></li>
-							</ul>
-						</div>
-						
-						<div class="table-content table-responsive" >
-							<h2
-								style="padding: 10px; background-color: #FEE76F; color: white;">리뷰
-								내역</h2>
-							<table>
-								<thead>
-									<tr>
-										<th class="product-thumbnail">상품 이미지</th>
-										<th class="product-name">상품명</th>
-										<th class="product-name">후기 제목</th>
-										<th class="product-remove">리뷰 작성일</th>
-										<th class="product-remove">리뷰 삭제</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td class="product-thumbnail"><a href="#"><img
-												src="<c:url value='resources/shop/images/earring/매직스퀘어 귀걸이.gif'/>"></a></td>
-										<td class="product-name"><a href="#">매직스퀘어 귀걸이</a></td>
-										<td class="product-name"><a href="#">반짝반짝 마음에 들어요</a></td>
-										<td class="product-subtotal">2020-05-24</td>
-										<td class="product-remove"><a href="#"><i class="icon-trash icons"></i></a></td>
-									</tr>
+		<div class="container">
+			<div class="row">
+				<div>
+					<div class="checkout__inner">
+						<div class="accordion-list">
+							<div class="accordion__body__form">
+								<div class="row">
 
-									<tr>
-										<td class="product-thumbnail"><a href="#"><img
-												src="<c:url value='resources/shop/images/earring/너의 곁에 나비 귀걸이.gif'/>"></a></td>
-										<td class="product-name"><a href="#">너의 곁에 나비 귀걸이</a></td>
-										<td class="product-name"><a href="#">찰랑찰랑 마음에 들어요</a></td>
-										<td class="product-subtotal">2020-05-24</td>
-										<td class="product-remove"><a href="#"><i class="icon-trash icons"></i></a></td>
-									</tr>
-								</tbody>
-							</table>
+									<div class="col-md-12"
+										style="border: 1px solid gray; padding: 10px; margin-top: 100px;">
+										<form action="reviewOk.do" method="post"
+											accept-charset="UTF-8">
+											<div class="row">
+											<input type="hidden" name="PRODUCT_NUM" value="${PRODUCT_NUM}">
+											<input type="hidden" name="ORDERS_NUM" value="${ORDERS_NUM}">
+												<div class="col-md-12">
+													<h5 class="checkout-method__title">리뷰하기</h5>
+													<h5 class="checkout-method__title">상품을 리뷰하세요</h5>
+												</div>
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-id">리뷰 제목</label> <input type="text"
+															id="user_id" name="REVIEW_TITLE">
+													</div>
+												</div>
+												
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-pass">상품 리뷰</label>
+														<textarea rows="8" style="width: 100%; resize: none;"
+															name="REVIEW_CONTENTS"></textarea>
+													</div>
+												</div>
+												<!-- 파일을 업로드할 영역 -->
+												<div class="col-md-12">
+													<div class="single-input">
+														<label for="user-pass">리뷰 이미지 등록</label>
+
+														<div class="fileDrop" id="productFileDrop"></div>
+													</div>
+												</div>
+												<!-- 업로드된 파일 목록 -->
+												<div class="col-md-12">
+													<div class="productList" id="productList"></div>
+												</div>
+
+												<div class="col-md-12">
+													<div class="dark-btn" style="margin-top: 10px;">
+														<button>등록하기</button>
+													</div>
+												</div>
+											</div>
+
+										</form>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 		<!-- cart-main-area end -->

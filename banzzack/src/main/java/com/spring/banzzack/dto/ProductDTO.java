@@ -12,6 +12,8 @@ public class ProductDTO {
 	private int PRODUCT_COUNT; // 재고 수량
 	private String PRODUCT_CATEGORY1; // 상품 카테고리1
 	private String PRODUCT_CATEGORY2; // 상품 카테고리2
+	
+	
 	public int getPRODUCT_NUM() {
 		return PRODUCT_NUM;
 	}

@@ -10,6 +10,8 @@
 		<typeAlias type="com.spring.banzzack.dto.ProductDTO" alias="ProductDTO"></typeAlias>
 		<typeAlias type="com.spring.banzzack.dto.VirtualDTO" alias="VirtualDTO"></typeAlias>
 		<typeAlias type="com.spring.banzzack.dto.OrderDTO" alias="OrderDTO"></typeAlias>
+		<typeAlias type="com.spring.banzzack.dto.MyOrderDTO" alias="MyOrderDTO"></typeAlias>
+		<typeAlias type="com.spring.banzzack.dto.ReviewDTO" alias="ReviewDTO"></typeAlias>
 	</typeAliases>
 	
 	

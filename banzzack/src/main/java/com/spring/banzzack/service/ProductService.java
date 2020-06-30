@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.banzzack.dao.ProductDAO;
+import com.spring.banzzack.dto.MyOrderDTO;
 import com.spring.banzzack.dto.OrderDTO;
 import com.spring.banzzack.dto.ProductDTO;
+import com.spring.banzzack.dto.ReviewDTO;
 import com.spring.banzzack.dto.VirtualDTO;
 
 
@@ -67,12 +69,14 @@ public class ProductService{
 		// TODO Auto-generated method stub
 		return dao.bestSellerproduct(pRODUCT_CATEGORY1); // 상품 등록
 	}
-
+	
+	// 최신 품목 리스트
 	public List<ProductDTO> mainListAll() {
 		// TODO Auto-generated method stub
 		return dao.mainListAll(); // 메인 최신 상품
 	}
-
+	
+	// 베스트 셀러
 	public List<ProductDTO> bestListAll() {
 		// TODO Auto-generated method stub
 		return dao.bestListAll(); // 메인 베스트 상품
@@ -82,6 +86,24 @@ public class ProductService{
 		dao.orderProduct(dto); // 상품 등록
 		return 1;
 	}
+
+	// 마이페이지 - 구매 내역
+	public List<MyOrderDTO> myOrdersListAll(String userid) {
+		// TODO Auto-generated method stub
+		return dao.myOrdersListAll(userid); // 메인 베스트 상품
+	}
+
+	public int review(ReviewDTO dto) {
+		dao.review(dto); // 상품 리뷰
+		return 1;
+	}
+
+	public void changeReview(int orders_NUM) {
+		ReviewDTO dto = new ReviewDTO();
+		dto.setORDERS_NUM(orders_NUM);
+		dao.changeReview(dto); // 상품 등록
+	}
+
 
 	
 }

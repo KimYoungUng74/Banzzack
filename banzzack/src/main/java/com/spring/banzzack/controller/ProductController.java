@@ -31,8 +31,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.banzzack.dto.MyOrderDTO;
 import com.spring.banzzack.dto.OrderDTO;
 import com.spring.banzzack.dto.ProductDTO;
+import com.spring.banzzack.dto.ReviewDTO;
 import com.spring.banzzack.dto.UserDTO;
 import com.spring.banzzack.dto.VirtualDTO;
 import com.spring.banzzack.service.ProductService;
@@ -61,6 +63,26 @@ public class ProductController {
 		System.out.println("fileUploadAjax에 접근함");
 
 		String dirname = File.separator + "product";
+		logger.info("파일이름 :" + file.getOriginalFilename());
+		logger.info("파일크기 : " + file.getSize());
+		logger.info("컨텐트 타입 : " + file.getContentType());
+		String savedName = file.getOriginalFilename();
+		System.out.println("파일이름 :" + file.getOriginalFilename());
+
+		savedName = uploadFile(savedName, file.getBytes(), dirname);
+		System.out.println(savedName);
+		return savedName; // mypage.jsp(결과화면)로 포워딩
+
+	}
+
+	// 파일 업로드 Ajax
+	@RequestMapping(value = "/reviewUploadAjax.do", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public @ResponseBody String reviewUploadAjax(MultipartFile file, ModelAndView mav, HttpSession session)
+			throws IOException, Exception {
+		System.out.println(file);
+		System.out.println("reviewUploadAjax에 접근함");
+
+		String dirname = File.separator + "reivew";
 		logger.info("파일이름 :" + file.getOriginalFilename());
 		logger.info("파일크기 : " + file.getSize());
 		logger.info("컨텐트 타입 : " + file.getContentType());
@@ -122,6 +144,7 @@ public class ProductController {
 		return mav;
 	}
 
+
 	// 상품등록 처리
 	@RequestMapping(value = "registOk.do", method = RequestMethod.POST)
 	public ModelAndView registOk(Locale locale, ProductDTO dto, @RequestParam String VIRTUAL_IMG,
@@ -170,23 +193,61 @@ public class ProductController {
 
 	// 상품 구매
 	@RequestMapping(value = "orderProduct.do")
-		public ModelAndView orderProduct(Locale locale,  HttpSession session, OrderDTO dto)
-				throws Exception {
-			ModelAndView mav = new ModelAndView();
-			System.out.println(dto);
-			dto.setUSER_ID(session.getAttribute("userId").toString());
-			if(productSer.orderProduct(dto)==1) {
-				System.out.println("구매 성공");
-			} else {
-				System.out.println("구매 실패");
-			}
-			System.out.println("정상적인 접근");
+	public ModelAndView orderProduct(Locale locale, HttpSession session, OrderDTO dto) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		System.out.println(dto);
+		dto.setUSER_ID(session.getAttribute("userId").toString());
+		if (productSer.orderProduct(dto) == 1) {
+			System.out.println("구매 성공");
+		} else {
+			System.out.println("구매 실패");
+		}
+		System.out.println("정상적인 접근");
 
-			mav = setHome();
-			mav.setViewName("home");
+		mav = setHome();
+		mav.setViewName("home");
+
+		return mav;
+	}
+
+	
+	// 상품 구매
+		@RequestMapping(value = "review.do")
+		public ModelAndView review(Locale locale, @RequestParam int PRODUCT_NUM,
+				@RequestParam int ORDERS_NUM) throws Exception {
+			ModelAndView mav = new ModelAndView();
+			
+			mav.addObject("PRODUCT_NUM", PRODUCT_NUM); // 최신 악세서리
+			mav.addObject("ORDERS_NUM", ORDERS_NUM); // 베스트셀러 악세서리
+			mav.setViewName("reviewPage");
 
 			return mav;
 		}
+
+	// 상품리뷰 처리
+	@RequestMapping(value = "reviewOk.do", method = RequestMethod.POST)
+	public ModelAndView reviewOk(Locale locale, ReviewDTO dto, HttpSession session) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		dto.setUSER_ID(session.getAttribute("userId").toString());
+
+		System.out.println(dto);
+		productSer.review(dto);
+		productSer.changeReview(dto.getORDERS_NUM());
+		System.out.println("리뷰등록 되었음");
+
+		List<MyOrderDTO> list = null; // 베스트셀러 악세서리
+
+		list = productSer.myOrdersListAll(session.getAttribute("userId").toString());
+
+		System.out.println("정상적인 접근");
+		mav.addObject("list", list); // 최신 악세서리
+
+
+		mav.setViewName("orderHistory");
+		
+
+		return mav;
+	}
 
 	// 파일명 랜덤생성 메서드
 	private String uploadFile(String originalName, byte[] fileData, String dirName) throws Exception {

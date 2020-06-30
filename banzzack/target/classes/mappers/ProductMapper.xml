@@ -16,6 +16,20 @@
 		#{PRODUCT_IMG2}, #{PRODUCT_IMG3}, #{PRODUCT_RPICE},
 		#{PRODUCT_COUNT}, #{PRODUCT_CATEGORY1}, #{PRODUCT_CATEGORY2})
 	</insert>
+	
+	<!-- 리뷰 등록 -->
+	<insert id="review" parameterType="ReviewDTO">
+		INSERT INTO
+		REVIEW_TABLE(REVIEW_NUM, ORDERS_NUM, REVIEW_TITLE, REVIEW_CONTENTS, USER_ID, PRODUCT_NUM, REVIEW_IMG)
+		VALUES(REVIEWAUTOINC.nextval, #{ORDERS_NUM}, #{REVIEW_TITLE}, #{REVIEW_CONTENTS},
+		#{USER_ID}, #{PRODUCT_NUM}, #{REVIEW_IMG})
+	</insert>
+	
+	<update id="changeReview" parameterType="ReviewDTO">
+		UPDATE ORDERS_TABLE
+    	SET IS_REVIEW = 1
+    	WHERE ORDERS_NUM = #{ORDERS_NUM}
+	</update>
 	<!-- 가상이미지 등록 -->
 	<insert id="VirtualRegister" parameterType="VirtualDTO">
 		INSERT INTO
@@ -56,7 +70,8 @@
 		PRODUCT_RPICE
 		FROM PRODUCT_TABLE
 		WHERE PRODUCT_CATEGORY1 = #{PRODUCT_CATEGORY1}
-		AND PRODUCT_CATEGORY2 = #{PRODUCT_CATEGORY2}
+		AND
+		PRODUCT_CATEGORY2 = #{PRODUCT_CATEGORY2}
 	</select>
 	<!-- 제품 정보 조회 -->
 	<select id="ProductSearch" parameterType="ProductDTO"
@@ -76,6 +91,8 @@
 		WHERE PRODUCT_NUM
 		= #{PRODUCT_NUM}
 	</select>
+
+	<!-- 베스트 셀러 -->
 	<select id="bestListAll" resultType="ProductDTO">
 		SELECT SUM(o.orders_amount)
 		구매수량,
@@ -83,7 +100,8 @@
 		PRODUCT_TITLE,
 		PRODUCT_IMG1,
 		PRODUCT_RPICE
-		FROM ORDERS_TABLE o,
+		FROM
+		ORDERS_TABLE o,
 		product_table p
 		where o.product_num = p.product_num
 		group by
@@ -91,6 +109,8 @@
 		ORDER BY
 		SUM(o.orders_amount) DESC
 	</select>
+
+	<!-- 해당 카테고리 베스트 셀러 -->
 	<select id="bestSellerproduct" parameterType="ProductDTO"
 		resultType="ProductDTO">
 		SELECT SUM(o.orders_amount) 구매수량,
@@ -102,9 +122,19 @@
 		product_table p
 		where o.product_num = p.product_num AND
 		PRODUCT_CATEGORY1 = #{PRODUCT_CATEGORY1}
-		group by p.PRODUCT_NUM,PRODUCT_TITLE,PRODUCT_IMG1,PRODUCT_RPICE
+		group by
+		p.PRODUCT_NUM,PRODUCT_TITLE,PRODUCT_IMG1,PRODUCT_RPICE
 		ORDER BY
 		SUM(o.orders_amount) DESC
+	</select>
+
+	<!-- 구매내역 리스트 -->
+	<select id="myOrdersListAll" parameterType="MyOrderDTO" resultType="MyOrderDTO">
+		SELECT o.ORDERS_NUM, p.product_num, p.product_img1,
+		p.product_title, p.PRODUCT_RPICE, o.ORDERS_AMOUNT, o.orders_time, o.is_review
+		FROM PRODUCT_TABLE p, ORDERS_TABLE o
+		WHERE p.product_num = o.product_num AND o.user_id =  #{USER_ID}
+		ORDER BY o.orders_time
 	</select>
 
 	<!-- 가상 착용 정보 조회 -->
@@ -124,6 +154,7 @@
 	<insert id="orderProduct" parameterType="OrderDTO">
 		INSERT INTO
 		ORDERS_TABLE(ORDERS_NUM, ORDERS_AMOUNT, USER_ID, PRODUCT_NUM)
-		VALUES(ORDERAUTOINC.nextval, #{ORDERS_AMOUNT}, #{USER_ID}, #{PRODUCT_NUM})
+		VALUES(ORDERAUTOINC.nextval, #{ORDERS_AMOUNT}, #{USER_ID},
+		#{PRODUCT_NUM})
 	</insert>
 </mapper>

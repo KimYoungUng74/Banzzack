@@ -52,7 +52,7 @@ public class HomeController {
 		 */
 		model.addAttribute("serverTime", formattedDate);
 
-		return "orderHistory";
+		return "reviewPage";
 	}
 
 	// 상품 리스트

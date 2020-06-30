@@ -17,10 +17,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.banzzack.dto.MyOrderDTO;
 import com.spring.banzzack.dto.ProductDTO;
 import com.spring.banzzack.dto.UserDTO;
+import com.spring.banzzack.dto.VirtualDTO;
 import com.spring.banzzack.service.ProductService;
 import com.spring.banzzack.service.UserService;
 
@@ -100,6 +103,26 @@ public class UserController {
 			mav = setHome();
 			mav.setViewName("home");
 			mav.addObject("msg", "logout");
+			return mav;
+		}
+		
+		// 마이 페이지
+		@RequestMapping(value = "myPage.do")
+		public ModelAndView myPage(Locale locale, HttpSession session)
+				throws Exception {
+
+			ModelAndView mav = new ModelAndView();
+
+			List<MyOrderDTO> list = null; // 베스트셀러 악세서리
+
+			list = productSer.myOrdersListAll(session.getAttribute("userId").toString());
+
+			System.out.println("정상적인 접근");
+			mav.addObject("list", list); // 최신 악세서리
+
+
+			mav.setViewName("orderHistory");
+
 			return mav;
 		}
 		

@@ -7,8 +7,11 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.spring.banzzack.dto.MyOrderDTO;
 import com.spring.banzzack.dto.OrderDTO;
 import com.spring.banzzack.dto.ProductDTO;
+import com.spring.banzzack.dto.ReviewDTO;
+import com.spring.banzzack.dto.UserDTO;
 import com.spring.banzzack.dto.VirtualDTO;
 
 @Repository
@@ -73,6 +76,24 @@ public class ProductDAO {
 
 	public void orderProduct(OrderDTO dto) {
 		mybatis.insert("ProductMapper.orderProduct", dto);
+	}
+
+	// 마이페이지
+	public List<MyOrderDTO> myOrdersListAll(String userid) {
+		// TODO Auto-generated method stub
+		MyOrderDTO dto = new MyOrderDTO();
+		dto.setUSER_ID(userid);
+		System.out.println(userid);
+		return mybatis.selectList("ProductMapper.myOrdersListAll", dto);
+	}
+
+	public void review(ReviewDTO dto) {
+		mybatis.insert("ProductMapper.review", dto);
+	}
+
+	// 리뷰 여부 수정
+	public void changeReview(ReviewDTO dto) {
+		mybatis.insert("ProductMapper.changeReview", dto);
 	}
 
 }
