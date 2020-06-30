@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.banzzack.dto.OrderDTO;
 import com.spring.banzzack.dto.ProductDTO;
 import com.spring.banzzack.dto.UserDTO;
 import com.spring.banzzack.dto.VirtualDTO;
@@ -74,66 +75,69 @@ public class ProductController {
 
 	// 파일 업로드 Ajax
 	@RequestMapping(value = "/virtualUploadAjax.do", method = RequestMethod.POST, produces = "application/text; charset=utf8")
-		public @ResponseBody String virtualUploadAjax(MultipartFile file, ModelAndView mav, HttpSession session) throws IOException, Exception {
-			System.out.println(file);
-			System.out.println("fileUploadAjax에 접근함");
-			
-			String dirname = File.separator + "virtual";
-			logger.info("파일이름 :" + file.getOriginalFilename());
-			logger.info("파일크기 : " + file.getSize());
-			logger.info("컨텐트 타입 : " + file.getContentType());
-			String savedName = file.getOriginalFilename();
-			System.out.println("파일이름 :" + file.getOriginalFilename());
+	public @ResponseBody String virtualUploadAjax(MultipartFile file, ModelAndView mav, HttpSession session)
+			throws IOException, Exception {
+		System.out.println(file);
+		System.out.println("fileUploadAjax에 접근함");
 
-			savedName = uploadFile(savedName, file.getBytes(), dirname);
-			System.out.println(savedName);
-			return savedName; // mypage.jsp(결과화면)로 포워딩
+		String dirname = File.separator + "virtual";
+		logger.info("파일이름 :" + file.getOriginalFilename());
+		logger.info("파일크기 : " + file.getSize());
+		logger.info("컨텐트 타입 : " + file.getContentType());
+		String savedName = file.getOriginalFilename();
+		System.out.println("파일이름 :" + file.getOriginalFilename());
 
-		}
+		savedName = uploadFile(savedName, file.getBytes(), dirname);
+		System.out.println(savedName);
+		return savedName; // mypage.jsp(결과화면)로 포워딩
+
+	}
 
 	// 상품등록 페이지
 	@RequestMapping(value = "productReg.do", method = RequestMethod.GET)
 	public String productReg(Locale locale, Model model) {
 		return "productReg";
 	}
-	
+
 	// 상품 리스트
-		@RequestMapping(value = "productList.do")
-		public ModelAndView productList(Locale locale,  @RequestParam String PRODUCT_CATEGORY1,  @RequestParam String PRODUCT_CATEGORY2, HttpSession session)
-				throws Exception {
-			ModelAndView mav = new ModelAndView();
-			List<ProductDTO> list = null;	// 카테고리
-			List<ProductDTO> list2 = null;	// 베스트 셀러
-			System.out.println("productList 정상적인 접근");
-			if(PRODUCT_CATEGORY2.equals("all")) {list = productSer.productListAll(PRODUCT_CATEGORY1);
-			}
-			else {list = productSer.productListSelect(PRODUCT_CATEGORY1, PRODUCT_CATEGORY2);}
-			list2 = productSer.bestSellerproduct(PRODUCT_CATEGORY1);
-			System.out.println(list2);
-			mav.addObject("list", list);	// 카테고리
-			mav.addObject("list2", list2);	// 베스트 셀러
-			mav.addObject("PRODUCT_CATEGORY1", PRODUCT_CATEGORY1);
-			mav.setViewName("productList");
-
-			return mav;
+	@RequestMapping(value = "productList.do")
+	public ModelAndView productList(Locale locale, @RequestParam String PRODUCT_CATEGORY1,
+			@RequestParam String PRODUCT_CATEGORY2, HttpSession session) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		List<ProductDTO> list = null; // 카테고리
+		List<ProductDTO> list2 = null; // 베스트 셀러
+		System.out.println("productList 정상적인 접근");
+		if (PRODUCT_CATEGORY2.equals("all")) {
+			list = productSer.productListAll(PRODUCT_CATEGORY1);
+		} else {
+			list = productSer.productListSelect(PRODUCT_CATEGORY1, PRODUCT_CATEGORY2);
 		}
+		list2 = productSer.bestSellerproduct(PRODUCT_CATEGORY1);
+		System.out.println(list2);
+		mav.addObject("list", list); // 카테고리
+		mav.addObject("list2", list2); // 베스트 셀러
+		mav.addObject("PRODUCT_CATEGORY1", PRODUCT_CATEGORY1);
+		mav.setViewName("productList");
 
+		return mav;
+	}
 
 	// 상품등록 처리
 	@RequestMapping(value = "registOk.do", method = RequestMethod.POST)
-	public ModelAndView registOk(Locale locale, ProductDTO dto, @RequestParam String VIRTUAL_IMG, @RequestParam String VIRTUAL_IMG2,HttpSession session) throws Exception {
+	public ModelAndView registOk(Locale locale, ProductDTO dto, @RequestParam String VIRTUAL_IMG,
+			@RequestParam String VIRTUAL_IMG2, HttpSession session) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		
+
 		if (1 == productSer.productReg(dto)) {
 			System.out.println("상품등록 되었음");
-			
+
 			VirtualDTO virDto = new VirtualDTO();
 			dto.setPRODUCT_CONTENTS(dto.getPRODUCT_CONTENTS().replace("\n", "<br>"));
 			virDto.setPRODUCT_NUM(dto.getPRODUCT_NUM());
 			virDto.setVIRTUAL_IMG(VIRTUAL_IMG);
 			virDto.setVIRTUAL_IMG2(VIRTUAL_IMG2);
 			productSer.virtualReg(virDto);
-			
+
 			mav = setHome();
 		} else {
 			System.out.println("상품등록 실패");
@@ -145,7 +149,7 @@ public class ProductController {
 
 	// 상품 상세 페이지
 	@RequestMapping(value = "productDetail.do")
-	public ModelAndView productDetail(@RequestParam int PRODUCT_NUM, Locale locale,  HttpSession session)
+	public ModelAndView productDetail(@RequestParam int PRODUCT_NUM, Locale locale, HttpSession session)
 			throws Exception {
 		ProductDTO dto = new ProductDTO();
 		ModelAndView mav = new ModelAndView();
@@ -158,15 +162,35 @@ public class ProductController {
 		mav.addObject("list", list); // 최신 악세서리
 		mav.addObject("dto", dto);
 		mav.addObject("dto2", dto2);
-		
+
 		mav.setViewName("product_details");
 
 		return mav;
 	}
 
+	// 상품 구매
+	@RequestMapping(value = "orderProduct.do")
+		public ModelAndView orderProduct(Locale locale,  HttpSession session, OrderDTO dto)
+				throws Exception {
+			ModelAndView mav = new ModelAndView();
+			System.out.println(dto);
+			dto.setUSER_ID(session.getAttribute("userId").toString());
+			if(productSer.orderProduct(dto)==1) {
+				System.out.println("구매 성공");
+			} else {
+				System.out.println("구매 실패");
+			}
+			System.out.println("정상적인 접근");
+
+			mav = setHome();
+			mav.setViewName("home");
+
+			return mav;
+		}
+
 	// 파일명 랜덤생성 메서드
 	private String uploadFile(String originalName, byte[] fileData, String dirName) throws Exception {
-			
+
 		// 폴더 생성
 		makeDir(uploadPath, dirName);
 		// uuid 생성(Universal Unique IDentifier, 범용 고유 식별자)
@@ -196,14 +220,14 @@ public class ProductController {
 			}
 		}
 	}
-	
+
 	public ModelAndView setHome() {
 		ModelAndView mav = new ModelAndView();
 		List<ProductDTO> list = null; // 최신 악세서리
 		List<ProductDTO> list2 = null; // 베스트셀러 악세서리
 		list = productSer.mainListAll();
 		list2 = productSer.bestListAll();
-		
+
 		mav.addObject("list", list); // 최신 악세서리
 		mav.addObject("list2", list2); // 베스트셀러 악세서리
 		mav.setViewName("home");

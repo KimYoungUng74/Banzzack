@@ -451,9 +451,11 @@
 							</div>
 							<!-- End Small images -->
 						</div>
+						<form action="orderProduct.do" method="post">
 						<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
 							<div class="ht__product__dtl">
 								<h2>${dto.PRODUCT_TITLE}</h2>
+								<input type="hidden" name="PRODUCT_NUM" value="${dto.PRODUCT_NUM}">
 								<h6>
 									상품번호: <span>${dto.PRODUCT_NUM}</span>
 								</h6>
@@ -472,7 +474,7 @@
 										<p>
 											<span>수량</span>
 										</p>
-										<select class="select__size">
+										<select class="select__size" name="ORDERS_AMOUNT">
 											<option value=1>1</option>
 											<option value=2>2</option>
 											<option value=3>3</option>
@@ -522,22 +524,23 @@
 									</div> -->
 									<p class="pro__info">${dto.PRODUCT_CONTENTS}</p>
 									<div class="row">
-										<div class="col-md-6">
+										<!-- <div class="col-md-6">
 											<div class="dark-btn" style="margin-top: 20px">
 												<button>장바구니에 추가</button>
 											</div>
-										</div>
-										<div class="col-md-6">
+										</div> -->
+										<div class="col-md-12">
 											<div class="dark-btn" style="margin-top: 20px">
 												<button>주문하기</button>
 											</div>
 										</div>
 									</div>
-
+									
 								</div>
 							</div>
+							
 						</div>
-
+						</form>
 					</div>
 					<hr>
 					<div class="row" style="margin-top: 20px">

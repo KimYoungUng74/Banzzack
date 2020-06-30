@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.banzzack.dao.ProductDAO;
-
+import com.spring.banzzack.dto.OrderDTO;
 import com.spring.banzzack.dto.ProductDTO;
 import com.spring.banzzack.dto.VirtualDTO;
 
@@ -76,6 +76,11 @@ public class ProductService{
 	public List<ProductDTO> bestListAll() {
 		// TODO Auto-generated method stub
 		return dao.bestListAll(); // 메인 베스트 상품
+	}
+
+	public int orderProduct(OrderDTO dto) {
+		dao.orderProduct(dto); // 상품 등록
+		return 1;
 	}
 
 	

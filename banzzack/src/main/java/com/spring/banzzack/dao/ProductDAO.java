@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.spring.banzzack.dto.OrderDTO;
 import com.spring.banzzack.dto.ProductDTO;
 import com.spring.banzzack.dto.VirtualDTO;
 
@@ -68,6 +69,10 @@ public class ProductDAO {
 	public List<ProductDTO> bestListAll() {
 		// TODO Auto-generated method stub
 		return mybatis.selectList("ProductMapper.bestListAll");
+	}
+
+	public void orderProduct(OrderDTO dto) {
+		mybatis.insert("ProductMapper.orderProduct", dto);
 	}
 
 }

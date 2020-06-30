@@ -7,16 +7,22 @@
 
 	<!-- 제품 등록 -->
 	<insert id="Register" parameterType="ProductDTO">
-		INSERT INTO PRODUCT_TABLE(PRODUCT_NUM, PRODUCT_TITLE, PRODUCT_CONTENTS, PRODUCT_IMG1, PRODUCT_IMG2, PRODUCT_IMG3, PRODUCT_RPICE, PRODUCT_COUNT, PRODUCT_CATEGORY1, PRODUCT_CATEGORY2)
-		VALUES(PRODUCTAUTOINC.nextval, #{PRODUCT_TITLE}, #{PRODUCT_CONTENTS}, #{PRODUCT_IMG1},
-		#{PRODUCT_IMG2}, #{PRODUCT_IMG3}, #{PRODUCT_RPICE}, #{PRODUCT_COUNT}, #{PRODUCT_CATEGORY1}, #{PRODUCT_CATEGORY2})
+		INSERT INTO
+		PRODUCT_TABLE(PRODUCT_NUM, PRODUCT_TITLE, PRODUCT_CONTENTS,
+		PRODUCT_IMG1, PRODUCT_IMG2, PRODUCT_IMG3, PRODUCT_RPICE,
+		PRODUCT_COUNT, PRODUCT_CATEGORY1, PRODUCT_CATEGORY2)
+		VALUES(PRODUCTAUTOINC.nextval, #{PRODUCT_TITLE}, #{PRODUCT_CONTENTS},
+		#{PRODUCT_IMG1},
+		#{PRODUCT_IMG2}, #{PRODUCT_IMG3}, #{PRODUCT_RPICE},
+		#{PRODUCT_COUNT}, #{PRODUCT_CATEGORY1}, #{PRODUCT_CATEGORY2})
 	</insert>
 	<!-- 가상이미지 등록 -->
 	<insert id="VirtualRegister" parameterType="VirtualDTO">
-		INSERT INTO VIRTUAL_TABLE(PRODUCT_NUM, VIRTUAL_IMG, VIRTUAL_IMG2)
+		INSERT INTO
+		VIRTUAL_TABLE(PRODUCT_NUM, VIRTUAL_IMG, VIRTUAL_IMG2)
 		VALUES(VIRTUALCTAUTOINC.nextval, #{VIRTUAL_IMG}, #{VIRTUAL_IMG2})
 	</insert>
-	
+
 	<!-- 제품 리스트 전체 조회 -->
 	<select id="mainListAll" parameterType="ProductDTO"
 		resultType="ProductDTO">
@@ -28,7 +34,7 @@
 		FROM PRODUCT_TABLE
 		ORDER BY PRODUCT_NUM DESC
 	</select>
-	
+
 	<!-- 제품 리스트 전체 조회 -->
 	<select id="productListAll" parameterType="ProductDTO"
 		resultType="ProductDTO">
@@ -49,7 +55,7 @@
 		PRODUCT_IMG1,
 		PRODUCT_RPICE
 		FROM PRODUCT_TABLE
-		WHERE PRODUCT_CATEGORY1 = #{PRODUCT_CATEGORY1} 
+		WHERE PRODUCT_CATEGORY1 = #{PRODUCT_CATEGORY1}
 		AND PRODUCT_CATEGORY2 = #{PRODUCT_CATEGORY2}
 	</select>
 	<!-- 제품 정보 조회 -->
@@ -67,31 +73,38 @@
 		PRODUCT_CATEGORY1,
 		PRODUCT_CATEGORY2
 		FROM PRODUCT_TABLE
-		WHERE PRODUCT_NUM = #{PRODUCT_NUM}
+		WHERE PRODUCT_NUM
+		= #{PRODUCT_NUM}
 	</select>
-	<select id="bestListAll"
-		resultType="ProductDTO">
-		SELECT  SUM(o.orders_amount) 구매수량,
-        p.PRODUCT_NUM,
+	<select id="bestListAll" resultType="ProductDTO">
+		SELECT SUM(o.orders_amount)
+		구매수량,
+		p.PRODUCT_NUM,
 		PRODUCT_TITLE,
 		PRODUCT_IMG1,
 		PRODUCT_RPICE
-		FROM ORDERS_TABLE o, product_table p
+		FROM ORDERS_TABLE o,
+		product_table p
 		where o.product_num = p.product_num
-		group by p.PRODUCT_NUM,PRODUCT_TITLE,PRODUCT_IMG1,PRODUCT_RPICE
-		ORDER BY SUM(o.orders_amount) DESC
+		group by
+		p.PRODUCT_NUM,PRODUCT_TITLE,PRODUCT_IMG1,PRODUCT_RPICE
+		ORDER BY
+		SUM(o.orders_amount) DESC
 	</select>
 	<select id="bestSellerproduct" parameterType="ProductDTO"
 		resultType="ProductDTO">
-		SELECT  SUM(o.orders_amount) 구매수량,
-        p.PRODUCT_NUM,
+		SELECT SUM(o.orders_amount) 구매수량,
+		p.PRODUCT_NUM,
 		PRODUCT_TITLE,
 		PRODUCT_IMG1,
 		PRODUCT_RPICE
-		FROM ORDERS_TABLE o, product_table p
-		where o.product_num = p.product_num AND PRODUCT_CATEGORY1 = #{PRODUCT_CATEGORY1} 
+		FROM ORDERS_TABLE o,
+		product_table p
+		where o.product_num = p.product_num AND
+		PRODUCT_CATEGORY1 = #{PRODUCT_CATEGORY1}
 		group by p.PRODUCT_NUM,PRODUCT_TITLE,PRODUCT_IMG1,PRODUCT_RPICE
-		ORDER BY SUM(o.orders_amount) DESC
+		ORDER BY
+		SUM(o.orders_amount) DESC
 	</select>
 
 	<!-- 가상 착용 정보 조회 -->
@@ -101,8 +114,16 @@
 		PRODUCT_NUM,
 		VIRTUAL_IMG,
 		VIRTUAL_IMG2
-		FROM VIRTUAL_TABLE
+		FROM
+		VIRTUAL_TABLE
 		WHERE PRODUCT_NUM = #{PRODUCT_NUM}
 	</select>
 
+
+	<!-- 제품 구매 -->
+	<insert id="orderProduct" parameterType="OrderDTO">
+		INSERT INTO
+		ORDERS_TABLE(ORDERS_NUM, ORDERS_AMOUNT, USER_ID, PRODUCT_NUM)
+		VALUES(ORDERAUTOINC.nextval, #{ORDERS_AMOUNT}, #{USER_ID}, #{PRODUCT_NUM})
+	</insert>
 </mapper>

@@ -2,6 +2,7 @@ package com.spring.banzzack.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.banzzack.dto.ProductDTO;
 import com.spring.banzzack.dto.UserDTO;
+import com.spring.banzzack.service.ProductService;
 import com.spring.banzzack.service.UserService;
 
 
@@ -33,6 +36,9 @@ public class UserController {
 	@Autowired
 	UserService userSer;
 	
+	@Autowired
+	ProductService productSer;
+	
 	// 회원가입 화면
 		@RequestMapping(value = "signup.do")
 		public String signup(Locale locale, Model model) {
@@ -45,6 +51,7 @@ public class UserController {
 			System.out.println("userName : " + dto.getUSER_NAME());
 			ModelAndView mav = new ModelAndView();
 			userSer.signupUser(dto);
+			mav = setHome();
 			/*if (1 == userSer.signupUser(dto)) {
 				System.out.println("회원가입 되었음");
 				mav.setViewName("home");
@@ -69,6 +76,7 @@ public class UserController {
 			ModelAndView mav = new ModelAndView();
 
 			if (result) { // 로그인 성공
+				mav = setHome();
 				mav.addObject("dto", dto);
 				mav.setViewName("home");
 				mav.addObject("msg", "success");
@@ -89,8 +97,23 @@ public class UserController {
 
 			userSer.logout(session);
 			ModelAndView mav = new ModelAndView();
+			mav = setHome();
 			mav.setViewName("home");
 			mav.addObject("msg", "logout");
+			return mav;
+		}
+		
+		public ModelAndView setHome() {
+			ModelAndView mav = new ModelAndView();
+			List<ProductDTO> list = null; // 최신 악세서리
+			List<ProductDTO> list2 = null; // 베스트셀러 악세서리
+			list = productSer.mainListAll();
+			list2 = productSer.bestListAll();
+			
+			mav.addObject("list", list); // 최신 악세서리
+			mav.addObject("list2", list2); // 베스트셀러 악세서리
+			mav.setViewName("home");
+
 			return mav;
 		}
 
