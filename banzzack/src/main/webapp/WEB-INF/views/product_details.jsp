@@ -216,61 +216,64 @@
 								<nav class="main__menu__nav hidden-xs hidden-sm">
 									<ul class="main__menu">
 										<li class="drop"><a href="home.do">Home</a></li>
-										<li class="drop"><a href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=all">귀걸이</a>
+										<li class="drop"><a
+											href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=all">귀걸이</a>
 											<ul class="dropdown">
 												<!-- Start Single Mega MEnu -->
 												<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=패션 귀걸이">패션
-													귀걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=실버침">실버침</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=투웨이귀걸이">투웨이귀걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=핸드메이드 귀걸이">핸드메이드
-													귀걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=롱귀걸이">롱귀걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=러블리">러블리</a></li>
+													href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=패션 귀걸이">패션
+														귀걸이</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=실버침">실버침</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=투웨이귀걸이">투웨이귀걸이</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=핸드메이드 귀걸이">핸드메이드
+														귀걸이</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=롱귀걸이">롱귀걸이</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=러블리">러블리</a></li>
 												<!-- End Single Mega MEnu -->
 											</ul></li>
 
-										<li class="drop"><a href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=all">반지</a>
+										<li class="drop"><a
+											href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=all">반지</a>
 											<ul class="dropdown">
 												<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=14/18k">14/18k</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=실버링">실버링</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=커플링">커플링</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=심플링">심플링</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=다이아몬드 링">다이아몬드
-													링</a></li>
+													href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=14/18k">14/18k</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=실버링">실버링</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=커플링">커플링</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=심플링">심플링</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=다이아몬드 링">다이아몬드
+														링</a></li>
 											</ul></li>
 
-										<li class="drop"><a href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=all">목걸이</a>
+										<li class="drop"><a
+											href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=all">목걸이</a>
 											<ul class="dropdown">
 												<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 목걸">14/18k
-													목걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 펜던트">14/18k
-													펜던트</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=24k 순금목걸이">24k
-													순금목걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=탄생석 목걸이">탄생석
-													목걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=진주 목걸이">진주
-													목걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=체인 목걸이">체인
-													목걸이</a></li>
+													href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 목걸">14/18k
+														목걸이</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 펜던트">14/18k
+														펜던트</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=24k 순금목걸이">24k
+														순금목걸이</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=탄생석 목걸이">탄생석
+														목걸이</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=진주 목걸이">진주
+														목걸이</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=체인 목걸이">체인
+														목걸이</a></li>
 											</ul></li>
 									</ul>
 								</nav>
@@ -283,57 +286,57 @@
 												<ul class="dropdown">
 													<!-- Start Single Mega MEnu -->
 													<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=패션 귀걸이">패션
-													귀걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=실버침">실버침</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=투웨이귀걸이">투웨이귀걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=핸드메이드 귀걸이">핸드메이드
-													귀걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=롱귀걸이">롱귀걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=러블리">러블리</a></li>
+														href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=패션 귀걸이">패션
+															귀걸이</a></li>
+													<li><a
+														href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=실버침">실버침</a></li>
+													<li><a
+														href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=투웨이귀걸이">투웨이귀걸이</a></li>
+													<li><a
+														href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=핸드메이드 귀걸이">핸드메이드
+															귀걸이</a></li>
+													<li><a
+														href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=롱귀걸이">롱귀걸이</a></li>
+													<li><a
+														href="productList.do?PRODUCT_CATEGORY1=귀걸이&PRODUCT_CATEGORY2=러블리">러블리</a></li>
 													<!-- End Single Mega MEnu -->
 												</ul></li>
 
 											<li class="drop"><a href="#">반지</a>
 												<ul class="dropdown">
 													<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=14/18k">14/18k</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=실버링">실버링</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=커플링">커플링</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=심플링">심플링</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=다이아몬드 링">다이아몬드
-													링</a></li>
-
-											<li class="drop"><a href="#">목걸이</a>
-												<ul class="dropdown">
+														href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=14/18k">14/18k</a></li>
 													<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 목걸">14/18k
-													목걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 펜던트">14/18k
-													펜던트</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=24k 순금목걸이">24k
-													순금목걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=탄생석 목걸이">탄생석
-													목걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=진주 목걸이">진주
-													목걸이</a></li>
-											<li><a
-												href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=체인 목걸이">체인
-													목걸이</a></li>
-											</ul></li>
+														href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=실버링">실버링</a></li>
+													<li><a
+														href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=커플링">커플링</a></li>
+													<li><a
+														href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=심플링">심플링</a></li>
+													<li><a
+														href="productList.do?PRODUCT_CATEGORY1=반지&PRODUCT_CATEGORY2=다이아몬드 링">다이아몬드
+															링</a></li>
+
+													<li class="drop"><a href="#">목걸이</a>
+														<ul class="dropdown">
+															<li><a
+																href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 목걸">14/18k
+																	목걸이</a></li>
+															<li><a
+																href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=14/18k 펜던트">14/18k
+																	펜던트</a></li>
+															<li><a
+																href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=24k 순금목걸이">24k
+																	순금목걸이</a></li>
+															<li><a
+																href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=탄생석 목걸이">탄생석
+																	목걸이</a></li>
+															<li><a
+																href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=진주 목걸이">진주
+																	목걸이</a></li>
+															<li><a
+																href="productList.do?PRODUCT_CATEGORY1=목걸이&PRODUCT_CATEGORY2=체인 목걸이">체인
+																	목걸이</a></li>
+														</ul></li>
 												</ul></li>
 										</ul>
 									</nav>
@@ -523,52 +526,55 @@
 							<!-- End Small images -->
 						</div>
 						<form action="orderProduct.do" method="post">
-						<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
-							<div class="ht__product__dtl">
-								<h2>${dto.PRODUCT_TITLE}</h2>
-								<input type="hidden" name="PRODUCT_NUM" value="${dto.PRODUCT_NUM}">
-								<h6>
-									상품번호: <span>${dto.PRODUCT_NUM}</span>
-								</h6>
-								<ul class="rating">
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-									<li class="old"><i class="icon-star icons"></i></li>
-								</ul>
-								<ul class="pro__prize">
-									<li>${dto.PRODUCT_RPICE}원</li>
-								</ul>
-								<div class="ht__pro__desc">
-									<div class="sin__desc align--left">
-										<p>
-											<span>수량</span>
-										</p>
-										<select class="select__size" name="ORDERS_AMOUNT">
-											<option value=1>1</option>
-											<option value=2>2</option>
-											<option value=3>3</option>
-											<option value=4>4</option>
-											<option value=5>5</option>
-											<option value=6>6</option>
-											<option value=7>7</option>
-											<option value=8>8</option>
-											<option value=9>9</option>
-											<option value=10>10</option>
-										</select>
-									</div>
-									<div class="sin__desc align--left">
-										<p>
-											<span>Categories:</span>
-										</p>
-										<ul class="pro__cat__list">
-											<li><a href="productList.do?PRODUCT_CATEGORY1=${dto.PRODUCT_CATEGORY1}&PRODUCT_CATEGORY2=all">${dto.PRODUCT_CATEGORY1}</a></li>
-											<li><a href="productList.do?PRODUCT_CATEGORY1=${dto.PRODUCT_CATEGORY1}&PRODUCT_CATEGORY2=${dto.PRODUCT_CATEGORY2}">${dto.PRODUCT_CATEGORY2}</a></li>
-										</ul>
-									</div>
-									<!-- 공유하기 기능  -->
-									<!-- <div class="sin__desc product__share__link">
+							<div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
+								<div class="ht__product__dtl">
+									<h2>${dto.PRODUCT_TITLE}</h2>
+									<input type="hidden" name="PRODUCT_NUM"
+										value="${dto.PRODUCT_NUM}">
+									<h6>
+										상품번호: <span>${dto.PRODUCT_NUM}</span>
+									</h6>
+									<ul class="rating">
+										<li><i class="icon-star icons"></i></li>
+										<li><i class="icon-star icons"></i></li>
+										<li><i class="icon-star icons"></i></li>
+										<li class="old"><i class="icon-star icons"></i></li>
+										<li class="old"><i class="icon-star icons"></i></li>
+									</ul>
+									<ul class="pro__prize">
+										<li>${dto.PRODUCT_RPICE}원</li>
+									</ul>
+									<div class="ht__pro__desc">
+										<div class="sin__desc align--left">
+											<p>
+												<span>수량</span>
+											</p>
+											<select class="select__size" name="ORDERS_AMOUNT">
+												<option value=1>1</option>
+												<option value=2>2</option>
+												<option value=3>3</option>
+												<option value=4>4</option>
+												<option value=5>5</option>
+												<option value=6>6</option>
+												<option value=7>7</option>
+												<option value=8>8</option>
+												<option value=9>9</option>
+												<option value=10>10</option>
+											</select>
+										</div>
+										<div class="sin__desc align--left">
+											<p>
+												<span>Categories:</span>
+											</p>
+											<ul class="pro__cat__list">
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=${dto.PRODUCT_CATEGORY1}&PRODUCT_CATEGORY2=all">${dto.PRODUCT_CATEGORY1}</a></li>
+												<li><a
+													href="productList.do?PRODUCT_CATEGORY1=${dto.PRODUCT_CATEGORY1}&PRODUCT_CATEGORY2=${dto.PRODUCT_CATEGORY2}">${dto.PRODUCT_CATEGORY2}</a></li>
+											</ul>
+										</div>
+										<!-- 공유하기 기능  -->
+										<!-- <div class="sin__desc product__share__link">
 										<p>
 											<span>Share this:</span>
 										</p>
@@ -593,24 +599,24 @@
 													class="icon-social-pinterest icons"></i></a></li>
 										</ul>
 									</div> -->
-									<p class="pro__info">${dto.PRODUCT_CONTENTS}</p>
-									<div class="row">
-										<!-- <div class="col-md-6">
+										<p class="pro__info">${dto.PRODUCT_CONTENTS}</p>
+										<div class="row">
+											<!-- <div class="col-md-6">
 											<div class="dark-btn" style="margin-top: 20px">
 												<button>장바구니에 추가</button>
 											</div>
 										</div> -->
-										<div class="col-md-12">
-											<div class="dark-btn" style="margin-top: 20px">
-												<button>주문하기</button>
+											<div class="col-md-12">
+												<div class="dark-btn" style="margin-top: 20px">
+													<button>주문하기</button>
+												</div>
 											</div>
 										</div>
+
 									</div>
-									
 								</div>
+
 							</div>
-							
-						</div>
 						</form>
 					</div>
 					<hr>
@@ -639,49 +645,49 @@
 								<c:choose>
 									<c:when test="${dto.PRODUCT_CATEGORY1 == '귀걸이'}">
 										<div>
-										<div class="col-md-6 dark-btn" style="margin-top: 20px;">
-											<button class="earring1" style="margin-bottom: 20px;">귀걸이1
-												착용</button>
-											<h4>크기 조절</h4>
-											<input class="range1" type="range" value="30" min="5"
-												max="100" style="margin-top: 5px;">
+											<div class="col-md-6 dark-btn" style="margin-top: 20px;">
+												<button class="earring1" style="margin-bottom: 20px;">귀걸이1
+													착용</button>
+												<h4>크기 조절</h4>
+												<input class="range1" type="range" value="30" min="5"
+													max="100" style="margin-top: 5px;">
+											</div>
+											<div class="col-md-6 dark-btn"
+												style="margin-top: 20px; margin-bottom: 20px;">
+												<button class="earring2" style="margin-bottom: 20px;">귀걸이2
+													착용</button>
+												<h4>크기 조절</h4>
+												<input class="range2" type="range" value="30" min="5"
+													max="100" style="margin-top: 5px;">
+											</div>
 										</div>
-										<div class="col-md-6 dark-btn"
-											style="margin-top: 20px; margin-bottom: 20px;">
-											<button class="earring2" style="margin-bottom: 20px;">귀걸이2
-												착용</button>
-											<h4>크기 조절</h4>
-											<input class="range2" type="range" value="30" min="5"
-												max="100" style="margin-top: 5px;">
-										</div>
-									</div>
 									</c:when>
-									
+
 									<c:when test="${dto.PRODUCT_CATEGORY1 == '목걸이'}">
-									<div>
-										<div class="col-md-12 dark-btn" style="margin-top: 20px;">
-											<button class="necklace" style="margin-bottom: 20px;">목걸이
-												착용</button>
-											<h4>크기 조절</h4>
-											<input class="range3" type="range" value="30" min="5"
-												max="100" style="margin-top: 5px;">
+										<div>
+											<div class="col-md-12 dark-btn" style="margin-top: 20px;">
+												<button class="necklace" style="margin-bottom: 20px;">목걸이
+													착용</button>
+												<h4>크기 조절</h4>
+												<input class="range3" type="range" value="30" min="5"
+													max="100" style="margin-top: 5px;">
+											</div>
 										</div>
-									</div>
 									</c:when>
-									
+
 									<c:when test="${dto.PRODUCT_CATEGORY1 == '반지'}">
-									<div>
-										<div class="col-md-12 dark-btn" style="margin-top: 20px;">
-											<button class="ring" style="margin-bottom: 20px;">반지
-												착용</button>
-											<h4>크기 조절</h4>
-											<input class="range4" type="range" value="30" min="5"
-												max="100" style="margin-top: 5px;">
+										<div>
+											<div class="col-md-12 dark-btn" style="margin-top: 20px;">
+												<button class="ring" style="margin-bottom: 20px;">반지
+													착용</button>
+												<h4>크기 조절</h4>
+												<input class="range4" type="range" value="30" min="5"
+													max="100" style="margin-top: 5px;">
+											</div>
 										</div>
-									</div>
 									</c:when>
-									
-									</c:choose>
+
+								</c:choose>
 							</div>
 						</div>
 						<div class="col-md-4"></div>
@@ -704,59 +710,68 @@
 					</div>
 				</div>
 				<div class="row">
+				<c:if test="${list2.size()==0}">
+					<div class="col-xs-12" style="width: 100%; margin-top: 20px;">
+										<div class="section__title--2 text-center">
+											<h2 class="title__line">등록된 후기가 없습니다 ㅠㅠ</h2>
+										</div>
+									</div>
+				</c:if>
 					<div class="ht__blog__wrap clearfix">
-					<c:choose>
-						<c:when test="${list2.size() < 4}">
-							<c:forEach var="i" begin="0" end="${list2.size()-1}">
-						<!-- Start Single Blog -->
-						<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-							<div class="blog">
-								<div class="blog__thumb">
-									<img
-										src="<c:url value='http://localhost:8181/banzzackimg/reivew/${list2[i].REVIEW_IMG}'/>"
-										alt="blog images">
-								</div>
-								<div class="blog__details">
-									<div class="bl__date">
-										<span>${list2[i].REVIEW_TIME}</span>
+						<c:choose>
+							<c:when test="${list2.size()==0}">
+							</c:when>
+							<c:when test="${list2.size() < 4}">
+								<c:forEach var="i" begin="0" end="${list2.size()-1}">
+									<!-- Start Single Blog -->
+									<div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+										<div class="blog">
+											<div class="blog__thumb">
+												<img
+													src="<c:url value='http://localhost:8181/banzzackimg/reivew/${list2[i].REVIEW_IMG}'/>"
+													alt="blog images">
+											</div>
+											<div class="blog__details">
+												<div class="bl__date">
+													<span>${list2[i].REVIEW_TIME}</span>
+												</div>
+												<h2>
+													<a href="#">${list2[i].REVIEW_TITLE}</a>
+												</h2>
+												<p>${list2[i].REVIEW_CONTENTS}</p>
+											</div>
+										</div>
 									</div>
-									<h2>
-										<a href="#">${list2[i].REVIEW_TITLE}</a>
-									</h2>
-									<p>${list2[i].REVIEW_CONTENTS}</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						</c:forEach>
-						</c:when>
-						<c:otherwise>
-						<c:forEach var="i" begin="0" end="3">
-						<!-- Start Single Blog -->
-						<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-							<div class="blog">
-								<div class="blog__thumb">
-									<img
-										src="<c:url value='http://localhost:8181/banzzackimg/reivew/${list2[i].REVIEW_IMG}'/>"
-										alt="blog images">
-								</div>
-								<div class="blog__details">
-									<div class="bl__date">
-										<span>${list2[i].REVIEW_TIME}</span>
+									<!-- End Single Blog -->
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<c:forEach var="i" begin="0" end="3">
+									<!-- Start Single Blog -->
+									<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
+										<div class="blog">
+											<div class="blog__thumb">
+												<img
+													src="<c:url value='http://localhost:8181/banzzackimg/reivew/${list2[i].REVIEW_IMG}'/>"
+													alt="blog images">
+											</div>
+											<div class="blog__details">
+												<div class="bl__date">
+													<span>${list2[i].REVIEW_TIME}</span>
+												</div>
+												<h2>
+													<a href="#">${list2[i].REVIEW_TITLE}</a>
+												</h2>
+												<p>${list2[i].REVIEW_CONTENTS}</p>
+											</div>
+										</div>
 									</div>
-									<h2>
-										<a href="#">${list2[i].REVIEW_TITLE}</a>
-									</h2>
-									<p>${list2[i].REVIEW_CONTENTS}</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						</c:forEach>
-						</c:otherwise>
-					</c:choose>
-					
-						
+									<!-- End Single Blog -->
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+
+
 					</div>
 				</div>
 			</div>
